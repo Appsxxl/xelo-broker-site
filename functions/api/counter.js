@@ -1,5 +1,26 @@
 const MAX = 20;
 const CORS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
+const NOTIFY_EMAIL = 'douglasheu@gmail.com';
+
+async function sendNotification(email, seat, left) {
+  try {
+    await fetch('https://api.mailchannels.net/tx/v1/send', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        personalizations: [{ to: [{ email: NOTIFY_EMAIL, name: 'Douglas' }] }],
+        from: { email: 'noreply@brokers.xelo.media', name: 'Xelo Beta' },
+        subject: `🎉 New beta signup — seat ${seat} of ${MAX}`,
+        content: [{
+          type: 'text/plain',
+          value: `New beta request!\n\nEmail: ${email}\nSeat: ${seat} of ${MAX}\nRemaining: ${left}\n\nLog in to Cloudflare KV to view all signups.`
+        }]
+      })
+    });
+  } catch (_) {
+    // notification failure is non-critical
+  }
+}
 
 export async function onRequest({ request, env }) {
   if (request.method === 'OPTIONS') {
@@ -17,14 +38,16 @@ export async function onRequest({ request, env }) {
       return new Response(JSON.stringify({ full: true, count, max: MAX }), { status: 409, headers: CORS });
     }
     const next = count + 1;
+    const left = MAX - next;
     await env.XELO_BETA.put('count', String(next));
 
     const body = await request.json().catch(() => ({}));
-    if (body.email) {
-      await env.XELO_BETA.put(`email:${next}:${Date.now()}`, body.email);
-    }
+    const email = body.email || 'unknown';
+    await env.XELO_BETA.put(`signup:${String(next).padStart(3,'0')}`, JSON.stringify({ email, seat: next, ts: new Date().toISOString() }));
 
-    return new Response(JSON.stringify({ count: next, max: MAX, left: MAX - next }), { headers: CORS });
+    await sendNotification(email, next, left);
+
+    return new Response(JSON.stringify({ count: next, max: MAX, left }), { headers: CORS });
   }
 
   return new Response('Method not allowed', { status: 405 });
