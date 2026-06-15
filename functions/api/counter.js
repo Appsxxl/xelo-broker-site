@@ -1,6 +1,6 @@
 const MAX_FREE = 20;   // first 20 actual signups get free access
 const MAX_TOTAL = 50;  // total beta programme size shown
-const SEED = 7;        // display offset — makes counter start at 7, never 0
+const SEED = 9;        // display offset — makes counter start at 9, never 0
 const NOTIFY_EMAIL = 'douglasheu@gmail.com';
 
 const CORS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
