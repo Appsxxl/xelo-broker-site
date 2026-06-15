@@ -511,6 +511,13 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 #btt.show{opacity:1;pointer-events:all}
 #btt svg{width:18px;height:18px;fill:var(--n)}
 
+/* Market preview */
+.market-preview-wrap{margin-top:36px}
+.market-preview-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--g);font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;background:var(--g3);border:1px solid var(--gbdr);border-radius:20px;padding:5px 14px}
+.market-preview-frame{border-radius:14px;overflow:hidden;border:1px solid var(--gbdr);box-shadow:0 24px 80px rgba(0,0,0,.5);position:relative}
+.market-preview-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,var(--n2),transparent);pointer-events:none}
+.market-preview-img{width:100%;display:block;border-radius:14px}
+
 /* Sticky CTA bar */
 #sticky-cta{position:fixed;top:0;left:0;right:0;background:rgba(10,21,32,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.2);padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:998;transform:translateY(-100%);transition:transform .3s ease;flex-wrap:wrap}
 #sticky-cta.show{transform:translateY(0)}
@@ -902,6 +909,16 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
         </div>
       </div>
     </div>
+
+    <div class="market-preview-wrap reveal">
+      <div class="market-preview-label">
+        <span>🖥</span> Xelo Market — coming soon
+      </div>
+      <div class="market-preview-frame">
+        <img src="/market-preview.png" alt="Xelo Market portal preview" class="market-preview-img">
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1496,7 +1513,7 @@ function updateBetaUI(d){
     .then(function(r){return r.json();})
     .then(function(d){updateBetaUI(d);})
     .catch(function(){
-      updateBetaUI({count:0,maxTotal:50,maxFree:20,isFreeAvailable:true,isFull:false});
+      updateBetaUI({count:7,maxTotal:50,maxFree:20,isFreeAvailable:true,isFull:false});
     });
 })();
 

@@ -1,5 +1,6 @@
-const MAX_FREE = 20;   // first 20 get free access
+const MAX_FREE = 20;   // first 20 actual signups get free access
 const MAX_TOTAL = 50;  // total beta programme size shown
+const SEED = 7;        // display offset — makes counter start at 7, never 0
 const NOTIFY_EMAIL = 'douglasheu@gmail.com';
 
 const CORS = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
@@ -32,8 +33,9 @@ export async function onRequest({ request, env }) {
   const count = parseInt(await env.XELO_BETA.get('count') || '0');
 
   if (request.method === 'GET') {
+    const display = count + SEED;
     return new Response(JSON.stringify({
-      count,
+      count: display,
       maxTotal: MAX_TOTAL,
       maxFree: MAX_FREE,
       freeSpotsLeft: Math.max(0, MAX_FREE - count),
@@ -60,7 +62,7 @@ export async function onRequest({ request, env }) {
     await sendNotification(email, next, isFree);
 
     return new Response(JSON.stringify({
-      count: next,
+      count: next + SEED,
       maxTotal: MAX_TOTAL,
       maxFree: MAX_FREE,
       freeSpotsLeft: Math.max(0, MAX_FREE - next),
