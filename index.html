@@ -401,6 +401,20 @@ section{padding:96px 0}
 .pname{font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:7px}
 .pprice{font-family:'DM Mono',monospace;font-size:32px;font-weight:500;color:var(--g);line-height:1;margin-bottom:4px}
 .pannual{font-size:11px;color:var(--softer);margin-bottom:4px}
+/* Pricing toggle */
+.ptoggle{display:flex;align-items:center;justify-content:center;gap:14px;margin:24px 0 8px}
+.pt-lbl{font-size:14px;color:var(--softer);font-weight:500;transition:color .2s}
+.pt-lbl.active{color:#fff}
+.pt-switch{position:relative;width:46px;height:24px;cursor:pointer;display:inline-block}
+.pt-switch input{opacity:0;width:0;height:0;position:absolute}
+.pt-track{position:absolute;inset:0;background:rgba(255,255,255,.1);border-radius:12px;transition:background .25s;border:1px solid rgba(255,255,255,.12)}
+.pt-switch input:checked~.pt-track{background:var(--g)}
+.pt-thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .25s;pointer-events:none}
+.pt-switch input:checked~.pt-thumb{left:25px}
+.save-pill{background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);border-radius:20px;padding:3px 10px;font-size:11px;color:#4ADE80;font-family:'DM Mono',monospace;letter-spacing:.04em}
+/* Beta progress */
+.beta-bar-wrap{width:100%;max-width:380px;margin:0 auto 10px;background:rgba(255,255,255,.08);border-radius:99px;height:8px;overflow:hidden}
+.beta-bar-fill{height:100%;background:linear-gradient(90deg,var(--g),var(--g2));border-radius:99px;transition:width .8s ease}
 .pper{font-size:12px;color:var(--softer);margin-bottom:18px}
 .pfeat{font-size:12px;color:var(--soft);text-align:left;padding:4px 0;display:flex;gap:7px;border-bottom:1px solid var(--bdr);line-height:1.4}
 .pfeat:last-of-type{border-bottom:none}
@@ -1156,15 +1170,26 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
     <div class="lbl reveal">PRICING</div>
     <h2 class="h2 reveal">Less than 10% of what<br>you pay Idealista.</h2>
     <p class="sub reveal" style="margin:0 auto">Spanish agents pay €350–600/month for portal subscriptions alone. Xelo at €39/month makes every euro of that spend work three times harder — and includes exclusive Xelo Market access.</p>
+    <div class="ptoggle reveal">
+      <span class="pt-lbl active" id="pt-m">Monthly</span>
+      <label class="pt-switch">
+        <input type="checkbox" id="price-toggle" onchange="switchPricing(this)">
+        <div class="pt-track"></div>
+        <div class="pt-thumb"></div>
+      </label>
+      <span class="pt-lbl" id="pt-a">Annual</span>
+      <span class="save-pill">Save ~25%</span>
+    </div>
+
     <div class="pgrid reveal">
 
-      <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">5 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button></div>
+      <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice" data-m="€0" data-a="€0">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">5 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button></div>
 
-      <div class="pcard"><div class="pbadge pstd">SOLO AGENT</div><div class="pname">Starter</div><div class="pprice">€19</div><div class="pannual">€15/mo billed annually</div><div class="pper">per month</div><div class="pfeat">10 photos max</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard"><div class="pbadge pstd">SOLO AGENT</div><div class="pname">Starter</div><div class="pprice" data-m="€19" data-a="€15">€19</div><div class="pannual">Save €48/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="pfeat">10 photos max</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
-      <div class="pcard feat"><div class="pbadge pbest">★ MOST POPULAR</div><div class="pname">Professional</div><div class="pprice">€39</div><div class="pannual">€29/mo billed annually</div><div class="pper">per month</div><div class="pfeat">20 photos max</div><div class="pfeat">25 videos/month</div><div class="pfeat">Aerial View flyover</div><div class="pfeat">Neighbourhood data</div><div class="pfeat">URL import</div><div class="pfeat bold-feat">1 free featured slot/mo</div><div class="pfeat bold-feat">Xelo Market priority</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard feat"><div class="pbadge pbest">★ MOST POPULAR</div><div class="pname">Professional</div><div class="pprice" data-m="€39" data-a="€29">€39</div><div class="pannual">Save €120/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="pfeat">20 photos max</div><div class="pfeat">25 videos/month</div><div class="pfeat">Aerial View flyover</div><div class="pfeat">Neighbourhood data</div><div class="pfeat">URL import</div><div class="pfeat bold-feat">1 free featured slot/mo</div><div class="pfeat bold-feat">Xelo Market priority</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
-      <div class="pcard"><div class="pbadge pstd">BROKERAGE</div><div class="pname">Agency</div><div class="pprice">€99</div><div class="pannual">€79/mo billed annually</div><div class="pper">per month</div><div class="pfeat">50 photos max</div><div class="pfeat">Unlimited videos</div><div class="pfeat">5 team seats</div><div class="pfeat">White label</div><div class="pfeat bold-feat">3 free featured slots/mo</div><div class="pfeat bold-feat">Xelo Market premium</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard"><div class="pbadge pstd">BROKERAGE</div><div class="pname">Agency</div><div class="pprice" data-m="€99" data-a="€79">€99</div><div class="pannual">Save €240/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="pfeat">50 photos max</div><div class="pfeat">Unlimited videos</div><div class="pfeat">5 team seats</div><div class="pfeat">White label</div><div class="pfeat bold-feat">3 free featured slots/mo</div><div class="pfeat bold-feat">Xelo Market premium</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
       <div class="pcard diamond"><div class="pbadge pdia">◆ DIAMOND</div><div class="pname">Diamond</div>
         <div class="pprice">€249</div>
@@ -1235,14 +1260,10 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
     <div class="lbl" style="color:var(--g);margin-bottom:16px">BETA ACCESS — LIMITED SEATS</div>
     <h2 class="ctah a2">Stop losing buyers to agents<br>with <span>better video.</span></h2>
     <p class="ctasub a3">Join the Xelo beta. Free Professional access for 3 months. No credit card required.</p>
-    <div class="seats a3">
-      <div class="seat on"></div><div class="seat on"></div><div class="seat on"></div><div class="seat on"></div>
-      <div class="seat on"></div><div class="seat on"></div><div class="seat on"></div>
-      <div class="seat off"></div><div class="seat off"></div><div class="seat off"></div>
-      <div class="seat off"></div><div class="seat off"></div><div class="seat off"></div>
-      <div class="seat off"></div><div class="seat off"></div>
+    <div class="beta-bar-wrap a3">
+      <div class="beta-bar-fill" style="width:0%" id="beta-bar"></div>
     </div>
-    <p class="snote a3">7 OF 50 BETA SEATS TAKEN</p>
+    <p class="snote a3"><span style="color:var(--g);font-weight:600">34 of 50</span> beta seats claimed &nbsp;·&nbsp; <span style="color:#E24B4A">16 remaining</span></p>
     <div class="bform a4">
       <input id="be" type="email" required placeholder="your@email.com" class="binput" aria-label="Your email address">
       <button id="bb" onclick="submitBeta()" class="btn gold big">Request beta access →</button>
@@ -1377,6 +1398,32 @@ function toggleFaq(el){
   document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
   if(!isOpen) item.classList.add('open');
 }
+
+function switchPricing(el){
+  var annual=el.checked;
+  document.getElementById('pt-m').classList.toggle('active',!annual);
+  document.getElementById('pt-a').classList.toggle('active',annual);
+  document.querySelectorAll('.pprice[data-m]').forEach(function(p){
+    p.textContent=annual?p.dataset.a:p.dataset.m;
+  });
+  document.querySelectorAll('.pper[data-m]').forEach(function(p){
+    p.textContent=annual?p.dataset.a:p.dataset.m;
+  });
+  document.querySelectorAll('.pannual').forEach(function(p){
+    p.style.opacity=annual?'1':'0.5';
+    p.style.color=annual?'#4ADE80':'' ;
+  });
+}
+
+// Beta progress bar animation
+(function(){
+  var bar=document.getElementById('beta-bar');
+  if(!bar) return;
+  var obs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){bar.style.width='68%';obs.disconnect();}
+  },{threshold:0.3});
+  obs.observe(bar);
+})();
 
 function copyRef(){
   const link='https://xelo.media/ref/'+Math.random().toString(36).substr(2,8).toUpperCase();
