@@ -593,15 +593,17 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 <!-- IMPACT + DUAL TRACK -->
 <section class="bg0">
   <div class="wrap">
-    <div class="impact reveal">
+    <div class="impact reveal" style="background:rgba(201,168,76,.06);border:2px solid var(--gbdr)">
       <div class="imp-num">
-        <div class="imp-big"><span class="cnt" data-val="4">0</span><span class="imp-x">×</span></div>
-        <div class="imp-lbl">MORE ENQUIRIES</div>
+        <div class="imp-big" style="font-size:clamp(72px,10vw,110px);color:var(--g);text-shadow:0 0 60px rgba(201,168,76,.35)"><span class="cnt" data-val="4">0</span><span class="imp-x">×</span></div>
+        <div class="imp-lbl" style="color:var(--g);font-size:12px;letter-spacing:.18em">MORE ENQUIRIES</div>
+        <div style="font-size:10px;color:var(--softer);margin-top:6px;font-family:'DM Mono',monospace">— Idealista data</div>
       </div>
       <div class="imp-div"></div>
       <div class="imp-body">
-        <div class="imp-title">Video listings get 4× more enquiries than photo-only</div>
-        <div class="imp-desc">Idealista's own data. Buyers scroll all day — they stop for video, every time. 78% of agents without video are losing buyers to the 22% who have it. <strong>Xelo gives you a professional video in under 3 minutes — or you have nothing at all.</strong></div>
+        <div class="imp-title" style="font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,30px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.025em;margin-bottom:14px">Video listings get <span style="color:var(--g)">4× more enquiries</span><br>than photo-only listings.</div>
+        <div class="imp-desc">Buyers scroll Idealista all day — <strong>they stop for video every time.</strong> 78% of agents have zero video. That means the 22% who do are getting nearly all the clicks. Xelo gives you a professional video in under 3 minutes.</div>
+        <a href="#beta" class="btn gold" style="margin-top:18px;display:inline-flex">Get 4× more enquiries →</a>
       </div>
     </div>
     <div class="tg reveal" style="margin-top:16px">
@@ -678,59 +680,55 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
     <h2 class="h2 reveal">Your face. Your voice. Every listing.<br><span class="g">Automatically personalised.</span></h2>
     <p class="sub reveal">Record 2 minutes of your voice and 30 seconds of your face. Every Xelo video you generate introduces the property in your own voice — cloned by AI, always available, never needs re-recording.</p>
     <div class="avatar-section reveal">
-      <div style="font-size:11px;color:var(--softer);font-family:'DM Mono',monospace;letter-spacing:.06em;margin-bottom:20px">RECOMMENDED TECHNOLOGY STACK</div>
       <div class="av-grid">
         <div class="av-card rec">
           <span class="av-icon">🎙</span>
-          <div class="av-name">ElevenLabs <span class="av-badge av-best">RECOMMENDED · YOUR ACCOUNT</span></div>
-          <div class="av-desc">Best voice cloning API available. Clone your exact voice from 1 minute of clean audio. Supports 29 languages. Full REST API at api.elevenlabs.io. You already have an account — this is the voice layer.</div>
+          <div class="av-name">Your Voice <span class="av-badge av-best">AI CLONED</span></div>
+          <div class="av-desc">Record 2 minutes of your voice once. Xelo clones it with AI and uses it to introduce every property you list — in any language your buyer speaks.</div>
           <ul class="av-pros">
-            <li><span class="ok">✓</span>Clone voice from 1 minute of audio</li>
-            <li><span class="ok">✓</span>29 languages including ES, PT, DE, NL, NO, SV</li>
-            <li><span class="ok">✓</span>Full API — integrates directly into Xelo</li>
-            <li><span class="ok">✓</span>You already have an account</li>
-            <li><span class="ok">✓</span>~€0.02 per video intro (negligible)</li>
+            <li><span class="ok">✓</span>Sounds exactly like you — not a robot</li>
+            <li><span class="ok">✓</span>Speaks in all 9 buyer languages automatically</li>
+            <li><span class="ok">✓</span>Never needs re-recording after setup</li>
+            <li><span class="ok">✓</span>Consistent, professional, always available</li>
           </ul>
         </div>
         <div class="av-card rec">
           <span class="av-icon">🎬</span>
-          <div class="av-name">HeyGen <span class="av-badge av-best">RECOMMENDED · FACE LAYER</span></div>
-          <div class="av-desc">Best talking avatar API for real estate. Broker records 30 seconds of neutral video — HeyGen creates a photorealistic avatar. Use ElevenLabs audio as the voice input. Full API at app.heygen.com/api.</div>
+          <div class="av-name">Your Face <span class="av-badge av-best">AI AVATAR</span></div>
+          <div class="av-desc">Record 30 seconds of yourself on camera once. Xelo builds your photorealistic AI avatar and inserts it as the opening of every social video you generate — forever.</div>
           <ul class="av-pros">
-            <li><span class="ok">✓</span>Photorealistic talking head from 30s recording</li>
-            <li><span class="ok">✓</span>Full REST API — integrates into Xelo render pipeline</li>
-            <li><span class="ok">✓</span>Accepts external audio — perfect for ElevenLabs voice</li>
-            <li><span class="ok">✓</span>~€0.08 per video intro</li>
-            <li><span class="warn">~</span>Requires one-time avatar creation per broker</li>
+            <li><span class="ok">✓</span>Photorealistic — buyers see your face, not a cartoon</li>
+            <li><span class="ok">✓</span>8–12 second personalised intro per listing</li>
+            <li><span class="ok">✓</span>Auto-inserted in every Track B social video</li>
+            <li><span class="ok">✓</span>One setup afternoon — automatic forever</li>
           </ul>
         </div>
         <div class="av-card">
-          <span class="av-icon">🤖</span>
-          <div class="av-name">D-ID <span class="av-badge av-ok">ALTERNATIVE · BUDGET OPTION</span></div>
-          <div class="av-desc">More affordable talking avatar option. Good quality, full API, slightly lower realism than HeyGen. Works well with ElevenLabs voice. Lower per-video cost but more noticeable as AI.</div>
+          <span class="av-icon">🌍</span>
+          <div class="av-name">Every Language <span class="av-badge av-ok">AUTOMATIC</span></div>
+          <div class="av-desc">Your voice intro is automatically re-spoken in the buyer's language. A Norwegian buyer hears you speak Norwegian. A German buyer hears German. You record once, Xelo handles the rest.</div>
           <ul class="av-pros">
-            <li><span class="ok">✓</span>Full API at d-id.com/api</li>
-            <li><span class="ok">✓</span>Accepts ElevenLabs audio</li>
-            <li><span class="ok">✓</span>~€0.04 per video intro — cheapest option</li>
-            <li><span class="warn">~</span>Lower realism — noticeable as AI in close-up</li>
-            <li><span class="warn">~</span>Less natural mouth movement than HeyGen</li>
+            <li><span class="ok">✓</span>Auto-detects buyer language from their location</li>
+            <li><span class="ok">✓</span>Your cloned voice speaks all 9 languages</li>
+            <li><span class="ok">✓</span>Zero extra effort after initial setup</li>
+            <li><span class="ok">✓</span>Portal-compliant version for MLS track</li>
           </ul>
         </div>
       </div>
       <div class="av-flow">
-        <div class="av-flow-title">How it works in Xelo — one-time setup, automatic forever</div>
+        <div class="av-flow-title">One afternoon of setup — personalised forever</div>
         <div class="av-steps">
-          <div class="av-step">📹 Broker records 2 min audio + 30s face video</div>
+          <div class="av-step">📹 Record 2 min voice + 30s face — once</div>
           <span class="av-arrow">→</span>
-          <div class="av-step">🎙 ElevenLabs clones broker voice</div>
+          <div class="av-step">🤖 Xelo builds your AI voice &amp; face</div>
           <span class="av-arrow">→</span>
-          <div class="av-step">🎬 HeyGen creates talking avatar</div>
+          <div class="av-step">🏠 Every listing opens with your intro</div>
           <span class="av-arrow">→</span>
-          <div class="av-step">🏠 Every Xelo video opens with broker intro</div>
+          <div class="av-step">🌍 Buyer hears you in their own language</div>
           <span class="av-arrow">→</span>
-          <div class="av-step">🌍 Intro auto-translated to buyer's language</div>
+          <div class="av-step">📞 They call you — not your competitor</div>
         </div>
-        <div style="font-size:13px;color:var(--soft);margin-top:12px;line-height:1.6">The broker intro is generated once per property and inserted as the opening 8–12 seconds of every Track B social video. Track A (MLS) uses a shorter text-only overlay to keep portal compliance. Total extra cost per video: approximately <strong style="color:var(--g)">€0.10</strong> using ElevenLabs + HeyGen.</div>
+        <div style="font-size:13px;color:var(--soft);margin-top:12px;line-height:1.6">The personalised intro runs in the opening 8–12 seconds of every social video you generate. MLS track uses a compliant text overlay. <strong style="color:#fff">You never re-record. Xelo handles every language, every listing, every time.</strong></div>
       </div>
     </div>
   </div>
