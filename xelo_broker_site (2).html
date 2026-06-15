@@ -131,6 +131,31 @@ section{padding:96px 0}
 .ph-follow{font-size:14px;color:var(--softer);line-height:1.75}
 .ph-follow strong{color:rgba(255,255,255,.75)}
 
+/* HAMBURGER + MOBILE NAV */
+.hmb{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px 4px;background:transparent;border:none;flex-shrink:0}
+.hmb span{display:block;width:22px;height:2px;background:rgba(255,255,255,.65);border-radius:2px;transition:all .28s}
+.hmb.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hmb.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hmb.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(9,18,30,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--gbdr);z-index:190;padding:8px 24px 24px;flex-direction:column}
+.mob-nav.open{display:flex}
+.mob-nav a.mnl{font-size:15px;color:var(--soft);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s;font-weight:400}
+.mob-nav a.mnl:hover{color:var(--g)}
+.mob-ctas{display:flex;flex-direction:column;gap:9px;padding-top:18px}
+.mob-ctas .btn{text-align:center;justify-content:center;font-size:14px;padding:12px 20px}
+
+/* FAQ */
+.faq-list{margin-top:44px;display:flex;flex-direction:column;gap:3px}
+.faq-item{background:var(--n3);border:1px solid var(--bdr);border-radius:var(--rad);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--gbdr)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;font-family:'Syne',sans-serif;font-size:15px;font-weight:600;color:#fff;gap:16px;user-select:none;transition:color .2s}
+.faq-q:hover{color:var(--g)}
+.faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--gbdr);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--g);transition:transform .25s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 22px 18px;font-size:14px;color:var(--soft);line-height:1.85}
+.faq-a strong{color:#fff}
+.faq-item.open .faq-a{display:block}
+
 /* BRIDGE */
 .bridge{background:var(--n);padding:72px 0;text-align:center}
 .btag{display:inline-block;background:var(--g3);border:1px solid var(--gbdr);border-radius:20px;padding:5px 16px;font-size:11px;color:var(--g);font-family:'DM Mono',monospace;letter-spacing:.1em;margin-bottom:20px}
@@ -377,7 +402,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 .reveal.in{opacity:1;transform:none}
 
 @media(max-width:900px){
-  nav{padding:0 20px}.nv{display:none}
+  nav{padding:0 20px}.nv{display:none}.hmb{display:flex}
   .wrap{padding:0 20px}section{padding:64px 0}
   .hi{flex-direction:column}
   .hr{width:100%;max-width:400px;margin:0 auto}
@@ -410,14 +435,31 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
     <a href="#problem">The problem</a>
     <a href="#how">How it works</a>
     <a href="#features">Features</a>
-    <a href="#market">Xelo Market</a>
+    <a href="#market">Market Portal</a>
     <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
   </div>
   <div class="nc">
     <a href="#" class="btn ghost">Sign in</a>
     <a href="#beta" class="btn gold">Start free →</a>
   </div>
+  <button class="hmb" onclick="toggleMobNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mob-nav" id="mobnav">
+  <a class="mnl" href="#problem" onclick="closeMobNav()">The problem</a>
+  <a class="mnl" href="#how" onclick="closeMobNav()">How it works</a>
+  <a class="mnl" href="#features" onclick="closeMobNav()">Features</a>
+  <a class="mnl" href="#market" onclick="closeMobNav()">Market Portal</a>
+  <a class="mnl" href="#pricing" onclick="closeMobNav()">Pricing</a>
+  <a class="mnl" href="#faq" onclick="closeMobNav()">FAQ</a>
+  <div class="mob-ctas">
+    <a href="#" class="btn ghost">Sign in</a>
+    <a href="#beta" class="btn gold" onclick="closeMobNav()">Start free →</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -903,6 +945,44 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="bg1" id="faq">
+  <div class="wrap">
+    <div class="lbl reveal">FAQ</div>
+    <h2 class="h2 reveal">Everything you need to <span class="g">know.</span></h2>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does it take to generate a video?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Under <strong>3 minutes</strong> from upload to two ready-to-publish videos — a 16:9 MLS-clean version for portals and a full social pack (16:9 · 9:16 · 1:1) for Instagram, TikTok, and WhatsApp.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need a camera or videographer?<span class="faq-icon">+</span></div>
+        <div class="faq-a">No equipment needed. Upload up to <strong>20 property photos</strong> and your agent headshot. Xelo adds Google Street View neighbourhood footage, Aerial View flyover, and cinematic transitions automatically.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Which languages are supported?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Xelo generates videos and descriptions in <strong>9 languages</strong>: Spanish, English, German, Norwegian, Swedish, Dutch, French, Italian, and Portuguese — simultaneously, from one upload.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Which portals does Xelo work with?<span class="faq-icon">+</span></div>
+        <div class="faq-a">The MLS track outputs a clean <strong>16:9 video ready for Idealista, Fotocasa, Rightmove, Immowelt</strong>, and any portal that accepts video. The social track outputs 16:9, 9:16, and 1:1 for every major platform.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the Xelo Market Portal?<span class="faq-icon">+</span></div>
+        <div class="faq-a">An <strong>exclusive property portal</strong> only accessible to Xelo subscribers. Your listings reach international buyers browsing video-first without competing with 50,000 other agents. Featured placement is reserved for Professional tier and above.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is there a free trial?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. The <strong>Trial plan is €0</strong> — 3 full videos, no credit card required. You'll see exactly what Xelo produces before you spend anything.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How many photos can I upload per video?<span class="faq-icon">+</span></div>
+        <div class="faq-a">It depends on your plan: <strong>Trial 5 · Starter 10 · Professional 20 · Agency 50 · Diamond unlimited.</strong> Higher tiers unlock more shots and richer cinematic sequences.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BETA CTA -->
 <section class="ctas" id="beta">
   <div class="ctagl"></div>
@@ -1009,6 +1089,25 @@ function submitBeta(){
   msg.textContent='We will reply within 48 hours. Check your inbox.';
   msg.style.color='#ffffff';
   msg.style.fontWeight='600';
+}
+
+function toggleMobNav(){
+  document.querySelector('.hmb').classList.toggle('open');
+  document.querySelector('.mob-nav').classList.toggle('open');
+}
+function closeMobNav(){
+  document.querySelector('.hmb').classList.remove('open');
+  document.querySelector('.mob-nav').classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('nav')&&!e.target.closest('.mob-nav')) closeMobNav();
+});
+
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
 }
 
 function copyRef(){
