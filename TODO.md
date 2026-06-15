@@ -47,6 +47,15 @@ Items that cannot be completed yet and must be done before or shortly after publ
 
 ---
 
+## Admin Panel
+
+- [ ] **Set ADMIN_PASSWORD secret** — Go to Cloudflare Pages → `xelo-broker-site` → Settings → Environment variables → add `ADMIN_PASSWORD` (production only) with a strong password of your choice.
+  - Without this, the admin panel uses default `xelo2026admin` — set a real password before going live.
+  - Access admin at: `https://brokers.xelo.media/admin` (username = anything, password = your secret)
+  - Admin panel shows: all signups, free vs paid counts, display count, and lets you adjust the KV counter directly.
+
+---
+
 ## Nice to have (post-launch)
 
 - [ ] Annual pricing billing — Toggle exists on site; wire up to Stripe when payment is live.
