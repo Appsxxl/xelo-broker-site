@@ -119,6 +119,18 @@ section{padding:96px 0}
 .pc-val{font-family:'DM Mono',monospace;font-size:26px;font-weight:500;color:var(--red);margin-bottom:6px}
 .pc-desc{font-size:13px;color:var(--soft);line-height:1.6}
 
+/* PAIN HOOK */
+.pain-hook{display:flex;align-items:center;gap:32px;background:rgba(226,75,74,.07);border:1px solid rgba(226,75,74,.22);border-left:4px solid var(--red);border-radius:var(--rad);padding:24px 28px;margin:28px 0 0}
+.ph-stat{flex-shrink:0;text-align:center;min-width:96px;border-right:1px solid rgba(226,75,74,.18);padding-right:28px}
+.ph-num{font-family:'Syne',sans-serif;font-size:80px;font-weight:800;color:var(--red);line-height:1;display:block}
+.ph-unit{font-family:'DM Mono',monospace;font-size:11px;color:rgba(226,75,74,.65);letter-spacing:.14em;text-transform:uppercase;display:block;margin-top:2px}
+.ph-body{flex:1}
+.ph-stop{font-family:'Syne',sans-serif;font-size:clamp(18px,2.4vw,26px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px;letter-spacing:-.02em}
+.ph-stop .r{color:var(--red)}
+.ph-stop .g{color:var(--g)}
+.ph-follow{font-size:14px;color:var(--softer);line-height:1.75}
+.ph-follow strong{color:rgba(255,255,255,.75)}
+
 /* BRIDGE */
 .bridge{background:var(--n);padding:72px 0;text-align:center}
 .btag{display:inline-block;background:var(--g3);border:1px solid var(--gbdr);border-radius:20px;padding:5px 16px;font-size:11px;color:var(--g);font-family:'DM Mono',monospace;letter-spacing:.1em;margin-bottom:20px}
@@ -487,7 +499,16 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
   <div class="wrap">
     <div class="lbl reveal">THE DAILY REALITY</div>
     <h2 class="h2 reveal">Your competition posts video.<br>Your listings are <span class="r">invisible.</span></h2>
-    <p class="sub reveal">Buyers scroll Idealista for 4 seconds per listing. They stop for video every time. While you manually upload to 4 portals and rewrite descriptions, a competitor with Xelo just posted a cinematic video to Instagram in 3 minutes.</p>
+    <div class="pain-hook reveal">
+      <div class="ph-stat">
+        <span class="ph-num">4</span>
+        <span class="ph-unit">seconds</span>
+      </div>
+      <div class="ph-body">
+        <p class="ph-stop">Buyers scroll Idealista for <span class="r">4 seconds</span> per listing.<br>They stop for <span class="g">video.</span> Every. Single. Time.</p>
+        <p class="ph-follow">While you manually upload to 4 portals and rewrite descriptions, a competitor with Xelo just posted a <strong>cinematic video to Instagram in 3 minutes.</strong></p>
+      </div>
+    </div>
     <div class="pain-grid reveal">
       <div class="pain-card"><span class="pc-icon">🎥</span><div class="pc-val">2–4h</div><div class="pc-desc">Hiring, briefing, and waiting for a videographer per listing.</div></div>
       <div class="pain-card"><span class="pc-icon">✍️</span><div class="pc-val">90 min</div><div class="pc-desc">Writing the same description in different formats for each portal.</div></div>
