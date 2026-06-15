@@ -1264,7 +1264,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
   <div class="wrap ctr">
     <div class="lbl" style="color:var(--g);margin-bottom:16px">BETA ACCESS — LIMITED SEATS</div>
     <h2 class="ctah a2">Stop losing buyers to agents<br>with <span>better video.</span></h2>
-    <p class="ctasub a3">Join the Xelo beta. Free Professional access for 3 months. No credit card required.</p>
+    <p class="ctasub a3" id="beta-headline">Join the Xelo beta. Free Professional access for 3 months. No credit card required.</p>
     <div class="beta-bar-wrap a3">
       <div class="beta-bar-fill" style="width:0%" id="beta-bar"></div>
     </div>
@@ -1274,7 +1274,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       <button id="bb" onclick="submitBeta()" class="btn gold big">Request beta access →</button>
     </div>
     <div id="beta-full" style="display:none;text-align:center;padding:16px">
-      <p style="color:#fff;font-size:16px;font-weight:600;margin-bottom:12px">All 20 free beta seats are taken.</p>
+      <p style="color:#fff;font-size:16px;font-weight:600;margin-bottom:12px">All 50 beta spots are taken.</p>
       <a href="#pricing" class="btn gold big">See paid plans →</a>
     </div>
     <p id="bm" class="a4 bnote">3 MONTHS FREE PROFESSIONAL &nbsp;·&nbsp; NO CREDIT CARD &nbsp;·&nbsp; WE REPLY WITHIN 48 HOURS</p>
@@ -1379,9 +1379,9 @@ function submitBeta(){
   .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
   .then(function(res){
     if(res.d.full||!res.ok){
-      updateBetaUI(20,20,true);
+      updateBetaUI({count:50,maxTotal:50,maxFree:20,isFreeAvailable:false,isFull:true});
     } else {
-      updateBetaUI(res.d.count,res.d.max,false);
+      updateBetaUI(res.d);
       btn.textContent='✓ Seat reserved!';
       btn.style.background='#1D9E75';
       if(msg){ msg.textContent='We will reply to '+em.value+' within 48 hours.'; msg.style.color='#fff'; msg.style.fontWeight='600'; }
@@ -1454,32 +1454,49 @@ function switchPricing(el){
 }
 
 // Beta counter — live from Cloudflare KV
-function updateBetaUI(count, max, full){
+// States: FREE available | FREE full (switch to paid CTA) | TOTALLY full
+function updateBetaUI(d){
   var bar=document.getElementById('beta-bar');
   var snote=document.getElementById('beta-snote');
   var form=document.getElementById('beta-form');
   var fullDiv=document.getElementById('beta-full');
   var bm=document.getElementById('bm');
+  var headline=document.getElementById('beta-headline');
+  var btn=document.getElementById('bb');
   if(!bar) return;
-  var pct=Math.min(count/max*100,100);
-  bar.style.width=pct+'%';
-  if(full||count>=max){
-    snote.innerHTML='<span style="color:#E24B4A;font-weight:600">All '+max+' free beta seats are taken.</span>';
+
+  var count=d.count||0;
+  var maxTotal=d.maxTotal||50;
+  var maxFree=d.maxFree||20;
+  var isFreeAvailable=d.isFreeAvailable!==false && count<maxFree;
+  var isFull=d.isFull||count>=maxTotal;
+
+  // Progress bar fills relative to total (50)
+  bar.style.width=Math.min(count/maxTotal*100,100)+'%';
+
+  if(isFull){
+    snote.innerHTML='<span style="color:#E24B4A;font-weight:600">All '+maxTotal+' beta spots are taken.</span>';
     if(form) form.style.display='none';
     if(fullDiv) fullDiv.style.display='block';
     if(bm) bm.style.display='none';
+  } else if(!isFreeAvailable){
+    // Free spots gone, paid spots still open
+    var paidLeft=maxTotal-count;
+    snote.innerHTML='<span style="color:var(--g);font-weight:600">'+count+' of '+maxTotal+'</span> beta spots claimed &nbsp;·&nbsp; <span style="color:#4ADE80">'+paidLeft+' spots left</span>';
+    if(headline) headline.textContent='Free beta is full. Join the paid beta from €19/month.';
+    if(btn){ btn.textContent='Join paid beta →'; btn.onclick=function(){location='#pricing'}; }
+    if(bm) bm.textContent='CANCEL ANYTIME · NO LONG-TERM CONTRACT · JOIN 50 BETA AGENTS';
   } else {
-    var left=max-count;
-    snote.innerHTML='<span style="color:var(--g);font-weight:600">'+count+' of '+max+'</span> free seats claimed &nbsp;·&nbsp; <span style="color:#E24B4A">'+left+' remaining</span>';
+    var freeLeft=maxFree-count;
+    snote.innerHTML='<span style="color:var(--g);font-weight:600">'+count+' of '+maxTotal+'</span> beta spots claimed &nbsp;·&nbsp; <span style="color:#E24B4A">'+freeLeft+' free seats remaining</span>';
   }
 }
 (function loadBetaCount(){
   fetch('/api/counter')
     .then(function(r){return r.json();})
-    .then(function(d){updateBetaUI(d.count,d.max,d.full);})
+    .then(function(d){updateBetaUI(d);})
     .catch(function(){
-      // fallback if KV not yet configured
-      updateBetaUI(0,20,false);
+      updateBetaUI({count:0,maxTotal:50,maxFree:20,isFreeAvailable:true,isFull:false});
     });
 })();
 
