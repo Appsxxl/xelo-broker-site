@@ -30,6 +30,12 @@
   .right-desc{font-size:12px;color:var(--soft);line-height:1.5}
   .footer-legal{border-top:1px solid var(--bdr);padding:24px 32px;text-align:center;font-size:12px;color:rgba(255,255,255,.2);font-family:'DM Mono',monospace;max-width:760px;margin:0 auto}
   @media(max-width:600px){.wrap{padding:40px 20px 64px}nav{padding:0 20px}.rights-grid{grid-template-columns:1fr}}
+
+.page-nav{display:flex;gap:12px;justify-content:center;padding:40px 32px 0;max-width:760px;margin:0 auto;flex-wrap:wrap}
+.page-nav a,.page-nav button{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:rgba(255,255,255,.6)}
+.page-nav a:hover,.page-nav button:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25);text-decoration:none}
+.page-nav .gold{background:var(--g);color:var(--n);border-color:var(--g)}
+.page-nav .gold:hover{background:#b8973e}
 </style>
 </head>
 <body>
@@ -156,6 +162,13 @@
   Email: <a href="mailto:hello@xelo.media">hello@xelo.media</a><br>
   Website: <a href="https://xelo.media">xelo.media</a><br>
   We will respond to all requests <strong>within one month</strong> as required by GDPR Art. 12.</p>
+</div>
+
+
+<div class="page-nav">
+  <button onclick="history.back()" title="Go back">← Back</button>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+  <a href="/" class="gold">Home →</a>
 </div>
 
 <div class="footer-legal">© 2026 Xelo Media World OÜ · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · hello@xelo.media</div>
