@@ -78,11 +78,11 @@ section{padding:96px 0}
 .pstrip{display:flex;gap:5px;margin-bottom:11px;flex-wrap:wrap}
 .pt{width:52px;height:40px;border-radius:5px;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,.25);font-family:'DM Mono',monospace;position:relative;overflow:hidden}
 .ptf{position:absolute;inset:0}
-.c1{background:linear-gradient(135deg,#1a3050,#0a1520)}
-.c2{background:linear-gradient(135deg,#1a1a0a,#2a1510)}
-.c3{background:linear-gradient(135deg,#0a1a2a,#0a2a1a)}
-.c4{background:linear-gradient(135deg,#1a0a2a,#0a0a20)}
-.c5{background:linear-gradient(135deg,#2a1a0a,#1a2a0a)}
+.c1{background:linear-gradient(135deg,#5a4535,#3a2a20)}
+.c2{background:linear-gradient(135deg,#2d6040,#1a4028)}
+.c3{background:linear-gradient(135deg,#b0a898,#887870)}
+.c4{background:linear-gradient(135deg,#c8bfb0,#a09080)}
+.c5{background:linear-gradient(135deg,#2a7a9c,#185878)}
 .lr{display:flex;gap:5px;margin-bottom:11px;flex-wrap:wrap}
 .lc{font-size:10px;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.4)}
 .lc.on{background:var(--g3);border-color:var(--gbdr);color:var(--g)}
@@ -451,7 +451,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
           <div class="lr">
             <div class="lc on">🇪🇸 ES</div><div class="lc on">🇬🇧 EN</div>
             <div class="lc on">🇩🇪 DE</div><div class="lc on">🇳🇴 NO</div>
-            <div class="lc">🇸🇪 SV</div><div class="lc">🇳🇱 NL</div>
+            <div class="lc">🇸🇪 SV</div><div class="lc on">🇳🇱 NL</div>
           </div>
           <button class="gen" onclick="runDemo(this)">
             <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCABCAGQDASIAAhEBAxEB/8QAHQABAAAHAQEAAAAAAAAAAAAAAAECAwQFBgcICf/EADAQAAIBAwIEAwcEAwAAAAAAAAABAgMEBQYRBxIhMRMyQQgVIjNRcZFCU2GSI1Jy/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAEDBAUC/8QAJREAAgIBAgYCAwAAAAAAAAAAAAECAxEEEhMhMUFRYTJxgbHB/9oADAMBAAIRAxEAPwD5/gAAAAAAik29km3/AATeDW/an/VkpNjJICfwa37U/wCrIOnUit5U5JfVobWRlEoAIJAAAAAAAAAAAXdAGctqEaFGMYpczW8pFfqQR0PT/BbXWqeF95r3Tltj8njLJTdxQtryMrqk4dZRdDzb8vxbeseq3OxKcKYrc8I5yjKxvHNnPYxlKSjBSk29kkt239CrXtbu1cY3VtXoOS6KtTlDf8rqeofZ60Pprh1pCp7QnFGMYWljT8bB2M0nKpN9I11F95yfw0l95vokzWPaojqS+1PpfVmr8jKvmc7jql5OxpVee3xlDxF4NrSfryxe85/qnKT7bGSOujO/gxXLpn2uy+u5fLTSjXvZ5pyFvGlVjOCSU+6XoyzMnlPk0/8ApmMKdRFRsaRbS24LIABQWgAAAAAALugPUA2JfRnd+AVfWmiMdl+JOPrwpafoQUbywrT5PeFOEvjlSbeynTTbjJ+aW8PVnBqco1KMZx6po2nLcQNVZnSlDTN7kKccTQ5FC0t6EKMNo+VPlS3S77P169zo6uqd0FXDGH1z49GPTzjVJylnK6fZ1rj5h7m+0djtTaQy1W80NVnO7hjqT/w2Nat5qkI+kJPf4X8uTklspFH2nL9315ohye/h4Xk+3WByzB6/1Vp7TtzgcbkKfuy5cvFtLihCtB8y2kkpJ7Jrul9+5i8rqHL5uyx1plb2dzSx1F29tzpc0Kbe/K5d3t6b9l0MtGitrnDc01FvHlprv7/Zot1Ncoy2p5lj8Y/hrmU+TT+7MYZHKzjzU6afVbtmOJ1LzYyKPggADOWgAAAAAAAAFahdVrfpTl0f6X1RX951/wDSn+GWQLI2zisJnh1xfNovfelxt5af4ISyVw1slCP8pFmCePZ5HCh4IylKc3KTbb7tkACo9gAAAAAAAAAAAAAAAAAAAAAAAAAAH//Z" alt=""> Generate again
@@ -852,18 +852,19 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
     <p class="sub reveal" style="margin:0 auto">Spanish agents pay €350–600/month for portal subscriptions alone. Xelo at €39/month makes every euro of that spend work three times harder — and includes exclusive Xelo Market access.</p>
     <div class="pgrid reveal">
 
-      <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">10 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button></div>
+      <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">5 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button></div>
 
-      <div class="pcard"><div class="pbadge pstd">SOLO AGENT</div><div class="pname">Starter</div><div class="pprice">€19</div><div class="pannual">€15/mo billed annually</div><div class="pper">per month</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard"><div class="pbadge pstd">SOLO AGENT</div><div class="pname">Starter</div><div class="pprice">€19</div><div class="pannual">€15/mo billed annually</div><div class="pper">per month</div><div class="pfeat">10 photos max</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
-      <div class="pcard feat"><div class="pbadge pbest">★ MOST POPULAR</div><div class="pname">Professional</div><div class="pprice">€39</div><div class="pannual">€29/mo billed annually</div><div class="pper">per month</div><div class="pfeat">25 videos/month</div><div class="pfeat">Aerial View flyover</div><div class="pfeat">Neighbourhood data</div><div class="pfeat">URL import</div><div class="pfeat bold-feat">1 free featured slot/mo</div><div class="pfeat bold-feat">Xelo Market priority</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard feat"><div class="pbadge pbest">★ MOST POPULAR</div><div class="pname">Professional</div><div class="pprice">€39</div><div class="pannual">€29/mo billed annually</div><div class="pper">per month</div><div class="pfeat">20 photos max</div><div class="pfeat">25 videos/month</div><div class="pfeat">Aerial View flyover</div><div class="pfeat">Neighbourhood data</div><div class="pfeat">URL import</div><div class="pfeat bold-feat">1 free featured slot/mo</div><div class="pfeat bold-feat">Xelo Market priority</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
-      <div class="pcard"><div class="pbadge pstd">BROKERAGE</div><div class="pname">Agency</div><div class="pprice">€99</div><div class="pannual">€79/mo billed annually</div><div class="pper">per month</div><div class="pfeat">Unlimited videos</div><div class="pfeat">5 team seats</div><div class="pfeat">White label</div><div class="pfeat bold-feat">3 free featured slots/mo</div><div class="pfeat bold-feat">Xelo Market premium</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard"><div class="pbadge pstd">BROKERAGE</div><div class="pname">Agency</div><div class="pprice">€99</div><div class="pannual">€79/mo billed annually</div><div class="pper">per month</div><div class="pfeat">50 photos max</div><div class="pfeat">Unlimited videos</div><div class="pfeat">5 team seats</div><div class="pfeat">White label</div><div class="pfeat bold-feat">3 free featured slots/mo</div><div class="pfeat bold-feat">Xelo Market premium</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
       <div class="pcard diamond"><div class="pbadge pdia">◆ DIAMOND</div><div class="pname">Diamond</div>
         <div class="pprice">€249</div>
         <div class="pannual" style="color:var(--g);font-weight:500">€1,999/year — Save €989 vs monthly</div>
         <div class="pper">per month</div>
+        <div class="pfeat">Unlimited photos</div>
         <div class="pfeat">Everything unlimited</div>
         <div class="pfeat bold-feat">5 free Premium featured slots</div>
         <div class="pfeat bold-feat">Xelo Market top placement</div>
