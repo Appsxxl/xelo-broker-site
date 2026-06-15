@@ -1554,19 +1554,30 @@ window.addEventListener('scroll',()=>{
   document.getElementById('btt').classList.toggle('show', window.scrollY > 400);
 });
 
+// Stack all bottom-fixed elements so they never overlap each other
+function adjustStack(){
+  var cookie = document.getElementById('cookie-banner');
+  var bar = document.getElementById('sticky-cta');
+  var btt = document.getElementById('btt');
+  var wa = document.getElementById('wa-btn');
+  var cookieH = (cookie && cookie.style.display !== 'none' && !cookie.classList.contains('hide')) ? cookie.offsetHeight : 0;
+  var ctaShown = bar && bar.classList.contains('show');
+  var ctaH = ctaShown ? bar.offsetHeight : 0;
+  if(bar) bar.style.bottom = cookieH + 'px';
+  var gap = (ctaShown || cookieH > 0) ? 12 : 28;
+  var floatBottom = cookieH + ctaH + gap;
+  if(btt) btt.style.bottom = floatBottom + 'px';
+  if(wa) wa.style.bottom = floatBottom + 'px';
+}
+
 // Sticky CTA bar
 (function(){
   var hero = document.getElementById('home');
   var bar = document.getElementById('sticky-cta');
-  var btt = document.getElementById('btt');
-  var wa = document.getElementById('wa-btn');
   if(!hero||!bar) return;
   var obs = new IntersectionObserver(function(entries){
-    var show = !entries[0].isIntersecting;
-    bar.classList.toggle('show', show);
-    var offset = show ? '70px' : '28px';
-    if(btt) btt.style.bottom = offset;
-    if(wa) wa.style.bottom = offset;
+    bar.classList.toggle('show', !entries[0].isIntersecting);
+    adjustStack();
   },{threshold:0});
   obs.observe(hero);
 })();
@@ -1576,9 +1587,20 @@ window.addEventListener('scroll',()=>{
   var banner = document.getElementById('cookie-banner');
   if(!banner) return;
   if(localStorage.getItem('xelo_cookie')) banner.style.display='none';
+  adjustStack();
 })();
-function acceptCookies(){localStorage.setItem('xelo_cookie','1');document.getElementById('cookie-banner').classList.add('hide');setTimeout(function(){document.getElementById('cookie-banner').style.display='none'},300)}
-function dismissCookies(){localStorage.setItem('xelo_cookie','0');document.getElementById('cookie-banner').classList.add('hide');setTimeout(function(){document.getElementById('cookie-banner').style.display='none'},300)}
+function acceptCookies(){
+  localStorage.setItem('xelo_cookie','1');
+  var b=document.getElementById('cookie-banner');
+  b.classList.add('hide');
+  setTimeout(function(){b.style.display='none';adjustStack();},300);
+}
+function dismissCookies(){
+  localStorage.setItem('xelo_cookie','0');
+  var b=document.getElementById('cookie-banner');
+  b.classList.add('hide');
+  setTimeout(function(){b.style.display='none';adjustStack();},300);
+}
 
 // ROI Calculator
 (function(){
