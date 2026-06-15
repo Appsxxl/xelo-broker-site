@@ -3,6 +3,7 @@ const MAX_FREE = 20;
 const MAX_TOTAL = 50;
 
 export async function onRequest({ request, env }) {
+  // Auth check
   const pass = env.ADMIN_PASSWORD || 'xelo2026admin';
   const auth = request.headers.get('Authorization') || '';
 
@@ -12,51 +13,55 @@ export async function onRequest({ request, env }) {
     if (provided !== pass) return unauth();
   } catch (_) { return unauth(); }
 
-  if (request.method === 'POST') {
-    const form = await request.formData().catch(() => null);
-    if (form && form.get('action') === 'set_count') {
-      const val = parseInt(form.get('value') || '-1');
-      if (!isNaN(val) && val >= 0 && val <= MAX_TOTAL) {
-        await env.XELO_BETA.put('count', String(val));
+  // KV not yet bound — show setup instructions instead of crashing
+  if (!env.XELO_BETA) {
+    return new Response(setupPage(), { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+  }
+
+  try {
+    if (request.method === 'POST') {
+      const form = await request.formData().catch(() => null);
+      if (form && form.get('action') === 'set_count') {
+        const val = parseInt(form.get('value') || '-1');
+        if (!isNaN(val) && val >= 0 && val <= MAX_TOTAL) {
+          await env.XELO_BETA.put('count', String(val));
+        }
       }
+      return new Response(null, { status: 303, headers: { Location: '/admin' } });
     }
-    // Redirect back to GET to prevent form re-submission on reload
-    return new Response(null, { status: 303, headers: { Location: '/admin' } });
-  }
 
-  const count = parseInt(await env.XELO_BETA.get('count') || '0');
-  const displayCount = count + SEED;
-  const freeUsed = Math.min(count, MAX_FREE);
-  const paidUsed = Math.max(0, count - MAX_FREE);
-  const remaining = MAX_TOTAL - displayCount;
+    const count = parseInt(await env.XELO_BETA.get('count') || '0');
+    const displayCount = count + SEED;
+    const freeUsed = Math.min(count, MAX_FREE);
+    const paidUsed = Math.max(0, count - MAX_FREE);
+    const remaining = MAX_TOTAL - displayCount;
 
-  const list = await env.XELO_BETA.list({ prefix: 'signup:' });
-  const signups = [];
-  for (const key of list.keys) {
-    try {
-      const val = await env.XELO_BETA.get(key.name);
-      signups.push(JSON.parse(val));
-    } catch (_) {}
-  }
-  signups.sort((a, b) => a.seat - b.seat);
+    const list = await env.XELO_BETA.list({ prefix: 'signup:' });
+    const signups = [];
+    for (const key of list.keys) {
+      try {
+        const val = await env.XELO_BETA.get(key.name);
+        signups.push(JSON.parse(val));
+      } catch (_) {}
+    }
+    signups.sort((a, b) => a.seat - b.seat);
 
-  const rows = signups.length === 0
-    ? '<tr><td colspan="4" class="empty">No signups yet</td></tr>'
-    : signups.map(s => `
-      <tr>
-        <td>${s.seat}</td>
-        <td>${s.email || '—'}</td>
-        <td>${s.free ? '<span class="tag-free">FREE</span>' : '<span class="tag-paid">PAID</span>'}</td>
-        <td>${s.ts ? new Date(s.ts).toLocaleString('nl-NL') : '—'}</td>
-      </tr>`).join('');
+    const rows = signups.length === 0
+      ? '<tr><td colspan="4" class="empty">No signups yet</td></tr>'
+      : signups.map(s => `
+        <tr>
+          <td>${s.seat}</td>
+          <td>${s.email || '—'}</td>
+          <td>${s.free ? '<span class="tag-free">FREE</span>' : '<span class="tag-paid">PAID</span>'}</td>
+          <td>${s.ts ? new Date(s.ts).toLocaleString('nl-NL') : '—'}</td>
+        </tr>`).join('');
 
-  const html = `<!DOCTYPE html>
+    const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Xelo Admin — Beta</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -88,8 +93,8 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .form-row button{background:#C9A84C;color:#0C1B2E;border:none;padding:9px 20px;border-radius:6px;font-weight:700;cursor:pointer;font-size:13px}
 .form-row button:hover{opacity:.9}
 .hint{font-size:12px;color:rgba(255,255,255,.35);margin-top:8px}
-.progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;margin-top:14px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,#C9A84C,#E8C56A);border-radius:3px;transition:width .3s}
+.progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;margin-top:14px;overflow:hidden;margin-bottom:32px}
+.progress-fill{height:100%;background:linear-gradient(90deg,#C9A84C,#E8C56A);border-radius:3px}
 </style>
 </head>
 <body>
@@ -98,31 +103,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <span class="badge">Beta Admin</span>
 </nav>
 <div class="wrap">
-
   <div class="section-title">Overview</div>
   <div class="stats">
-    <div class="stat">
-      <div class="stat-num">${displayCount}</div>
-      <div class="stat-lbl">Shown publicly<br>(real + seed ${SEED})</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">${count}</div>
-      <div class="stat-lbl">Real signups in KV</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num green">${freeUsed}</div>
-      <div class="stat-lbl">Free seats used<br>(of ${MAX_FREE})</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num ${remaining <= 5 ? 'red' : ''}">${Math.max(0, remaining)}</div>
-      <div class="stat-lbl">Remaining to show<br>(of ${MAX_TOTAL})</div>
-    </div>
+    <div class="stat"><div class="stat-num">${displayCount}</div><div class="stat-lbl">Shown publicly<br>(real + seed ${SEED})</div></div>
+    <div class="stat"><div class="stat-num">${count}</div><div class="stat-lbl">Real signups in KV</div></div>
+    <div class="stat"><div class="stat-num green">${freeUsed}</div><div class="stat-lbl">Free seats used<br>(of ${MAX_FREE})</div></div>
+    <div class="stat"><div class="stat-num ${remaining <= 5 ? 'red' : ''}">${Math.max(0, remaining)}</div><div class="stat-lbl">Remaining to show<br>(of ${MAX_TOTAL})</div></div>
   </div>
-
-  <div class="progress-bar" style="margin-bottom:32px">
+  <div class="progress-bar">
     <div class="progress-fill" style="width:${Math.round((displayCount/MAX_TOTAL)*100)}%"></div>
   </div>
-
   <div class="card">
     <h2>Signups (${signups.length} real)</h2>
     <table>
@@ -130,10 +120,9 @@ tr:hover td{background:rgba(255,255,255,.02)}
       ${rows}
     </table>
   </div>
-
   <div class="card">
     <h2>Adjust real count</h2>
-    <p class="hint">Set the KV counter directly — use this to remove test signups or correct errors. Display count = value + seed (${SEED}). Paid: ${paidUsed}.</p>
+    <p class="hint">Set the KV counter directly — removes test signups or corrects errors. Display = value + seed (${SEED}). Paid so far: ${paidUsed}.</p>
     <form method="POST" action="/admin">
       <input type="hidden" name="action" value="set_count">
       <div class="form-row">
@@ -143,20 +132,74 @@ tr:hover td{background:rgba(255,255,255,.02)}
     </form>
     <p class="hint" style="margin-top:12px">To change SEED or MAX_FREE, edit <code>functions/api/counter.js</code> and deploy.</p>
   </div>
-
 </div>
 </body>
 </html>`;
 
-  return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+    return new Response(html, { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+
+  } catch (err) {
+    return new Response(`Error: ${err.message}`, { status: 500, headers: { 'Content-Type': 'text/plain' } });
+  }
 }
 
 function unauth() {
   return new Response('Unauthorized', {
     status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="Xelo Admin"',
-      'Content-Type': 'text/plain'
-    }
+    headers: { 'WWW-Authenticate': 'Basic realm="Xelo Admin"', 'Content-Type': 'text/plain' }
   });
+}
+
+function setupPage() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xelo Admin — Setup needed</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0C1B2E;color:#fff;font-family:'DM Sans',Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+nav{background:#0A1520;border-bottom:1px solid rgba(255,255,255,.08);padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#C9A84C;font-weight:700;font-size:20px}
+.badge{background:rgba(226,75,74,.12);border:1px solid rgba(226,75,74,.3);color:#E24B4A;font-size:11px;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.1em}
+.wrap{max-width:640px;margin:0 auto;padding:60px 24px}
+h1{font-size:22px;font-weight:700;margin-bottom:12px}
+p{color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px}
+.step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:18px 20px;margin-bottom:12px;counter-increment:steps}
+.step-num{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(201,168,76,.7);margin-bottom:6px}
+.step code{background:rgba(255,255,255,.08);border-radius:4px;padding:2px 6px;font-size:13px;font-family:monospace}
+</style>
+</head>
+<body>
+<nav><span class="logo">xelo</span><span class="badge">KV not connected</span></nav>
+<div class="wrap">
+  <h1>One-time setup needed</h1>
+  <p>The admin panel is working but the KV database isn't connected yet. Follow these steps in your Cloudflare dashboard — takes about 2 minutes.</p>
+
+  <div class="step">
+    <div class="step-num">Step 1</div>
+    Go to <strong>Cloudflare dashboard → Workers &amp; Pages → KV</strong> and click <strong>Create namespace</strong>. Name it <code>XELO_BETA</code> and save.
+  </div>
+
+  <div class="step">
+    <div class="step-num">Step 2</div>
+    Go to <strong>Pages → xelo-broker-site → Settings → Functions → KV namespace bindings</strong>. Click <strong>Add binding</strong>, set variable name to <code>XELO_BETA</code> and select the namespace you just created.
+  </div>
+
+  <div class="step">
+    <div class="step-num">Step 3</div>
+    Trigger a new deploy (push any small change, or use <strong>Pages → Deployments → Retry deployment</strong>).
+  </div>
+
+  <div class="step">
+    <div class="step-num">Step 4 (optional but recommended)</div>
+    Go to <strong>Settings → Environment variables</strong> and add <code>ADMIN_PASSWORD</code> with a strong password of your choice. Without this, the default password <code>xelo2026admin</code> is used.
+  </div>
+
+  <p style="margin-top:28px;font-size:13px">After setup, refresh this page and the full dashboard will appear.</p>
+</div>
+</body>
+</html>`;
 }
