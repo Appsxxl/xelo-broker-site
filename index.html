@@ -1126,7 +1126,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
         <tr class="odd"><td class="fn">Member-Only Xelo Market</td><td class="cy cx">✓</td><td class="cn">—</td><td class="cn">—</td><td class="cn">—</td><td class="cn">—</td></tr>
         <tr><td class="fn">AI Lead Concierge</td><td class="cy cx">✓</td><td class="cn">—</td><td class="cn">—</td><td class="cn">—</td><td class="cn">—</td></tr>
         <tr class="odd"><td class="fn">Agent Referral Programme</td><td class="cy cx">✓</td><td class="cn">—</td><td class="cn">—</td><td class="cn">—</td><td class="cn">—</td></tr>
-        <tr><td class="fn">Cost per Listing</td><td class="cx" style="text-align:center;font-weight:700;color:#4ADE80;font-size:14px">€0.32</td><td style="text-align:center;color:var(--softer)">€1.75+</td><td style="text-align:center;color:var(--softer)">€1.50+</td><td style="text-align:center;color:var(--softer)">€0.90+</td><td style="text-align:center;color:var(--softer)">€300 to €800</td></tr>
+        <tr><td class="fn">Cost per Listing</td><td class="cx" style="text-align:center;font-weight:700;color:#4ADE80;font-size:14px">from €1.56</td><td style="text-align:center;color:var(--softer)">€1.75+</td><td style="text-align:center;color:var(--softer)">€1.50+</td><td style="text-align:center;color:var(--softer)">€0.90+</td><td style="text-align:center;color:var(--softer)">€300 to €800</td></tr>
       </tbody>
     </table>
   </div>
@@ -1276,9 +1276,12 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Is there a limit to the free trial?<span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes — the Trial tier is intentionally limited to protect rendering costs and keep the service fast for paying agents. You get <strong>3 videos maximum</strong>, up to <strong>5 photos per video</strong>, output is <strong>16:9 with a watermark</strong>, and listings must be located in <strong>Spain or Portugal</strong>. Upgrade to Starter (€19/mo) to unlock 10 photos, no watermark, all covered countries, and unlimited videos.</div>
+        <div class="faq-a">Yes — the Trial tier is intentionally limited to protect rendering costs and keep the service fast for paying agents. You get <strong>3 videos maximum</strong>, up to <strong>5 photos per video</strong>, output is <strong>16:9 with a watermark</strong>, and listings must be located in <strong>Spain or Portugal</strong>. Upgrade to Starter (€19/mo Founding Partner rate · €49/mo at public launch) to unlock 10 photos, no watermark, all covered countries, and unlimited videos.</div>
       </div>
       <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What are the Founding Partner prices and how do they change at launch?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Beta members join at <strong>Founding Partner rates</strong> — <strong>Starter €19/mo · Professional €39/mo · Agency €99/mo</strong> — and keep these prices locked for <strong>6 years</strong> as long as the subscription stays active. At public launch, standard pricing increases to <strong>Starter €49/mo · Professional €99/mo · Agency €249/mo</strong>. Founding Partners are never moved to the higher price.</div>
+
         <div class="faq-q" onclick="toggleFaq(this)">How many photos can I upload per video?<span class="faq-icon">+</span></div>
         <div class="faq-a">It depends on your plan: <strong>Trial 5 · Starter 10 · Professional 20 · Agency 50 · Diamond unlimited.</strong> Higher tiers unlock more shots and richer cinematic sequences.</div>
       </div>
@@ -1515,7 +1518,7 @@ function updateBetaUI(d){
     // Free spots gone, paid spots still open
     var paidLeft=maxTotal-count;
     snote.innerHTML='<span style="color:var(--g);font-weight:600">'+count+' of '+maxTotal+'</span> beta spots claimed &nbsp;·&nbsp; <span style="color:#4ADE80">'+paidLeft+' remaining</span>';
-    if(headline) headline.textContent='Free beta is full. Join the paid beta from €19/month.';
+    if(headline) headline.textContent='Free beta is full. Join as a Founding Partner from €19/month — locked for 6 years.';
     if(btn){ btn.textContent='Join paid beta →'; btn.onclick=function(){location='#pricing'}; }
     if(bm) bm.textContent='CANCEL ANYTIME · NO LONG-TERM CONTRACT · JOIN 50 BETA AGENTS';
   } else {
