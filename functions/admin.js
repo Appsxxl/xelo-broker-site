@@ -46,6 +46,16 @@ export async function onRequest({ request, env }) {
     }
     signups.sort((a, b) => a.seat - b.seat);
 
+    const dlist = await env.XELO_BETA.list({ prefix: 'diamond:' });
+    const diamond = [];
+    for (const key of dlist.keys) {
+      try {
+        const val = await env.XELO_BETA.get(key.name);
+        diamond.push(JSON.parse(val));
+      } catch (_) {}
+    }
+    diamond.sort((a, b) => a.seat - b.seat);
+
     const rows = signups.length === 0
       ? '<tr><td colspan="4" class="empty">No signups yet</td></tr>'
       : signups.map(s => `
@@ -120,6 +130,16 @@ tr:hover td{background:rgba(255,255,255,.02)}
       ${rows}
     </table>
   </div>
+  <div class="card">
+    <h2>◆ Diamond waitlist (${diamond.length})</h2>
+    <table>
+      <tr><th>#</th><th>Email</th><th>Joined</th></tr>
+      ${diamond.length === 0
+        ? '<tr><td colspan="3" class="empty">No waitlist entries yet</td></tr>'
+        : diamond.map(d => `<tr><td>${d.seat}</td><td>${d.email||'—'}</td><td>${d.ts ? new Date(d.ts).toLocaleString('nl-NL') : '—'}</td></tr>`).join('')}
+    </table>
+  </div>
+
   <div class="card">
     <h2>Adjust real count</h2>
     <p class="hint">Set the KV counter directly — removes test signups or corrects errors. Display = value + seed (${SEED}). Paid so far: ${paidUsed}.</p>

@@ -524,6 +524,25 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 #wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.55)}
 #wa-btn svg{width:28px;height:28px;fill:#fff}
 
+/* Coming soon pill */
+.coming-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:20px;padding:6px 16px;font-size:11px;color:var(--g);font-family:'DM Mono',monospace;letter-spacing:.08em;margin-bottom:20px}
+.coming-pill-icon{font-size:12px}
+
+/* Waitlist modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:2000;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex}
+.modal-box{background:#0A1520;border:1px solid rgba(201,168,76,.3);border-radius:16px;padding:40px;max-width:460px;width:100%;position:relative}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,.35);font-size:22px;cursor:pointer;line-height:1}
+.modal-close:hover{color:#fff}
+.modal-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--g);text-transform:uppercase;margin-bottom:10px}
+.modal-title{font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.02em;line-height:1.1}
+.modal-sub{font-size:14px;color:var(--soft);line-height:1.65;margin-bottom:24px}
+.modal-input{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:13px 16px;color:#fff;font-size:14px;outline:none;margin-bottom:12px;font-family:'DM Sans',sans-serif}
+.modal-input:focus{border-color:var(--g)}
+.modal-btn{width:100%;background:transparent;border:1.5px solid var(--g);color:var(--g);padding:13px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.modal-btn:hover{background:var(--g);color:var(--n)}
+.modal-msg{font-size:13px;margin-top:12px;text-align:center;min-height:18px}
+
 /* Guarantee badge */
 .guarantee{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:12px 20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:10px;max-width:480px;margin-left:auto;margin-right:auto}
 .guarantee-icon{font-size:20px;flex-shrink:0}
@@ -1009,6 +1028,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 <section class="bg1" id="inbox">
   <div class="wrap">
     <div class="lbl reveal">XELO INBOX</div>
+    <div class="reveal"><span class="coming-pill"><span class="coming-pill-icon">⏰</span> Coming Q3 2026 — included in your subscription</span></div>
     <h2 class="h2 reveal">Buyers message at 11pm.<br><span class="g">Xelo replies immediately.</span><br>You wake up to booked visits.</h2>
     <p class="sub reveal">WhatsApp, Instagram, Facebook, TikTok — one AI inbox handles every channel in every language, 24 hours a day. You only get notified when a lead is serious.</p>
     <div class="imock reveal">
@@ -1035,6 +1055,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 <section class="bg0" id="affiliate">
   <div class="wrap">
     <div class="lbl reveal">XELO AFFILIATE PROGRAMME</div>
+    <div class="reveal"><span class="coming-pill"><span class="coming-pill-icon">⏰</span> Coming Q3 2026 — lock in beta pricing now</span></div>
     <h2 class="h2 reveal">Tell a colleague about Xelo.<br>Earn <span class="g">credits every month.</span></h2>
     <p class="sub reveal">Real estate agents work in tight professional networks. When you love a tool, you tell your colleagues. Xelo rewards you for every agent you bring on board — automatically credited to your account.</p>
     <div class="affiliate reveal">
@@ -1206,8 +1227,8 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
         <div class="pfeat">Success manager</div>
         <div class="pfeat">50 seats max</div>
         <div class="pfeat">Website rebuild <span style="font-size:10px;color:var(--softer);font-style:italic">(quoted separately)</span></div>
-        <button class="pcta" style="background:var(--g);color:var(--n);border-color:var(--g)" onclick="location='#beta'">Apply →</button>
-        <span class="price-note">Website rebuild service is quoted separately based on scope</span>
+        <button class="pcta" style="background:transparent;border:1.5px solid var(--g);color:var(--g)" onclick="openWaitlistModal()">Join waitlist →</button>
+        <span class="price-note">◆ Phase 6 — last to launch · waitlist only</span>
       </div>
 
     </div>
@@ -1247,7 +1268,11 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Is there a free trial?<span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes. The <strong>Trial plan is €0</strong> — 3 full videos, no credit card required. You'll see exactly what Xelo produces before you spend anything.</div>
+        <div class="faq-a">Yes. The <strong>Trial plan is €0</strong> — 3 videos, no credit card required. Limits apply: <strong>5 photos per video</strong>, <strong>16:9 watermarked</strong> output, and coverage is restricted to <strong>Spain and Portugal only</strong>. You'll see exactly what Xelo produces before you commit to a paid plan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is there a limit to the free trial?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — the Trial tier is intentionally limited to protect rendering costs and keep the service fast for paying agents. You get <strong>3 videos maximum</strong>, up to <strong>5 photos per video</strong>, output is <strong>16:9 with a watermark</strong>, and listings must be located in <strong>Spain or Portugal</strong>. Upgrade to Starter (€19/mo) to unlock 10 photos, no watermark, all covered countries, and unlimited videos.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">How many photos can I upload per video?<span class="faq-icon">+</span></div>
@@ -1540,6 +1565,47 @@ window.addEventListener('scroll',()=>{
   slider.addEventListener('input', update);
   update();
 })();
+
+// Diamond waitlist modal
+function openWaitlistModal(){document.getElementById('diamond-modal').classList.add('open')}
+function closeWaitlistModal(){
+  document.getElementById('diamond-modal').classList.remove('open');
+  document.getElementById('wl-email').value='';
+  document.getElementById('wl-msg').textContent='';
+  document.getElementById('wl-email').disabled=false;
+}
+document.getElementById('diamond-modal').addEventListener('click',function(e){if(e.target===this)closeWaitlistModal();});
+async function submitWaitlist(){
+  var email=document.getElementById('wl-email').value.trim();
+  var msg=document.getElementById('wl-msg');
+  if(!email||!email.includes('@')){msg.style.color='#E24B4A';msg.textContent='Please enter a valid email.';return;}
+  document.getElementById('wl-btn').textContent='Sending…';
+  try{
+    await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})});
+    msg.style.color='#4ADE80';
+    msg.textContent='✓ You\'re on the list. We\'ll contact you personally when Diamond launches.';
+    document.getElementById('wl-email').disabled=true;
+    document.getElementById('wl-btn').textContent='Reserved ✓';
+  }catch(e){
+    msg.style.color='#E24B4A';
+    msg.textContent='Something went wrong. Email us at hello@xelo.media';
+    document.getElementById('wl-btn').textContent='Join waitlist →';
+  }
+}
 </script>
+
+<!-- Diamond waitlist modal -->
+<div class="modal-overlay" id="diamond-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeWaitlistModal()">✕</button>
+    <div class="modal-tag">◆ Diamond · Phase 6</div>
+    <div class="modal-title">Join the Diamond waitlist</div>
+    <p class="modal-sub">Diamond is our enterprise tier — launching once the core product reaches real traction. Leave your email and we'll reach out personally with early access and pricing before public release.</p>
+    <input class="modal-input" type="email" id="wl-email" placeholder="your@email.com">
+    <button class="modal-btn" id="wl-btn" onclick="submitWaitlist()">Join waitlist →</button>
+    <div class="modal-msg" id="wl-msg"></div>
+  </div>
+</div>
+
 </body>
 </html>
