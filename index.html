@@ -416,7 +416,10 @@ section{padding:96px 0}
 /* Beta progress */
 .beta-bar-wrap{width:100%;max-width:380px;margin:0 auto 10px;background:rgba(255,255,255,.08);border-radius:99px;height:8px;overflow:hidden}
 .beta-bar-fill{height:100%;background:linear-gradient(90deg,var(--g),var(--g2));border-radius:99px;transition:width .8s ease}
-.pper{font-size:12px;color:var(--softer);margin-bottom:18px}
+.pper{font-size:12px;color:var(--softer);margin-bottom:8px}
+.launch-price{font-size:11px;color:rgba(255,255,255,.28);font-family:'DM Mono',monospace;margin-bottom:14px;letter-spacing:.04em}
+.launch-price strong{color:rgba(255,255,255,.42)}
+.fp-lock{font-size:11px;color:var(--g);font-family:'DM Mono',monospace;text-align:center;margin-top:24px;letter-spacing:.05em;opacity:.8}
 .pfeat{font-size:12px;color:var(--soft);text-align:left;padding:4px 0;display:flex;gap:7px;border-bottom:1px solid var(--bdr);line-height:1.4}
 .pfeat:last-of-type{border-bottom:none}
 .pfeat::before{content:'–';color:var(--g);flex-shrink:0}
@@ -1185,16 +1188,16 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
           <div class="roi-res-lbl">Return on Professional plan</div>
         </div>
       </div>
-      <div class="roi-note">Based on avg. €400 videographer cost · 2.5h per listing · Professional plan €39/mo</div>
+      <div class="roi-note">Based on avg. €400 videographer cost · 2.5h per listing · Professional Founding Partner rate €39/mo</div>
     </div>
   </div>
 </section>
 
 <section class="bg0" id="pricing">
   <div class="wrap ctr">
-    <div class="lbl reveal">PRICING</div>
-    <h2 class="h2 reveal">Less than 10% of what<br>you pay Idealista.</h2>
-    <p class="sub reveal" style="margin:0 auto">Spanish agents pay €350 to €600/month for portal subscriptions alone. Xelo at €39/month makes every euro of that spend work three times harder — and includes exclusive Xelo Market access.</p>
+    <div class="lbl reveal">FOUNDING PARTNER PRICING</div>
+    <h2 class="h2 reveal">Lock in your rate.<br><span class="g">Forever.</span></h2>
+    <p class="sub reveal" style="margin:0 auto">Beta members pay today's Founding Partner price for as long as they stay subscribed. Public pricing takes effect at launch — and it won't come back down.</p>
     <div class="ptoggle reveal">
       <span class="pt-lbl active" id="pt-m">Monthly</span>
       <label class="pt-switch">
@@ -1210,11 +1213,11 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 
       <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice" data-m="€0" data-a="€0">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">5 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button></div>
 
-      <div class="pcard"><div class="pbadge pstd">SOLO AGENT</div><div class="pname">Starter</div><div class="pprice" data-m="€19" data-a="€15">€19</div><div class="pannual">Save €48/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="pfeat">10 photos max</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard"><div class="pbadge pstd">🔒 FOUNDING PARTNER</div><div class="pname">Starter</div><div class="pprice" data-m="€19" data-a="€15">€19</div><div class="pannual">Save €48/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="launch-price">At launch: <strong>€49/mo</strong></div><div class="pfeat">10 photos max</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
-      <div class="pcard feat"><div class="pbadge pbest">★ MOST POPULAR</div><div class="pname">Professional</div><div class="pprice" data-m="€39" data-a="€29">€39</div><div class="pannual">Save €120/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="pfeat">20 photos max</div><div class="pfeat">25 videos/month</div><div class="pfeat">Aerial View flyover</div><div class="pfeat">Neighbourhood data</div><div class="pfeat">URL import</div><div class="pfeat bold-feat">1 free featured slot/mo</div><div class="pfeat bold-feat">Xelo Market priority</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard feat"><div class="pbadge pbest">🔒 FOUNDING PARTNER</div><div class="pname">Professional</div><div class="pprice" data-m="€39" data-a="€29">€39</div><div class="pannual">Save €120/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="launch-price">At launch: <strong>€99/mo</strong></div><div class="pfeat">20 photos max</div><div class="pfeat">25 videos/month</div><div class="pfeat">Aerial View flyover</div><div class="pfeat">Neighbourhood data</div><div class="pfeat">URL import</div><div class="pfeat bold-feat">1 free featured slot/mo</div><div class="pfeat bold-feat">Xelo Market priority</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
-      <div class="pcard"><div class="pbadge pstd">BROKERAGE</div><div class="pname">Agency</div><div class="pprice" data-m="€99" data-a="€79">€99</div><div class="pannual">Save €240/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="pfeat">50 photos max</div><div class="pfeat">Unlimited videos</div><div class="pfeat">5 team seats</div><div class="pfeat">White label</div><div class="pfeat bold-feat">3 free featured slots/mo</div><div class="pfeat bold-feat">Xelo Market premium</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
+      <div class="pcard"><div class="pbadge pstd">🔒 FOUNDING PARTNER</div><div class="pname">Agency</div><div class="pprice" data-m="€99" data-a="€79">€99</div><div class="pannual">Save €240/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="launch-price">At launch: <strong>€249/mo</strong></div><div class="pfeat">50 photos max</div><div class="pfeat">Unlimited videos</div><div class="pfeat">5 team seats</div><div class="pfeat">White label</div><div class="pfeat bold-feat">3 free featured slots/mo</div><div class="pfeat bold-feat">Xelo Market premium</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
       <div class="pcard diamond"><div class="pbadge pdia">◆ DIAMOND</div><div class="pname">Diamond</div>
         <div class="pprice">€249</div>
@@ -1236,7 +1239,8 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       <div class="guarantee-icon">🛡️</div>
       <div class="guarantee-text"><strong>14-day money-back guarantee.</strong> Not happy in the first 14 days? We refund you in full, no questions asked.</div>
     </div>
-    <p class="reveal" style="font-size:14px;color:var(--softer);margin-top:16px">All prices exclude VAT · SEPA Direct Debit available · Cancel anytime · Credits never expire</p>
+    <p class="fp-lock reveal">🔒 Founding Partners keep this price forever · Public pricing takes effect at launch</p>
+    <p class="reveal" style="font-size:13px;color:var(--softer);margin-top:10px">All prices exclude VAT · SEPA Direct Debit available · Cancel anytime · Credits never expire</p>
   </div>
 </section>
 
