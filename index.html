@@ -547,6 +547,11 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 .modal-msg{font-size:13px;margin-top:12px;text-align:center;min-height:18px}
 
 /* Guarantee badge */
+.credits-strip{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px auto 0;flex-wrap:wrap;max-width:680px}
+.credits-strip-lbl{font-size:12px;color:rgba(255,255,255,.4);font-family:'DM Mono',monospace;letter-spacing:.08em;white-space:nowrap}
+.cpack{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 16px;display:flex;align-items:center;gap:8px;font-size:13px}
+.cpack-n{color:#fff;font-weight:600}.cpack-p{color:var(--g);font-family:'DM Mono',monospace;font-weight:500}
+.cpack-u{font-size:10px;color:rgba(255,255,255,.3);font-family:'DM Mono',monospace}
 .guarantee{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:12px 20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:10px;max-width:480px;margin-left:auto;margin-right:auto}
 .guarantee-icon{font-size:20px;flex-shrink:0}
 .guarantee-text{font-size:13px;color:rgba(255,255,255,.7);line-height:1.4}
@@ -1196,7 +1201,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 <section class="bg0" id="pricing">
   <div class="wrap ctr">
     <div class="lbl reveal">FOUNDING PARTNER PRICING</div>
-    <h2 class="h2 reveal">Lock in your rate.<br><span class="g">Forever.</span></h2>
+    <h2 class="h2 reveal">Lock in your rate.<br><span class="g">6 Years.</span></h2>
     <p class="sub reveal" style="margin:0 auto">Beta members pay today's Founding Partner price for as long as they stay subscribed. Public pricing takes effect at launch — and it won't come back down.</p>
     <div class="ptoggle reveal">
       <span class="pt-lbl active" id="pt-m">Monthly</span>
@@ -1211,7 +1216,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
 
     <div class="pgrid reveal">
 
-      <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice" data-m="€0" data-a="€0">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">5 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button></div>
+      <div class="pcard"><div class="pbadge pstd">FREE TRIAL</div><div class="pname">Trial</div><div class="pprice" data-m="€0" data-a="€0">€0</div><div class="pper">3 videos · no card</div><div class="pfeat">5 photos max</div><div class="pfeat">AI description</div><div class="pfeat">16:9 watermarked</div><div class="pfeat">ES + PT only</div><button class="pcta" onclick="location='#beta'">Start free →</button><span class="price-note">Need more? Buy extra credits below</span></div>
 
       <div class="pcard"><div class="pbadge pstd">🔒 FOUNDING PARTNER</div><div class="pname">Starter</div><div class="pprice" data-m="€19" data-a="€15">€19</div><div class="pannual">Save €48/year</div><div class="pper" data-m="per month" data-a="per month, billed annually">per month</div><div class="launch-price">At launch: <strong>€49/mo</strong></div><div class="pfeat">10 photos max</div><div class="pfeat">8 videos/month</div><div class="pfeat">All 9 languages</div><div class="pfeat">All 3 formats</div><div class="pfeat">Street View</div><div class="pfeat bold-feat">Xelo Market access</div><button class="pcta" onclick="location='#beta'">Get started →</button></div>
 
@@ -1235,6 +1240,14 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       </div>
 
     </div>
+
+    <div class="credits-strip reveal">
+      <span class="credits-strip-lbl">🎬 EXTRA VIDEO CREDITS — any plan</span>
+      <div class="cpack"><span class="cpack-n">5 videos</span><span class="cpack-p">€9</span><span class="cpack-u">€1.80/video</span></div>
+      <div class="cpack"><span class="cpack-n">20 videos</span><span class="cpack-p">€29</span><span class="cpack-u">€1.45/video</span></div>
+      <div class="cpack"><span class="cpack-n">50 videos</span><span class="cpack-p">€59</span><span class="cpack-u">€1.18/video</span></div>
+    </div>
+
     <div class="guarantee reveal">
       <div class="guarantee-icon">🛡️</div>
       <div class="guarantee-text"><strong>14-day money-back guarantee.</strong> Not happy in the first 14 days? We refund you in full, no questions asked.</div>
@@ -1281,6 +1294,9 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What are the Founding Partner prices and how do they change at launch?<span class="faq-icon">+</span></div>
         <div class="faq-a">Beta members join at <strong>Founding Partner rates</strong> — <strong>Starter €19/mo · Professional €39/mo · Agency €99/mo</strong> — and keep these prices locked for <strong>6 years</strong> as long as the subscription stays active. At public launch, standard pricing increases to <strong>Starter €49/mo · Professional €99/mo · Agency €249/mo</strong>. Founding Partners are never moved to the higher price.</div>
+
+        <div class="faq-q" onclick="toggleFaq(this)">Can I buy extra video credits if I need more videos?<span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — extra video credits are available on any plan, including Trial. Credits are sold in packs: <strong>5 videos for €9</strong> · <strong>20 videos for €29</strong> · <strong>50 videos for €59</strong>. Credits never expire and can be used at any time. If you regularly exceed your monthly limit, upgrading your plan is more cost-effective than buying credits.</div>
 
         <div class="faq-q" onclick="toggleFaq(this)">How many photos can I upload per video?<span class="faq-icon">+</span></div>
         <div class="faq-a">It depends on your plan: <strong>Trial 5 · Starter 10 · Professional 20 · Agency 50 · Diamond unlimited.</strong> Higher tiers unlock more shots and richer cinematic sequences.</div>
