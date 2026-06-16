@@ -27,6 +27,18 @@ export async function onRequest({ request, env }) {
           await env.XELO_BETA.put('count', String(val));
         }
       }
+      if (form && form.get('action') === 'delete_diamond') {
+        const key = form.get('key');
+        if (key && key.startsWith('diamond:')) {
+          await env.XELO_BETA.delete(key);
+        }
+      }
+      if (form && form.get('action') === 'delete_signup') {
+        const key = form.get('key');
+        if (key && key.startsWith('signup:')) {
+          await env.XELO_BETA.delete(key);
+        }
+      }
       return new Response(null, { status: 303, headers: { Location: '/admin' } });
     }
 
@@ -57,13 +69,14 @@ export async function onRequest({ request, env }) {
     diamond.sort((a, b) => a.seat - b.seat);
 
     const rows = signups.length === 0
-      ? '<tr><td colspan="4" class="empty">No signups yet</td></tr>'
+      ? '<tr><td colspan="5" class="empty">No signups yet</td></tr>'
       : signups.map(s => `
         <tr>
           <td>${s.seat}</td>
           <td>${s.email || '—'}</td>
           <td>${s.free ? '<span class="tag-free">FREE</span>' : '<span class="tag-paid">PAID</span>'}</td>
           <td>${s.ts ? new Date(s.ts).toLocaleString('nl-NL') : '—'}</td>
+          <td><form method="POST" action="/admin" style="margin:0" onsubmit="return confirm('Delete ${s.email}?')"><input type="hidden" name="action" value="delete_signup"><input type="hidden" name="key" value="signup:${String(s.seat).padStart(3,'0')}"><button type="submit" style="background:rgba(226,75,74,.15);border:1px solid rgba(226,75,74,.3);color:#E24B4A;padding:3px 10px;border-radius:5px;cursor:pointer;font-size:11px">✕ Delete</button></form></td>
         </tr>`).join('');
 
     const html = `<!DOCTYPE html>
@@ -126,17 +139,17 @@ tr:hover td{background:rgba(255,255,255,.02)}
   <div class="card">
     <h2>Signups (${signups.length} real)</h2>
     <table>
-      <tr><th>#</th><th>Email</th><th>Type</th><th>Signed up</th></tr>
+      <tr><th>#</th><th>Email</th><th>Type</th><th>Signed up</th><th></th></tr>
       ${rows}
     </table>
   </div>
   <div class="card">
     <h2>◆ Diamond waitlist (${diamond.length})</h2>
     <table>
-      <tr><th>#</th><th>Email</th><th>Joined</th></tr>
+      <tr><th>#</th><th>Email</th><th>Joined</th><th></th></tr>
       ${diamond.length === 0
-        ? '<tr><td colspan="3" class="empty">No waitlist entries yet</td></tr>'
-        : diamond.map(d => `<tr><td>${d.seat}</td><td>${d.email||'—'}</td><td>${d.ts ? new Date(d.ts).toLocaleString('nl-NL') : '—'}</td></tr>`).join('')}
+        ? '<tr><td colspan="4" class="empty">No waitlist entries yet</td></tr>'
+        : diamond.map(d => `<tr><td>${d.seat}</td><td>${d.email||'—'}</td><td>${d.ts ? new Date(d.ts).toLocaleString('nl-NL') : '—'}</td><td><form method="POST" action="/admin" style="margin:0" onsubmit="return confirm('Delete ${d.email}?')"><input type="hidden" name="action" value="delete_diamond"><input type="hidden" name="key" value="diamond:${String(d.seat).padStart(3,'0')}"><button type="submit" style="background:rgba(226,75,74,.15);border:1px solid rgba(226,75,74,.3);color:#E24B4A;padding:3px 10px;border-radius:5px;cursor:pointer;font-size:11px">✕ Delete</button></form></td></tr>`).join('')}
     </table>
   </div>
 
