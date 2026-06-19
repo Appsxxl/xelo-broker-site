@@ -1446,6 +1446,12 @@ function submitBeta(){
   });
 }
 
+// Seek to 3s on load so the first visible frame shows as thumbnail
+document.addEventListener('DOMContentLoaded',function(){
+  var v2=document.getElementById('v2');
+  if(v2){v2.addEventListener('loadedmetadata',function(){v2.currentTime=3;});}
+});
+
 function toggleVideo(cardId){
   const card=document.getElementById(cardId);
   const vid=card.querySelector('video');
