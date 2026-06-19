@@ -687,7 +687,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       <div class="vcard" id="vc1" onclick="toggleVideo('vc1')">
         <span class="vcard-badge vb-promo">XELO PROMO</span>
         <div class="vthumb">
-          <video id="v1" src="/xelo_promo.mp4" preload="metadata" playsinline></video>
+          <video id="v1" src="/xelo_promo.mp4" poster="https://app.xelo.media/public/xelo-promo-poster.jpg" preload="none" playsinline></video>
           <div class="vplay"><div class="vplay-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
           <div class="vprogress" onclick="seekVideo(event,'v1')"><div class="vpbar" id="vp1"></div></div>
         </div>
@@ -703,7 +703,7 @@ footer{background:#060E1A;padding:44px 48px;display:flex;align-items:center;just
       <div class="vcard" id="vc2" onclick="toggleVideo('vc2')">
         <span class="vcard-badge vb-real">REAL LISTING · SPAIN</span>
         <div class="vthumb">
-          <video id="v2" src="https://app.xelo.media/public/demo-villa-spain.mp4" poster="https://app.xelo.media/public/demo-villa-spain-poster.jpg" preload="none" playsinline></video>
+          <video id="v2" src="https://app.xelo.media/public/demo-villa-spain.mp4" poster="https://app.xelo.media/public/demo-villa-spain-poster.jpg" preload="none" playsinline crossorigin="anonymous"></video>
           <div class="vplay"><div class="vplay-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
           <div class="vprogress" onclick="seekVideo(event,'v2')"><div class="vpbar" id="vp2"></div></div>
         </div>
@@ -1452,10 +1452,17 @@ function toggleVideo(cardId){
   const bar=card.querySelector('.vpbar');
   if(vid.paused){
     document.querySelectorAll('video').forEach(v=>{ if(v!==vid){v.pause();v.closest('.vcard').classList.remove('playing');}});
-    vid.play();
-    card.classList.add('playing');
-    vid.ontimeupdate=()=>{ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
-    vid.onended=()=>{ card.classList.remove('playing'); bar.style.width='0%'; };
+    const p=vid.play();
+    if(p!==undefined){p.then(()=>{
+      card.classList.add('playing');
+      vid.ontimeupdate=()=>{ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
+      vid.onended=()=>{ card.classList.remove('playing'); bar.style.width='0%'; };
+    }).catch(()=>{ card.classList.remove('playing'); });}
+    else{
+      card.classList.add('playing');
+      vid.ontimeupdate=()=>{ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
+      vid.onended=()=>{ card.classList.remove('playing'); bar.style.width='0%'; };
+    }
   } else {
     vid.pause();
     card.classList.remove('playing');
