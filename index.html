@@ -1452,17 +1452,11 @@ function toggleVideo(cardId){
   const bar=card.querySelector('.vpbar');
   if(vid.paused){
     document.querySelectorAll('video').forEach(v=>{ if(v!==vid){v.pause();v.closest('.vcard').classList.remove('playing');}});
+    card.classList.add('playing');
+    vid.ontimeupdate=()=>{ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
+    vid.onended=()=>{ card.classList.remove('playing'); bar.style.width='0%'; };
     const p=vid.play();
-    if(p!==undefined){p.then(()=>{
-      card.classList.add('playing');
-      vid.ontimeupdate=()=>{ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
-      vid.onended=()=>{ card.classList.remove('playing'); bar.style.width='0%'; };
-    }).catch(()=>{ card.classList.remove('playing'); });}
-    else{
-      card.classList.add('playing');
-      vid.ontimeupdate=()=>{ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
-      vid.onended=()=>{ card.classList.remove('playing'); bar.style.width='0%'; };
-    }
+    if(p!==undefined){p.catch(()=>{ card.classList.remove('playing'); });}
   } else {
     vid.pause();
     card.classList.remove('playing');
