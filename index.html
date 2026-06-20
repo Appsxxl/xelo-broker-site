@@ -1621,18 +1621,38 @@ async function submitWaitlist(){
   }
 }
 
-// Auto-play video 2 when scrolled into view
+// Auto-play video 2 muted when scrolled into view
 (function(){
   var vc2 = document.getElementById('vc2');
   if(!vc2 || !('IntersectionObserver' in window)) return;
   var played = false;
   var obs = new IntersectionObserver(function(entries){
-    if(played) return;
-    if(entries[0].isIntersecting){
-      played = true;
-      obs.disconnect();
-      toggleVideo('vc2');
-    }
+    if(played || !entries[0].isIntersecting) return;
+    played = true;
+    obs.disconnect();
+    var vid = vc2.querySelector('video');
+    var bar = vc2.querySelector('.vpbar');
+    document.querySelectorAll('video').forEach(function(v){ if(v!==vid){v.pause();v.closest('.vcard').classList.remove('playing');} });
+    vid.muted = true;
+    vc2.classList.add('playing');
+    vid.ontimeupdate = function(){ bar.style.width=(vid.currentTime/vid.duration*100)+'%'; };
+    vid.onended = function(){ vc2.classList.remove('playing'); bar.style.width='0%'; };
+    var p = vid.play();
+    if(p!==undefined){ p.catch(function(){ vc2.classList.remove('playing'); }); }
+    // Show unmute hint
+    var hint = document.createElement('div');
+    hint.id = 'unmute-hint';
+    hint.innerHTML = '🔇 Tap for sound';
+    hint.style.cssText = 'position:absolute;bottom:44px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-size:13px;padding:5px 12px;border-radius:20px;pointer-events:none;z-index:10;opacity:1;transition:opacity .4s';
+    vc2.style.position='relative';
+    vc2.appendChild(hint);
+    // Remove hint when user taps card (unmutes)
+    vc2.addEventListener('click', function unmute(){
+      vid.muted = false;
+      var h = document.getElementById('unmute-hint');
+      if(h){ h.style.opacity='0'; setTimeout(function(){ h.remove(); },400); }
+      vc2.removeEventListener('click', unmute);
+    }, { once: true });
   }, { threshold: 0.5 });
   obs.observe(vc2);
 })();
