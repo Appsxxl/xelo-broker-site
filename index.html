@@ -1620,6 +1620,22 @@ async function submitWaitlist(){
     document.getElementById('wl-btn').textContent='Join waitlist →';
   }
 }
+
+// Auto-play video 2 when scrolled into view
+(function(){
+  var vc2 = document.getElementById('vc2');
+  if(!vc2 || !('IntersectionObserver' in window)) return;
+  var played = false;
+  var obs = new IntersectionObserver(function(entries){
+    if(played) return;
+    if(entries[0].isIntersecting){
+      played = true;
+      obs.disconnect();
+      toggleVideo('vc2');
+    }
+  }, { threshold: 0.5 });
+  obs.observe(vc2);
+})();
 </script>
 
 <!-- Diamond waitlist modal -->
