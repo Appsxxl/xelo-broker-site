@@ -63,6 +63,10 @@ section{padding:104px 0}
 .vid-card-label strong{display:block;color:rgba(255,255,255,.9);font-size:12px;margin-bottom:2px}
 .vid-format{display:inline-block;font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.1em;color:var(--g);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:1px 6px;margin-bottom:4px}
 @media(max-width:900px){.vid-showcase{grid-template-columns:1fr}}
+.vthmb{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .18s;aspect-ratio:9/16;background:var(--n3)}
+.vthmb.active{border-color:var(--g)}
+.vthmb:hover{border-color:rgba(201,168,76,.5)}
+.vthmb-label{position:absolute;bottom:0;left:0;right:0;padding:4px 6px;background:linear-gradient(transparent,rgba(12,27,46,.85));font-size:9px;font-family:ui-monospace,monospace;color:rgba(255,255,255,.7);letter-spacing:.05em;text-align:center}
 .pain-band{background:var(--n2);padding:32px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
 .pain-inner{display:flex;gap:0;overflow-x:auto}
 .pain-stat{flex:1;min-width:180px;padding:28px 32px;border-right:1px solid rgba(255,255,255,.05);text-align:center}
@@ -226,9 +230,9 @@ footer a:hover{color:var(--g)}
         </div>
       </div>
       <div class="hero-visual">
-        <div class="video-mock">
-          <div class="vid-label">VERTICAL · 9:16 · SOCIAL PACK</div>
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+        <div class="video-mock" id="hero-mock">
+          <div class="vid-label" id="hero-label">VERTICAL · 9:16 · SOCIAL PACK</div>
+          <video id="hero-video" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
             <source src="https://app.xelo.media/public/listings/85e63e51-4fd1-4ca5-a556-7df071af6e40/video_walkthroughx9x16_en.mp4" type="video/mp4">
           </video>
           <div class="vid-badges">
@@ -236,11 +240,19 @@ footer a:hover{color:var(--g)}
             <span class="live"><span class="live-dot"></span>AI script</span>
           </div>
         </div>
-        <div style="margin-top:10px;position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--gbdr);background:var(--n3)">
-          <div style="position:absolute;top:8px;left:10px;font-size:9px;font-family:ui-monospace,monospace;color:var(--g);letter-spacing:.1em;background:rgba(12,27,46,.7);padding:2px 7px;border-radius:4px;border:1px solid rgba(201,168,76,.25);z-index:1">✦ MLS · 16:9</div>
-          <video autoplay muted loop playsinline style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover">
-            <source src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4" type="video/mp4">
-          </video>
+        <div style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+          <div class="vthmb active" onclick="switchHero(this,'https://app.xelo.media/public/listings/85e63e51-4fd1-4ca5-a556-7df071af6e40/video_walkthroughx9x16_en.mp4','VERTICAL · 9:16 · SOCIAL PACK')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/85e63e51-4fd1-4ca5-a556-7df071af6e40/video_walkthroughx9x16_en.mp4" type="video/mp4"></video>
+            <span class="vthmb-label">9:16 · Social</span>
+          </div>
+          <div class="vthmb" onclick="switchHero(this,'https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
+            <span class="vthmb-label">16:9 · MLS</span>
+          </div>
+          <div class="vthmb" onclick="switchHero(this,'https://app.xelo.media/public/listings/65b306e3-16ec-4773-ad02-bd2dbdfebdae/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/65b306e3-16ec-4773-ad02-bd2dbdfebdae/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
+            <span class="vthmb-label">16:9 · MLS</span>
+          </div>
         </div>
       </div>
     </div>
@@ -588,6 +600,20 @@ footer a:hover{color:var(--g)}
 
 <script>
 function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+function switchHero(thumb, src, label) {
+  document.querySelectorAll('.vthmb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+  var v = document.getElementById('hero-video');
+  v.src = src; v.load(); v.play();
+  document.getElementById('hero-label').textContent = label;
+}
+// autoplay thumbnail videos on hover
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.vthmb video').forEach(function(v) {
+    v.parentElement.addEventListener('mouseenter', function() { v.play() });
+    v.parentElement.addEventListener('mouseleave', function() { v.pause() });
+  });
+});
 </script>
 </body>
 </html>
