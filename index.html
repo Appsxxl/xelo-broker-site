@@ -90,7 +90,7 @@ section{padding:104px 0}
 .mcard-body{padding:20px}
 .mlisting{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--bdr);align-items:center}
 .mlisting:last-child{border-bottom:none}
-.mthumbnail{width:56px;height:44px;border-radius:6px;background:var(--n4);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px}
+.mthumbnail{width:56px;height:44px;border-radius:6px;background:var(--n4);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden}
 .mprice{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:14px;color:var(--g)}
 .maddr{font-size:11px;color:var(--dim);margin-top:2px}
 .mfeat-badge{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:4px;font-size:9px;color:var(--g);padding:2px 6px;margin-top:4px;display:inline-block;letter-spacing:.06em}
@@ -138,7 +138,7 @@ section{padding:104px 0}
 .testi-name{font-size:13px;font-weight:700;color:#fff}
 .testi-meta{font-size:11px;color:var(--dim)}
 .testi-tag{font-size:9px;color:var(--g);letter-spacing:.1em;font-family:ui-monospace,monospace;margin-top:3px;text-transform:uppercase}
-.plans-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--bdr);border-radius:16px;overflow:hidden;border:1px solid var(--bdr);margin-top:24px}
+.plans-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--bdr);border-radius:16px;overflow:visible;border:1px solid var(--bdr);margin-top:24px}
 .billing-toggle{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:36px}
 .btab{padding:8px 20px;border-radius:6px;font-size:13px;font-family:Arial,Helvetica,sans-serif;font-weight:600;cursor:pointer;border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.45);transition:all .18s}
 .btab.active{background:var(--g);color:#0C1B2E;border-color:var(--g)}
@@ -151,8 +151,8 @@ section{padding:104px 0}
 .billing-annual .plan-old{display:none}
 .billing-annual .plan-annual-note{display:block}
 .plan{background:var(--n3);padding:32px 24px;position:relative;transition:background .2s}
-.plan-popular{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.25);margin:-1px;border-radius:2px;z-index:1}
-.popular-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--g);color:#0C1B2E;font-size:9px;font-family:Arial,Helvetica,sans-serif;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:0 0 8px 8px}
+.plan-popular{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.25);margin:-1px;border-radius:2px;z-index:1;padding-top:44px}
+.popular-tag{position:absolute;top:0;left:0;right:0;background:var(--g);color:#0C1B2E;font-size:9px;font-family:Arial,Helvetica,sans-serif;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 0;text-align:center;border-radius:2px 2px 0 0}
 .plan-name{font-size:11px;letter-spacing:.14em;color:var(--g);text-transform:uppercase;font-family:ui-monospace,monospace;margin-bottom:12px}
 .plan-price{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:36px;letter-spacing:-.04em;color:#fff;line-height:1}
 .plan-sub{font-size:11px;color:var(--dim);margin-top:5px}
@@ -202,8 +202,7 @@ footer a:hover{color:var(--g)}
 
 <nav>
   <div class="nl">
-    <svg width="26" height="26" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="7" fill="#0C1B2E"/><circle cx="16" cy="16" r="10" fill="none" stroke="#C9A84C" stroke-width="1.5"/><text x="16" y="20.5" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="13" fill="#C9A84C" text-anchor="middle">x</text></svg>
-    <span class="wordmark">xelo</span>
+    <img src="https://app.xelo.media/xelo-logo-full.png" alt="Xelo" style="height:36px;border-radius:8px">
   </div>
   <nav class="nv">
     <a href="#examples">Examples</a>
@@ -236,8 +235,8 @@ footer a:hover{color:var(--g)}
         <div class="hero-proof">
           <span class="badge"><span class="badge-dot green"></span> Xelo Market live</span>
           <span class="badge"><span class="badge-dot green"></span> James AI live</span>
-          <span class="badge"><span class="badge-dot amber"></span> 9 EU languages</span>
-          <span class="badge"><span class="badge-dot blue"></span> GDPR compliant</span>
+          <span class="badge"><span class="badge-dot green"></span> 9 EU languages</span>
+          <span class="badge"><span class="badge-dot green"></span> GDPR compliant</span>
         </div>
       </div>
       <div class="hero-visual">
@@ -327,10 +326,10 @@ footer a:hover{color:var(--g)}
     <p class="sub">From photos to published video in less time than it takes to write one email.</p>
     <div class="steps">
       <div class="step"><div class="step-n">1</div><div><div class="h3">Upload your listing photos</div><div style="font-size:14px;color:var(--dim);line-height:1.7">Upload 5–30 photos from your phone, camera, or MLS export. Xelo accepts any format.</div></div></div>
-      <div class="step"><div class="step-n">2</div><div><div class="h3">AI writes a property script</div><div style="font-size:14px;color:var(--dim);line-height:1.7">Claude analyses the photos, generates a professional narration script tailored to European buyers — highlights, neighbourhood, price context.</div></div></div>
-      <div class="step"><div class="step-n">3</div><div><div class="h3">Video is rendered with your voice</div><div style="font-size:14px;color:var(--dim);line-height:1.7">Kokoro TTS narrates the script in your broker's language (EN, NL, DE, FR, ES, PT, IT, PL, SV). The video is formatted for MLS (16:9) and social (9:16).</div></div></div>
+      <div class="step"><div class="step-n">2</div><div><div class="h3">AI writes a property script</div><div style="font-size:14px;color:var(--dim);line-height:1.7">Xelo analyses the photos, generates a professional narration script tailored to European buyers — highlights, neighbourhood, price context.</div></div></div>
+      <div class="step"><div class="step-n">3</div><div><div class="h3">AI voice narration in your broker's language</div><div style="font-size:14px;color:var(--dim);line-height:1.7">Your video is narrated in your broker's language — EN, NL, DE, FR, ES, PT, IT, PL, SV. Natural, clear speech that sounds professional. Formatted for MLS (16:9) and social (9:16).</div></div></div>
       <div class="step"><div class="step-n">4</div><div><div class="h3">Published to Xelo Market automatically</div><div style="font-size:14px;color:var(--dim);line-height:1.7">Your listing appears on Xelo Market — the only property portal where every listing has a professional video. Buyers across Europe see it immediately.</div></div></div>
-      <div class="step"><div class="step-n">5</div><div><div class="h3">James answers buyer questions 24/7</div><div style="font-size:14px;color:var(--dim);line-height:1.7">James, Xelo's AI buyer concierge, responds to enquiries, qualifies leads, and forwards serious buyers to you — in their language, any hour.</div></div></div>
+      <div class="step"><div class="step-n">5</div><div><div class="h3">James answers buyer questions 24/7</div><div style="font-size:14px;color:var(--dim);line-height:1.7">James, Xelo's AI buyer assistant, responds to enquiries, qualifies leads, and forwards serious buyers to you — in their language, any hour.</div></div></div>
     </div>
   </div>
 </section>
@@ -342,12 +341,12 @@ footer a:hover{color:var(--g)}
     <p class="sub">No agencies, no freelancers, no separate tools. One platform handles the full listing workflow.</p>
     <div class="feat-grid">
       <div class="feat"><div class="feat-icon">🎬</div><div class="feat-title">AI Video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">MLS 16:9 + social 9:16. Generated from photos in minutes. No footage needed.</div></div>
-      <div class="feat"><div class="feat-icon">🎙️</div><div class="feat-title">Voice narration <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Kokoro TTS speaks the script naturally in the broker's language. No AI robotic tone.</div></div>
-      <div class="feat"><div class="feat-icon">✍️</div><div class="feat-title">AI copywriting <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Claude writes the narration, the listing description, and SEO-ready portal text — all from photos.</div></div>
+      <div class="feat"><div class="feat-icon">🎙️</div><div class="feat-title">Voice narration <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Natural AI speech narrates your listing in the broker's language. Clear and professional — no robotic tone.</div></div>
+      <div class="feat"><div class="feat-icon">✍️</div><div class="feat-title">AI copywriting <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Xelo writes the narration, the listing description, and SEO-ready portal text — all from your photos.</div></div>
       <div class="feat"><div class="feat-icon">🌍</div><div class="feat-title">9 EU languages <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">EN, NL, DE, FR, ES, PT, IT, PL, SV. Buyers hear your listing in their own language.</div></div>
-      <div class="feat"><div class="feat-icon">🚁</div><div class="feat-title">Aerial video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Google satellite flyover + AI-generated aerial footage. EU drone permit guidance shown automatically per country.</div></div>
-      <div class="feat"><div class="feat-icon">📤</div><div class="feat-title">Portal export <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Formatted video and copy ready for Idealista, Funda, Immowelt, Rightmove, and 30+ other EU portals.</div></div>
-      <div class="feat"><div class="feat-icon">🤖</div><div class="feat-title">James AI concierge <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Buyer enquiry AI that qualifies leads and answers questions in any language — 24/7.</div></div>
+      <div class="feat"><div class="feat-icon">🚁</div><div class="feat-title">Aerial video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">AI-generated aerial view and satellite imagery of the property location. EU drone permit guidance shown automatically per country.</div></div>
+      <div class="feat"><div class="feat-icon">📤</div><div class="feat-title">Portal export <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc">Formatted video and copy ready for Idealista, Funda, Immowelt, Rightmove, and 30+ other EU portals.</div></div>
+      <div class="feat"><div class="feat-icon">🧑</div><div class="feat-title">James AI assistant <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Buyer enquiry AI that qualifies leads and answers questions in any language — 24/7.</div></div>
       <div class="feat"><div class="feat-icon">🔗</div><div class="feat-title">Embed widget <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">One line of code. Put a Xelo video player directly on your own website or property portal listing.</div></div>
       <div class="feat"><div class="feat-icon">📊</div><div class="feat-title">Analytics <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Track video views, lead quality, enquiry conversion, and portal performance per listing.</div></div>
     </div>
@@ -371,9 +370,11 @@ footer a:hover{color:var(--g)}
         <div class="mcard">
           <div class="mcard-header"><span class="live"><span class="live-dot"></span>live</span><strong style="color:#fff">Xelo Market</strong><span style="margin-left:auto;color:var(--dim)">app.xelo.media/market</span></div>
           <div class="mcard-body">
-            <div class="mlisting"><div class="mthumbnail">🏠</div><div><div class="mprice">€485,000</div><div class="maddr">Marbella — 3BR, 2BA · 140m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
-            <div class="mlisting"><div class="mthumbnail">🏡</div><div><div class="mprice">€320,000</div><div class="maddr">Lisbon — 2BR · 95m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
-            <div class="mlisting"><div class="mthumbnail">🏢</div><div><div class="mprice">€1,250,000</div><div class="maddr">Barcelona — Penthouse · 210m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
+            <a href="https://app.xelo.media/market" style="text-decoration:none;display:block">
+            <div class="mlisting"><div class="mthumbnail"><img src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/photo_01.jpg" style="width:100%;height:100%;object-fit:cover"></div><div><div class="mprice">€1,205,000</div><div class="maddr">Finestrat, Alicante · 4BR · 340m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
+            <div class="mlisting"><div class="mthumbnail"><img src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/photo_03.jpg" style="width:100%;height:100%;object-fit:cover"></div><div><div class="mprice">€470,000</div><div class="maddr">Willemstad, Curaçao · 5BR · 350m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
+            <div class="mlisting"><div class="mthumbnail"><img src="https://app.xelo.media/public/listings/65b306e3-16ec-4773-ad02-bd2dbdfebdae/photo_01.jpg" style="width:100%;height:100%;object-fit:cover"></div><div><div class="mprice">€485,000</div><div class="maddr">Marbella, Málaga · 3BR · 140m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
+            </a>
             <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr);font-size:11px;color:var(--dim);text-align:center">Listings rotate every 3 min · Every broker reaches premium</div>
           </div>
         </div>
@@ -384,7 +385,7 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="james">
   <div class="wrap">
-    <div class="eyebrow">Buyer concierge <span class="live" style="margin-left:0"><span class="live-dot"></span>live now</span></div>
+    <div class="eyebrow">XELO INBOX · James AI assistant <span class="live" style="margin-left:0"><span class="live-dot"></span>live now</span></div>
     <div class="james-layout">
       <div>
         <div class="chat-mock">
@@ -478,7 +479,7 @@ footer a:hover{color:var(--g)}
           <tr><td>9 EU languages</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>MLS + social formats</td><td class="xelo-col yes">✓</td><td>Extra cost</td><td>Manual export</td><td class="no">✕</td></tr>
           <tr><td>Xelo Market listing</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>James AI buyer concierge</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>James AI buyer assistant</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>AI listing copywriting</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>Enquiry conversion uplift</td><td class="xelo-col">4× vs no video</td><td>4× vs no video</td><td>2× vs no video</td><td>Baseline</td></tr>
         </tbody>
@@ -525,7 +526,7 @@ footer a:hover{color:var(--g)}
           <div class="pf"><span class="pf-check">✓</span> MLS 16:9 + Social 9:16</div>
           <div class="pf"><span class="pf-check">✓</span> 9 EU languages</div>
           <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
-          <div class="pf"><span class="pf-check">✓</span> James AI concierge</div>
+          <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
         </div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Start free</a>
       </div>
@@ -617,7 +618,7 @@ footer a:hover{color:var(--g)}
         <a href="mailto:hello@xelo.media?subject=Diamond plan" class="plan-btn plan-btn-ghost">Contact us</a>
       </div>
     </div>
-    <div class="credit-note"><strong>110 credits = 1 full listing video</strong> (MLS 16:9 + Social 9:16 pack). Credits never expire.</div>
+    <div class="credit-note"><strong>110 credits = 1 full listing Video(s)</strong> (MLS 16:9 + Social 9:16 pack). Credits valid for 3 months.</div>
   </div>
 </section>
 
@@ -627,8 +628,8 @@ footer a:hover{color:var(--g)}
     <h2 class="h2 ctr">Everything you need<br>to <span class="g">know.</span></h2>
     <div class="faq-list" style="margin-top:56px">
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to get my first video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Upload your photos and Xelo delivers both the MLS and social video within 9–12 minutes. No editing, no approvals — it's ready to publish.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to provide my own drone footage for aerial video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No drone needed. Xelo uses Google Aerial View satellite footage and AI-generated flyovers — all pulled automatically from the property address. When you request an aerial view, Xelo also shows the relevant EU drone permit requirements for your country, so you know the rules if you ever want to supplement with your own footage.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which languages does Xelo support? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">9 European languages: English, Dutch, German, French, Spanish, Portuguese, Italian, Polish, and Swedish. Both the narration (TTS voice) and the listing copy are generated in your chosen language. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to provide my own drone footage for aerial video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No drone needed. Xelo uses satellite imagery and AI-generated aerial views pulled automatically from the property address. When you request an aerial view, Xelo also shows the relevant EU drone permit requirements for your country, so you know the rules if you ever want to supplement with your own footage.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which languages does Xelo support? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">9 European languages: English, Dutch, German, French, Spanish, Portuguese, Italian, Polish, and Swedish. Both the voice narration and the listing copy are generated in your chosen language. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is Xelo Market and do I have to pay extra for it? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Xelo Market is included in every paid plan. It's a European property portal where every listing has a professional video. Your listings are published automatically when you create them — no extra upload. It's the only portal with video-first search and James AI for buyer enquiries.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are "credits" and how do they work? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Credits are the internal unit Xelo uses to generate video. One full listing video pack (MLS 16:9 + Social 9:16) costs 110 credits. Your plan includes a monthly credits allowance. Credits accumulate — they never expire. If you run out, you can buy a top-up without upgrading your plan.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use Xelo on my existing website? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. The embed widget lets you add a Xelo video player to any website with one line of HTML. Your listings already live on Xelo Market — the embed just mirrors them on your own site. No API key or backend needed.</div></div></div>
@@ -638,7 +639,7 @@ footer a:hover{color:var(--g)}
 
 <div class="cta-section">
   <div class="cta-tag">Start today</div>
-  <h2 class="cta-h">Stop losing buyers to agents<br>with <span>better video.</span></h2>
+  <h2 class="cta-h">Stop losing buyers to agents<br>with <span>better Video(s).</span></h2>
   <p style="font-size:17px;color:var(--soft);margin-top:20px;line-height:1.7">Every day without video, a buyer lands on your listing and leaves.<br>3 free videos. No credit card. Takes 9 minutes.</p>
   <div class="cta-btns">
     <a href="https://app.xelo.media/register" class="btn gold big">Make your first video free</a>
@@ -648,10 +649,9 @@ footer a:hover{color:var(--g)}
 </div>
 
 <footer>
-  <div style="display:flex;align-items:center;gap:8px">
-    <svg width="22" height="22" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="7" fill="#0C1B2E"/><circle cx="16" cy="16" r="11" fill="none" stroke="#C9A84C" stroke-width="1.5"/><text x="16" y="21" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="14" fill="#C9A84C" text-anchor="middle">x</text></svg>
-    <span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;color:var(--g)">xelo</span>
-    <span style="font-size:11px;color:rgba(255,255,255,.2);margin-left:8px">© 2026 Xelo. All rights reserved.</span>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="https://app.xelo.media/xelo-logo-full.png" alt="Xelo" style="height:28px;border-radius:6px">
+    <span style="font-size:11px;color:rgba(255,255,255,.2)">© 2026 Xelo. All rights reserved.</span>
   </div>
   <div style="display:flex;gap:20px">
     <a href="/privacy">Privacy</a>
