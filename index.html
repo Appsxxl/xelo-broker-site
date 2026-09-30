@@ -138,18 +138,9 @@ section{padding:104px 0}
 .testi-name{font-size:13px;font-weight:700;color:#fff}
 .testi-meta{font-size:11px;color:var(--dim)}
 .testi-tag{font-size:9px;color:var(--g);letter-spacing:.1em;font-family:ui-monospace,monospace;margin-top:3px;text-transform:uppercase}
-.plans-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--bdr);border-radius:16px;overflow:visible;border:1px solid var(--bdr);margin-top:24px}
-.billing-toggle{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:36px}
-.btab{padding:8px 20px;border-radius:6px;font-size:13px;font-family:Arial,Helvetica,sans-serif;font-weight:600;cursor:pointer;border:1.5px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.45);transition:all .18s}
-.btab.active{background:var(--g);color:#0C1B2E;border-color:var(--g)}
-.btab-save{font-size:10px;font-family:ui-monospace,monospace;background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.2);border-radius:20px;padding:2px 8px;margin-left:6px;letter-spacing:.04em}
+.plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bdr);border-radius:16px;overflow:visible;border:1px solid var(--bdr);margin-top:40px}
 .plan-vat{font-size:10px;color:var(--dim);margin-top:3px;letter-spacing:.02em}
-.plan-price-yr{display:none}
-.plan-annual-note{display:none;font-size:10px;color:#4ade80;font-weight:600;margin-top:5px}
-.billing-annual .plan-price-mo{display:none}
-.billing-annual .plan-price-yr{display:block}
-.billing-annual .plan-old{display:none}
-.billing-annual .plan-annual-note{display:block}
+.plan-agency{background:linear-gradient(135deg,rgba(20,18,12,1) 0%,rgba(35,28,15,1) 100%);border:1px solid rgba(201,168,76,.35);margin:-1px;border-radius:2px;z-index:1}
 .plan{background:var(--n3);padding:32px 24px;position:relative;transition:background .2s}
 .plan-popular{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.25);margin:-1px;border-radius:2px;z-index:1;padding-top:44px}
 .popular-tag{position:absolute;top:0;left:0;right:0;background:var(--g);color:#0C1B2E;font-size:9px;font-family:Arial,Helvetica,sans-serif;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 0;text-align:center;border-radius:2px 2px 0 0}
@@ -187,7 +178,7 @@ footer a{font-size:12px;color:var(--dim);text-decoration:none}
 footer a:hover{color:var(--g)}
 @media(max-width:900px){
   .hero-grid,.market-layout,.james-layout,.embed-layout{grid-template-columns:1fr}
-  .plans-grid{grid-template-columns:repeat(3,1fr)}
+  .plans-grid{grid-template-columns:repeat(2,1fr)}
   .testi-grid{grid-template-columns:1fr}
   nav .nv,.nc .ghost{display:none}
   .wrap{padding:0 24px}.wrap-sm{padding:0 24px}
@@ -229,7 +220,7 @@ footer a:hover{color:var(--g)}
           <div class="hstat"><div class="hnum">9</div><div class="hlabel">languages, auto-spoken</div></div>
         </div>
         <div class="hero-ctas">
-          <a href="https://app.xelo.media/register" class="btn gold big">Start free — 3 videos</a>
+          <a href="https://app.xelo.media/register" class="btn gold big">Start free — 30-day trial</a>
           <a href="#how" class="btn ghost big">See how it works</a>
         </div>
         <div class="hero-proof">
@@ -502,123 +493,74 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="pricing">
   <div class="wrap">
-    <div class="eyebrow ctr">Founding Partner pricing</div>
-    <h2 class="h2 ctr">Lock in your rate.<br><span class="g">Price rises at public launch.</span></h2>
-    <p class="sub ctr">Founding Partner pricing — locked for early members. All prices exclude applicable VAT. Prices are subject to change once final cost analysis is complete.</p>
-    <div class="billing-toggle">
-      <button class="btab active" data-mode="monthly" onclick="switchBilling('monthly')">Monthly</button>
-      <button class="btab" data-mode="annual" onclick="switchBilling('annual')">Annual <span class="btab-save">2 months free</span></button>
-    </div>
+    <div class="eyebrow ctr">Plans</div>
+    <h2 class="h2 ctr">One price per listing.<br><span class="g">Everything included.</span></h2>
+    <p class="sub ctr">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
     <div class="plans-grid" id="plans-grid">
       <div class="plan">
         <div class="plan-name">Trial</div>
-        <div class="plan-price-mo">
-          <div class="plan-price">€0</div>
-          <div class="plan-vat">excl. VAT</div>
-        </div>
-        <div class="plan-price-yr">
-          <div class="plan-price">€0</div>
-          <div class="plan-vat">excl. VAT</div>
-        </div>
-        <div class="plan-sub">3 free videos to try</div>
+        <div class="plan-price">€0</div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub">30-day trial · 1 listing · 30s of video</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 3 full listing videos</div>
-          <div class="pf"><span class="pf-check">✓</span> MLS 16:9 + Social 9:16</div>
-          <div class="pf"><span class="pf-check">✓</span> 9 EU languages</div>
+          <div class="pf"><span class="pf-check">✓</span> 1 active listing</div>
+          <div class="pf"><span class="pf-check">✓</span> 30 seconds of video</div>
+          <div class="pf"><span class="pf-check">✓</span> All 9 languages</div>
+          <div class="pf"><span class="pf-check">✓</span> 16:9 portal + 9:16 social</div>
           <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
           <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
+          <div class="pf"><span class="pf-check">✓</span> <span class="training-text">Free live training every week</span></div>
+          <div class="pf"><span class="pf-check">✓</span> Personal onboarding with our founder</div>
         </div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Start free</a>
       </div>
       <div class="plan">
         <div class="plan-name">Starter</div>
-        <div class="plan-price-mo">
-          <div class="plan-price">€19<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-old">€39/mo at public launch</div>
-        </div>
-        <div class="plan-price-yr">
-          <div class="plan-price">€15<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-annual-note">€190/yr billed annually · 2 months free</div>
-        </div>
-        <div class="plan-sub">~3 full listing videos/month</div>
+        <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub" id="sub-starter">Up to 4 listings · 120s/month</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 350 video credits</div>
-          <div class="pf"><span class="pf-check">✓</span> All Trial features</div>
-          <div class="pf"><span class="pf-check">✓</span> Priority render queue</div>
-          <div class="pf"><span class="pf-check">✓</span> Portal export pack</div>
+          <div class="pf"><span class="pf-check">✓</span> Up to 4 active listings</div>
+          <div class="pf"><span class="pf-check">✓</span> 120 seconds of video/month</div>
+          <div class="pf"><span class="pf-check">✓</span> 8-second clips</div>
+          <div class="pf"><span class="pf-check">✓</span> All languages &amp; formats</div>
+          <div class="pf"><span class="pf-check">✓</span> Portal &amp; social posting</div>
+          <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
         </div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Get Starter</a>
       </div>
       <div class="plan plan-popular">
         <div class="popular-tag">MOST POPULAR</div>
         <div class="plan-name">Professional</div>
-        <div class="plan-price-mo">
-          <div class="plan-price">€39<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-old">€79/mo at public launch</div>
-        </div>
-        <div class="plan-price-yr">
-          <div class="plan-price">€32<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-annual-note">€390/yr billed annually · 2 months free</div>
-        </div>
-        <div class="plan-sub">~10 full listing videos/month</div>
+        <div class="plan-price"><span id="price-professional">€249</span><span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub" id="sub-professional">Up to 12 listings · 540s/month</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 1,200 video credits</div>
-          <div class="pf"><span class="pf-check">✓</span> All Starter features</div>
-          <div class="pf"><span class="pf-check">✓</span> Aerial video</div>
-          <div class="pf"><span class="pf-check">✓</span> Analytics dashboard</div>
-          <div class="pf"><span class="pf-check">✓</span> Embed widget access</div>
+          <div class="pf"><span class="pf-check">✓</span> Up to 12 active listings</div>
+          <div class="pf"><span class="pf-check">✓</span> 540 seconds of video/month</div>
+          <div class="pf"><span class="pf-check">✓</span> 8-second clips</div>
+          <div class="pf"><span class="pf-check">✓</span> Priority render queue</div>
+          <div class="pf"><span class="pf-check">✓</span> Everything in Starter</div>
         </div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-gold">Get Professional</a>
       </div>
-      <div class="plan">
+      <div class="plan plan-agency">
         <div class="plan-name">Agency</div>
-        <div class="plan-price-mo">
-          <div class="plan-price">€99<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-old">€149/mo at public launch</div>
-        </div>
-        <div class="plan-price-yr">
-          <div class="plan-price">€82<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-annual-note">€990/yr billed annually · 2 months free</div>
-        </div>
-        <div class="plan-sub">~31 full listing videos/month</div>
+        <div class="plan-price" id="price-agency">From €690<span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub">Multi-seat · 1080p · unlimited listings</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 3,500 video credits</div>
-          <div class="pf"><span class="pf-check">✓</span> All Professional features</div>
-          <div class="pf"><span class="pf-check">✓</span> Multi-agent seats</div>
-          <div class="pf"><span class="pf-check">✓</span> White-label export</div>
-          <div class="pf"><span class="pf-check">✓</span> Priority support</div>
+          <div class="pf"><span class="pf-check">✓</span> Unlimited listings</div>
+          <div class="pf"><span class="pf-check">✓</span> Unlimited video time</div>
+          <div class="pf"><span class="pf-check">✓</span> 1080p quality</div>
+          <div class="pf"><span class="pf-check">✓</span> Priority render queue</div>
+          <div class="pf"><span class="pf-check">✓</span> Multi-seat access</div>
+          <div class="pf"><span class="pf-check">✓</span> All languages &amp; formats</div>
         </div>
-        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Get Agency</a>
-      </div>
-      <div class="plan">
-        <div class="plan-name">Diamond</div>
-        <div class="plan-price-mo">
-          <div class="plan-price">€249<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-        </div>
-        <div class="plan-price-yr">
-          <div class="plan-price">€166<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-annual-note">€1,999/yr billed annually · Save €989</div>
-        </div>
-        <div class="plan-sub">Unlimited — enterprise scale</div>
-        <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> Unlimited video credits</div>
-          <div class="pf"><span class="pf-check">✓</span> All Agency features</div>
-          <div class="pf"><span class="pf-check">✓</span> Dedicated success manager</div>
-          <div class="pf"><span class="pf-check">✓</span> Custom voice &amp; branding</div>
-          <div class="pf"><span class="pf-check">✓</span> SLA uptime guarantee</div>
-        </div>
-        <a href="mailto:hello@xelo.media?subject=Diamond plan" class="plan-btn plan-btn-ghost">Contact us</a>
+        <a href="mailto:douglashoe@gmail.com?subject=Agency plan enquiry" class="plan-btn plan-btn-ghost" id="agency-cta">Contact us</a>
       </div>
     </div>
-    <div class="credit-note"><strong>110 credits = 1 full listing Video(s)</strong> (MLS 16:9 + Social 9:16 pack). Credits valid for 3 months.</div>
+    <div class="credit-note">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
   </div>
 </section>
 
@@ -628,10 +570,9 @@ footer a:hover{color:var(--g)}
     <h2 class="h2 ctr">Everything you need<br>to <span class="g">know.</span></h2>
     <div class="faq-list" style="margin-top:56px">
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to get my first video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Upload your photos and Xelo delivers both the MLS and social video within 9–12 minutes. No editing, no approvals — it's ready to publish.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need to provide my own drone footage for aerial video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">No drone needed. Xelo uses satellite imagery and AI-generated aerial views pulled automatically from the property address. When you request an aerial view, Xelo also shows the relevant EU drone permit requirements for your country, so you know the rules if you ever want to supplement with your own footage.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which languages does Xelo support? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">9 European languages: English, Dutch, German, French, Spanish, Portuguese, Italian, Polish, and Swedish. Both the voice narration and the listing copy are generated in your chosen language. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is Xelo Market and do I have to pay extra for it? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Xelo Market is included in every paid plan. It's a European property portal where every listing has a professional video. Your listings are published automatically when you create them — no extra upload. It's the only portal with video-first search and James AI for buyer enquiries.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What are "credits" and how do they work? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Credits are the internal unit Xelo uses to generate video. One full listing video pack (MLS 16:9 + Social 9:16) costs 110 credits. Your plan includes a monthly credits allowance. Credits accumulate — they never expire. If you run out, you can buy a top-up without upgrading your plan.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the video time allowance work? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Each plan includes a monthly video seconds allowance. Every clip you generate or re-render draws from that pool. Allowances reset on the 1st of each month — unused seconds do not roll over. Trial includes 30 seconds. Starter includes 120 seconds (~15 clips). Professional includes 540 seconds (~67 clips). Agency has no cap.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use Xelo on my existing website? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. The embed widget lets you add a Xelo video player to any website with one line of HTML. Your listings already live on Xelo Market — the embed just mirrors them on your own site. No API key or backend needed.</div></div></div>
     </div>
   </div>
@@ -663,12 +604,21 @@ footer a:hover{color:var(--g)}
 
 <script>
 function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open')}
-function switchBilling(mode){
-  document.querySelectorAll('.btab').forEach(function(t){t.classList.remove('active')});
-  document.querySelector('.btab[data-mode="'+mode+'"]').classList.add('active');
-  var grid=document.getElementById('plans-grid');
-  if(mode==='annual'){grid.classList.add('billing-annual')}else{grid.classList.remove('billing-annual')}
-}
+// Hydrate plan pricing from KV via same-origin Pages Function proxy
+(function(){
+  var DEFAULTS={trial:{price:0,seconds:30,listings:1},starter:{price:99,seconds:120,listings:4},professional:{price:249,seconds:540,listings:12},agency:{price:690,seconds:0,listings:0}};
+  function applyPricing(data){
+    var p=data.plans||{};var s=Object.assign({},DEFAULTS.starter,p.starter||{});var pr=Object.assign({},DEFAULTS.professional,p.professional||{});var a=Object.assign({},DEFAULTS.agency,p.agency||{});
+    var ps=document.getElementById('price-starter');if(ps)ps.textContent='€'+s.price;
+    var pp=document.getElementById('price-professional');if(pp)pp.textContent='€'+pr.price;
+    var pa=document.getElementById('price-agency');if(pa)pa.innerHTML='From €'+a.price+'<span style="font-size:16px;font-weight:400">/mo</span>';
+    var ss=document.getElementById('sub-starter');if(ss)ss.textContent='Up to '+s.listings+' listings · '+s.seconds+'s/month';
+    var sp=document.getElementById('sub-professional');if(sp)sp.textContent='Up to '+pr.listings+' listings · '+pr.seconds+'s/month';
+    var cta=document.getElementById('agency-cta');if(cta&&data.agency_contact_email)cta.href='mailto:'+data.agency_contact_email+'?subject=Agency plan enquiry';
+    var tt=data.training_offer_text;if(tt){document.querySelectorAll('.training-text').forEach(function(el){el.textContent=tt});}
+  }
+  fetch('/api/pricing').then(function(r){return r.json()}).then(applyPricing).catch(function(){});
+})();
 function switchHero(thumb, src, label, ratio) {
   document.querySelectorAll('.vthmb').forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
