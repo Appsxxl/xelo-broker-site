@@ -36,6 +36,21 @@
 .page-nav a:hover,.page-nav button:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25);text-decoration:none}
 .page-nav .gold{background:var(--g);color:var(--n);border-color:var(--g)}
 .page-nav .gold:hover{background:#b8973e}
+@media print{
+  nav,.page-nav,footer,.footer-legal{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.6}
+  .wrap{padding:20px 0;max-width:100%}
+  h1{font-size:22pt;color:#000}
+  h2{font-size:14pt;color:#000;margin:24px 0 8px}
+  p,ul,li{color:#222}
+  a{color:#000;text-decoration:underline}
+  a[href]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+  strong{color:#000}
+  .right-card{border:1px solid #ccc;background:#f9f9f9}
+  .right-title{color:#000}
+  .right-desc{color:#222}
+  .rights-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -48,7 +63,7 @@
 <div class="wrap">
   <div class="lbl">Legal</div>
   <h1>Privacy Policy</h1>
-  <div class="meta">Xelo Media World LTD · Last updated: 12 October 2026 · Effective: 12 October 2026</div>
+  <div class="meta">Xelo Media World LTD · Last updated: 12 October 2026 · Effective: 12 October 2026 · <a href="/privacy.pdf" style="color:var(--g)">Download PDF</a></div>
 
   <p>This Privacy Policy explains how <strong>Xelo Media World LTD</strong> ("Xelo", "we", "us") collects, uses, and protects your personal data when you use the Xelo platform at <a href="https://brokers.xelo.media">brokers.xelo.media</a> and related services. We are committed to GDPR compliance and protecting your rights as a data subject.</p>
 
@@ -83,7 +98,7 @@
   <ul>
     <li>To create and manage your account</li>
     <li>To generate property videos and AI-written descriptions</li>
-    <li>To publish your listings to Xelo Market (paying subscribers only)</li>
+    <li>To publish your listings to Xelo Market (all plans, including Trial)</li>
     <li>To process payments and issue invoices</li>
     <li>To send transactional emails (video ready, payment confirmation)</li>
     <li>To send product updates and feature announcements (opt-out any time)</li>
@@ -170,10 +185,11 @@
 <div class="page-nav">
   <button onclick="history.back()" title="Go back">← Back</button>
   <button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+  <a href="/privacy.pdf">⬇ Download PDF</a>
   <a href="/" class="gold">Home →</a>
 </div>
 
-<div class="footer-legal">© 2026 Xelo Media World LTD · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · support@xelo.media</div>
+<div class="footer-legal">© 2026 Xelo Media World LTD · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/privacy.pdf">Privacy PDF</a> · <a href="/terms.pdf">Terms PDF</a> · support@xelo.media</div>
 
 </body>
 </html>

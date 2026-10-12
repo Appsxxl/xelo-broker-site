@@ -32,6 +32,17 @@
 .page-nav a:hover,.page-nav button:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25);text-decoration:none}
 .page-nav .gold{background:var(--g);color:var(--n);border-color:var(--g)}
 .page-nav .gold:hover{background:#b8973e}
+@media print{
+  nav,.page-nav,footer,.footer-legal{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.6}
+  .wrap{padding:20px 0;max-width:100%}
+  h1{font-size:22pt;color:#000}
+  h2{font-size:14pt;color:#000;margin:24px 0 8px}
+  p,ul,li{color:#222}
+  a{color:#000;text-decoration:underline}
+  a[href]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+  strong{color:#000}
+}
 </style>
 </head>
 <body>
@@ -44,7 +55,7 @@
 <div class="wrap">
   <div class="lbl">Legal</div>
   <h1>Terms of Service</h1>
-  <div class="meta">Xelo Media World LTD · Last updated: 12 October 2026 · Effective: 12 October 2026</div>
+  <div class="meta">Xelo Media World LTD · Last updated: 12 October 2026 · Effective: 12 October 2026 · <a href="/terms.pdf" style="color:var(--g)">Download PDF</a></div>
 
   <p>These Terms of Service ("Terms") govern your access to and use of the Xelo platform ("Service") operated by <strong>Xelo Media World LTD</strong> (registered in England and Wales, company number 17490930; registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ, United Kingdom) ("Xelo", "we", "us"). By creating an account or using the Service you agree to be bound by these Terms.</p>
 
@@ -96,7 +107,7 @@
   <p>The Service is provided "as is" without warranty of any kind. We do not warrant that the Service will be uninterrupted, error-free, or meet your specific requirements.</p>
 
   <h2>11. Termination</h2>
-  <p>You may terminate your account at any time from your account settings. We reserve the right to suspend or terminate your access immediately if you breach these Terms or if we reasonably suspect fraudulent or harmful activity. Upon termination your data will be retained for 30 days before deletion, unless earlier deletion is requested.</p>
+  <p>You may terminate your account at any time from your account settings. We reserve the right to suspend or terminate your access immediately if you breach these Terms or if we reasonably suspect fraudulent or harmful activity. Upon termination your data will be retained for 30 days before deletion, unless earlier deletion is requested. Billing records, including subscription and payment history, are retained for 7 years as required by applicable financial record-keeping obligations.</p>
 
   <h2>12. Changes to Terms</h2>
   <p>We may update these Terms from time to time. Material changes will be notified by email at least 14 days in advance. Continued use of the Service after the effective date constitutes acceptance of the updated Terms.</p>
@@ -116,10 +127,11 @@
 <div class="page-nav">
   <button onclick="history.back()" title="Go back">← Back</button>
   <button onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+  <a href="/terms.pdf">⬇ Download PDF</a>
   <a href="/" class="gold">Home →</a>
 </div>
 
-<div class="footer-legal">© 2026 Xelo Media World LTD · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · support@xelo.media</div>
+<div class="footer-legal">© 2026 Xelo Media World LTD · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/terms.pdf">Terms PDF</a> · <a href="/privacy.pdf">Privacy PDF</a> · support@xelo.media</div>
 
 </body>
 </html>
