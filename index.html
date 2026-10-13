@@ -67,12 +67,11 @@ section{padding:72px 0}
 .vthmb.active{border-color:var(--g)}
 .vthmb:hover{border-color:rgba(201,168,76,.5)}
 .vthmb-label{position:absolute;bottom:0;left:0;right:0;padding:4px 6px;background:linear-gradient(transparent,rgba(12,27,46,.85));font-size:9px;font-family:ui-monospace,monospace;color:rgba(255,255,255,.7);letter-spacing:.05em;text-align:center}
-.pain-band{background:var(--n2);padding:32px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
-.pain-inner{display:flex;gap:0;overflow-x:auto}
-.pain-stat{flex:1;min-width:180px;padding:28px 32px;border-right:1px solid rgba(255,255,255,.05);text-align:center}
-.pain-stat:last-child{border-right:none}
-.pain-num{font-family:Arial,Helvetica,sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--red);letter-spacing:-.04em;line-height:1}
-.pain-label{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.5}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:48px}
+.stat-card{background:var(--n3);padding:40px 32px;text-align:center}
+.stat-num{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);color:var(--g);letter-spacing:-.04em;line-height:1}
+.stat-label{font-size:15px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.55}
+.stat-source{font-size:10px;color:var(--dim);margin-top:10px;font-family:ui-monospace,monospace;letter-spacing:.04em}
 .steps{display:flex;flex-direction:column;gap:0;margin-top:56px;position:relative}
 .steps::before{content:'';position:absolute;left:19px;top:38px;bottom:38px;width:2px;background:linear-gradient(to bottom,var(--g),rgba(201,168,76,.1));opacity:.4}
 .step{display:grid;grid-template-columns:40px 1fr;gap:24px;padding:28px 0;align-items:start}
@@ -193,7 +192,6 @@ footer a:hover{color:var(--g)}
   html{scroll-snap-type:y mandatory;scroll-padding-top:72px}
   .hero{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;align-items:stretch;padding:0}
   .hero>.wrap{padding:88px 48px 60px;flex:1 0 auto;display:flex;align-items:center}
-  .hero>.pain-band{flex-shrink:0}
   section{scroll-snap-align:start;min-height:calc(100vh - 72px);display:flex;align-items:center;padding:64px 0}
   .cta-section{scroll-snap-align:start;min-height:calc(100vh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 48px;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
   .hero>.wrap,section>.wrap,section>.wrap-sm{width:100%}
@@ -206,6 +204,8 @@ footer a:hover{color:var(--g)}
   .hstat{padding:30px 24px}
   .hero-stats{margin-top:40px}
   .hero-ctas{margin-top:40px}
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
+  .stat-card{padding:56px 32px}
   #examples{padding:40px 0}
   #examples .vid-showcase{gap:24px;margin-top:32px}
   #examples .vid-col-right>.vid-card:last-child{display:none}
@@ -320,17 +320,36 @@ footer a:hover{color:var(--g)}
       </div>
     </div>
   </div>
-<div class="pain-band">
+</div>
+
+<section class="bg1" id="stats">
   <div class="wrap">
-    <div class="pain-inner">
-      <div class="pain-stat"><div class="pain-num">Most</div><div class="pain-label">property listings<br>have no video at all</div></div>
-      <div class="pain-stat"><div class="pain-num">More</div><div class="pain-label">enquiries on listings<br>with professional video</div></div>
-      <div class="pain-stat"><div class="pain-num">€400+</div><div class="pain-label">traditional videographer cost<br>per property</div></div>
-      <div class="pain-stat"><div class="pain-num">2.5 hrs</div><div class="pain-label">spent on listing copy<br>per property, on average</div></div>
+    <div class="eyebrow ctr">The research</div>
+    <h2 class="h2 ctr">Why video wins.</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">4×</div>
+        <div class="stat-label">more contacts on listings<br>with video</div>
+        <div class="stat-source">Source: idealista, professional portal data</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">73%</div>
+        <div class="stat-label">of sellers prefer an agent<br>who markets with video</div>
+        <div class="stat-source">Source: NAR, 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">51%</div>
+        <div class="stat-label">of buyers more likely to book a viewing<br>after watching a video</div>
+        <div class="stat-source">Source: Zillow, 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1 in 10</div>
+        <div class="stat-label">listings<br>actually has video</div>
+        <div class="stat-source">Source: NAR, 2025</div>
+      </div>
     </div>
   </div>
-</div>
-</div>
+</section>
 
 <section class="bg0" id="examples">
   <div class="wrap">
@@ -537,10 +556,11 @@ footer a:hover{color:var(--g)}
           <tr><td>Xelo Market listing</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>James AI buyer assistant</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>AI listing copywriting</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>Enquiry conversion uplift</td><td class="xelo-col">4× vs no video</td><td>4× vs no video</td><td>2× vs no video</td><td>Baseline</td></tr>
+          <tr><td>Enquiry conversion uplift <sup style="font-size:9px;color:var(--dim)">¹</sup></td><td class="xelo-col">4× vs no video</td><td>4× vs no video</td><td>2× vs no video</td><td>Baseline</td></tr>
         </tbody>
       </table>
     <div style="margin-top:8px;font-size:10px;color:var(--dim);font-family:ui-monospace,monospace">Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75</div>
+    <div style="margin-top:4px;font-size:10px;color:var(--dim);font-family:ui-monospace,monospace">¹ Enquiry conversion uplift — Source: idealista portal data; NAR 2025</div>
   </div>
 </section>
 
