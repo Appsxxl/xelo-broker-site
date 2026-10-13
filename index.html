@@ -175,8 +175,16 @@ section{padding:90px 0}
 .cta-tag{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.16em;color:rgba(201,168,76,.6);text-transform:uppercase;margin-bottom:20px}
 .cta-h{font-family:Arial,Helvetica,sans-serif;font-size:clamp(32px,5vw,62px);font-weight:800;line-height:1;letter-spacing:-.045em;color:#fff;text-wrap:balance}
 .cta-h span{color:var(--g)}
-.cta-btns{display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.cta-sub{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:clamp(18px,2.2vw,28px);color:var(--g);margin-top:16px;letter-spacing:-.025em;line-height:1.1}
+.cta-grid{display:grid;grid-template-columns:1fr;gap:40px;width:100%;max-width:1400px}
+.cta-btns{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
 .cta-note{margin-top:18px;font-size:12px;color:var(--dim)}
+.cta-proof{display:flex;flex-direction:column;gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
+.cta-proof-item{background:rgba(12,27,46,.7);padding:22px 32px}
+.cta-proof-item:not(:last-child){border-bottom:1px solid var(--bdr)}
+.cta-proof-num{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(28px,3vw,44px);color:var(--g);letter-spacing:-.04em;line-height:1}
+.cta-proof-text{font-size:15px;color:rgba(255,255,255,.85);margin-top:6px;line-height:1.4}
+.cta-proof-src{font-size:11px;color:var(--dim);margin-top:3px;font-family:ui-monospace,monospace;letter-spacing:.02em}
 footer{background:var(--n);padding:32px 48px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
 footer a{font-size:12px;color:var(--dim);text-decoration:none}
 footer a:hover{color:var(--g)}
@@ -243,6 +251,11 @@ footer a:hover{color:var(--g)}
   .cta-h{font-size:clamp(52px,6vw,96px)}
   .cta-btns{margin-top:48px}
   .cta-note{font-size:13px;margin-top:24px}
+  .cta-grid{grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .cta-left{text-align:left}
+  .cta-left .cta-h{font-size:clamp(32px,3.5vw,54px)}
+  .cta-left .cta-btns{justify-content:flex-start;margin-top:36px}
+  .cta-left .cta-note{text-align:left}
   .btn.big{padding:20px 52px;font-size:17px}
 }
   </style>
@@ -686,14 +699,37 @@ footer a:hover{color:var(--g)}
 </section>
 
 <div class="cta-section" id="contact">
-  <div class="cta-tag">Start today</div>
-  <h2 class="cta-h">Stop losing buyers to agents<br>with <span>better video.</span></h2>
-  <p style="font-size:17px;color:var(--soft);margin-top:20px;line-height:1.7">Every day without video, a buyer lands on your listing and leaves.<br>Your first listing video is free. No credit card.</p>
-  <div class="cta-btns">
-    <a href="https://app.xelo.media/register" class="btn gold big">Make your first video free</a>
-    <a href="https://app.xelo.media/market" class="btn ghost big">See Xelo Market →</a>
+  <div class="cta-grid">
+    <div class="cta-left">
+      <h2 class="cta-h">Stop losing buyers to agents<br>with <span>better video.</span></h2>
+      <div class="cta-sub">Your next listing could have a video tonight.</div>
+      <p style="font-size:16px;color:var(--dim);margin-top:16px;line-height:1.7;max-width:520px">Every day without video, a buyer lands on your listing and leaves. Your first listing video is free. No credit card.</p>
+      <div class="cta-btns">
+        <a href="https://app.xelo.media/register" class="btn gold big">Make your first video free</a>
+        <a href="https://app.xelo.media/market" class="btn ghost big">See Xelo Market →</a>
+      </div>
+      <div class="cta-note">Trial includes 1 listing video · No credit card required · Cancel anytime</div>
+    </div>
+    <div>
+      <div class="cta-proof">
+        <div class="cta-proof-item">
+          <div class="cta-proof-num">4×</div>
+          <div class="cta-proof-text">more contacts on listings with video</div>
+          <div class="cta-proof-src">idealista portal data</div>
+        </div>
+        <div class="cta-proof-item">
+          <div class="cta-proof-num">73%</div>
+          <div class="cta-proof-text">of sellers prefer an agent who markets with video</div>
+          <div class="cta-proof-src">NAR, 2025</div>
+        </div>
+        <div class="cta-proof-item">
+          <div class="cta-proof-num">9 min</div>
+          <div class="cta-proof-text">from photos to published video</div>
+          <div class="cta-proof-src">typical generation time</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="cta-note">Trial includes 1 listing video · No credit card required · Cancel anytime</div>
 </div>
 
 <footer>
