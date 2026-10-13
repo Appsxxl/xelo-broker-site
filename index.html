@@ -141,6 +141,10 @@ section{padding:90px 0}
 .testi-meta{font-size:11px;color:var(--dim)}
 .testi-tag{font-size:9px;color:var(--g);letter-spacing:.1em;font-family:ui-monospace,monospace;margin-top:3px;text-transform:uppercase}
 .plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.pricing-top{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;margin-bottom:14px}
+.pricing-hd{display:flex;flex-direction:column;justify-content:center;padding:28px 0}
+.plans-lower{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.3);color:#3fb950;font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:6px;margin-bottom:10px;width:fit-content}
 .plan-vat{font-size:10px;color:var(--dim);margin-top:3px;letter-spacing:.02em}
 .plan-agency{background:linear-gradient(135deg,rgba(20,18,12,1) 0%,rgba(35,28,15,1) 100%);border:1px solid rgba(201,168,76,.35);border-radius:14px}
 .plan-agency .plan-name{color:#C9A84C}
@@ -191,6 +195,8 @@ footer a:hover{color:var(--g)}
 @media(max-width:900px){
   .hero-grid,.market-layout,.james-layout,.embed-layout{grid-template-columns:1fr}
   .plans-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-top{grid-template-columns:1fr}
+  .plans-lower{grid-template-columns:repeat(2,1fr)}
   .testi-grid{grid-template-columns:1fr}
   nav .nv,.nc .ghost{display:none}
   .wrap{padding:0 24px}.wrap-sm{padding:0 24px}
@@ -198,7 +204,7 @@ footer a:hover{color:var(--g)}
   nav{padding:0 24px}
   footer{padding:24px}
 }
-@media(max-width:600px){.plans-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}}
+@media(max-width:600px){.plans-grid{grid-template-columns:1fr}.plans-lower{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}}
 @media(min-width:901px){
   html{scroll-padding-top:72px}
   .hero{display:flex;flex-direction:column;align-items:stretch;padding:0}
@@ -308,20 +314,20 @@ footer a:hover{color:var(--g)}
         <div class="video-mock" id="hero-mock">
           <div class="vid-label" id="hero-label">VERTICAL · 9:16 · SOCIAL PACK</div>
           <video id="hero-video" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-            <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4">
+            <source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4">
           </video>
         </div>
         <div style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
-          <div class="vthmb active" onclick="switchHero(this,'https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4','VERTICAL · 9:16 · SOCIAL PACK','9/16')">
-            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4"></video>
+          <div class="vthmb active" onclick="switchHero(this,'https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4','VERTICAL · 9:16 · SOCIAL PACK','9/16')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4"></video>
             <span class="vthmb-label">9:16 · Social</span>
           </div>
           <div class="vthmb" style="aspect-ratio:16/9" onclick="switchHero(this,'https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT','16/9')">
             <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
             <span class="vthmb-label">16:9 · MLS</span>
           </div>
-          <div class="vthmb" style="aspect-ratio:16/9" onclick="switchHero(this,'https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT','16/9')">
-            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
+          <div class="vthmb" style="aspect-ratio:16/9" onclick="switchHero(this,'https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT','16/9')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
             <span class="vthmb-label">16:9 · MLS</span>
           </div>
         </div>
@@ -366,11 +372,11 @@ footer a:hover{color:var(--g)}
     <div class="vid-showcase">
       <div class="vid-card" style="aspect-ratio:9/16;max-height:400px">
         <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-          <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4">
+          <source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4">
         </video>
         <div class="vid-card-label">
           <div class="vid-format">✦ SOCIAL · 9:16</div>
-          <strong>Modern Villa with Pool</strong>
+          <strong>Luxury Villa — Sierra Cortina</strong>
           Finestrat, Alicante · Spain
         </div>
       </div>
@@ -573,11 +579,14 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="pricing">
   <div class="wrap">
-    <h2 class="h2">One price per listing.<br><span class="g">Everything included.</span></h2>
-    <p class="sub">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
-    <div class="plans-grid" id="plans-grid">
+    <div class="pricing-top">
+      <div class="pricing-hd">
+        <h2 class="h2">One price per listing.<br><span class="g">Everything included.</span></h2>
+        <p class="sub" style="margin-top:16px">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
+      </div>
       <div class="plan">
         <div class="plan-name">Trial</div>
+        <div class="free-badge">FREE</div>
         <div class="plan-price">€0</div>
         <div class="plan-vat">excl. VAT</div>
         <div class="plan-sub">Free to start · 1 listing video · 36s of video</div>
@@ -597,6 +606,8 @@ footer a:hover{color:var(--g)}
         <div style="margin-bottom:16px;padding:10px 14px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.6">Attend the free training and earn your first month free: 192 seconds, 4 listings, no watermark. <span style="color:rgba(255,255,255,.35)">Training link coming soon.</span></div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Start free</a>
       </div>
+    </div><!-- /pricing-top -->
+    <div class="plans-lower" id="plans-grid">
       <div class="plan">
         <div class="plan-name">Starter</div>
         <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
