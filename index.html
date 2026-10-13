@@ -88,6 +88,15 @@ section{padding:90px 0}
 .feat-desc{font-size:17px;color:var(--dim);line-height:1.65}
 .market-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
 .mcard{background:var(--n3);border:1px solid var(--gbdr);border-radius:16px;overflow:hidden}
+.market-live-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.mc{background:var(--n3);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;text-decoration:none;display:block;transition:border-color .18s}
+.mc:hover{border-color:rgba(201,168,76,.4)}
+.mc-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--n4)}
+.mc-body{padding:16px 18px}
+.mc-price{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:19px;color:var(--g);letter-spacing:-.02em}
+.mc-city{font-size:13px;color:var(--soft);margin-top:3px}
+.mc-specs{font-size:11px;color:var(--dim);margin-top:5px;font-family:ui-monospace,monospace;letter-spacing:.04em}
+.mc-premium{display:inline-flex;align-items:center;gap:4px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--g);font-size:9px;font-family:ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-top:6px}
 .mcard-header{background:rgba(201,168,76,.07);padding:14px 20px;border-bottom:1px solid var(--gbdr);display:flex;align-items:center;gap:10px;font-size:12px;color:var(--soft)}
 .mcard-body{padding:20px}
 .mlisting{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--bdr);align-items:center}
@@ -197,6 +206,7 @@ footer a:hover{color:var(--g)}
   .plans-grid{grid-template-columns:repeat(2,1fr)}
   .pricing-top{grid-template-columns:1fr}
   .plans-lower{grid-template-columns:repeat(2,1fr)}
+  .market-live-grid{grid-template-columns:repeat(2,1fr)}
   .testi-grid{grid-template-columns:1fr}
   nav .nv,.nc .ghost{display:none}
   .wrap{padding:0 24px}.wrap-sm{padding:0 24px}
@@ -204,7 +214,7 @@ footer a:hover{color:var(--g)}
   nav{padding:0 24px}
   footer{padding:24px}
 }
-@media(max-width:600px){.plans-grid{grid-template-columns:1fr}.plans-lower{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}}
+@media(max-width:600px){.plans-grid{grid-template-columns:1fr}.plans-lower{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}.market-live-grid{grid-template-columns:1fr}}
 @media(min-width:901px){
   html{scroll-padding-top:72px}
   .hero{display:flex;flex-direction:column;align-items:stretch;padding:0}
@@ -314,20 +324,20 @@ footer a:hover{color:var(--g)}
         <div class="video-mock" id="hero-mock">
           <div class="vid-label" id="hero-label">VERTICAL · 9:16 · SOCIAL PACK</div>
           <video id="hero-video" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-            <source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4">
+            <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4">
           </video>
         </div>
         <div style="margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
-          <div class="vthmb active" onclick="switchHero(this,'https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4','VERTICAL · 9:16 · SOCIAL PACK','9/16')">
-            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4"></video>
+          <div class="vthmb active" onclick="switchHero(this,'https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4','VERTICAL · 9:16 · SOCIAL PACK','9/16')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4"></video>
             <span class="vthmb-label">9:16 · Social</span>
           </div>
           <div class="vthmb" style="aspect-ratio:16/9" onclick="switchHero(this,'https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT','16/9')">
             <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
             <span class="vthmb-label">16:9 · MLS</span>
           </div>
-          <div class="vthmb" style="aspect-ratio:16/9" onclick="switchHero(this,'https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT','16/9')">
-            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
+          <div class="vthmb" style="aspect-ratio:16/9" onclick="switchHero(this,'https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx16x9_en.mp4','HORIZONTAL · 16:9 · MLS FORMAT','16/9')">
+            <video muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"><source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx16x9_en.mp4" type="video/mp4"></video>
             <span class="vthmb-label">16:9 · MLS</span>
           </div>
         </div>
@@ -367,43 +377,56 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="examples">
   <div class="wrap">
-    <h2 class="h2">This is what your<br>listings look like <span class="g">with Xelo.</span></h2>
-    <p class="sub">Every video below was generated from photos — no videographer, no editing, no studio. MLS 16:9 for portals and social 9:16 for Instagram, delivered together.</p>
-    <div class="vid-showcase">
-      <div class="vid-card" style="aspect-ratio:9/16;max-height:400px">
-        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-          <source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4">
-        </video>
-        <div class="vid-card-label">
-          <div class="vid-format">✦ SOCIAL · 9:16</div>
-          <strong>Luxury Villa — Sierra Cortina</strong>
-          Finestrat, Alicante · Spain
-        </div>
-      </div>
-      <div class="vid-col-right">
-        <div class="vid-card" style="aspect-ratio:16/9">
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-            <source src="https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4" type="video/mp4">
-          </video>
-          <div class="vid-card-label">
-            <div class="vid-format">✦ MLS · 16:9</div>
-            <strong>Sierra Cortina, Costa Blanca</strong>
-            Alicante · Spain
-          </div>
-        </div>
-        <div class="vid-card" style="aspect-ratio:16/9">
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-            <source src="https://app.xelo.media/public/listings/65b306e3-16ec-4773-ad02-bd2dbdfebdae/video_walkthroughx16x9_en.mp4" type="video/mp4">
-          </video>
-          <div class="vid-card-label">
-            <div class="vid-format">✦ MLS · 16:9</div>
-            <strong>Art Deco Villa — Kintjanweg</strong>
-            Willemstad, Curaçao
-          </div>
-        </div>
+    <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
+    <p class="sub">Every listing below has a cinematic walkthrough, copy in 9 languages, and James answering buyer enquiries — right now.</p>
+
+    <!-- Live market cards — populated by JS; hidden until data arrives -->
+    <div id="market-cards-live" style="display:none">
+      <div class="market-live-grid" id="market-cards-grid"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;flex-wrap:wrap;gap:12px">
+        <div style="font-size:11px;color:var(--dim);font-family:ui-monospace,monospace;letter-spacing:.04em" id="market-cards-ts"></div>
+        <a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn ghost" style="font-size:14px;padding:10px 22px">View all on Xelo Market →</a>
       </div>
     </div>
-    <div style="text-align:center;margin-top:28px;font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</div>
+
+    <!-- Static fallback — shown if fetch fails -->
+    <div id="market-cards-fallback">
+      <div class="vid-showcase">
+        <div class="vid-card" style="aspect-ratio:9/16;max-height:400px">
+          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+            <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4">
+          </video>
+          <div class="vid-card-label">
+            <div class="vid-format">✦ SOCIAL · 9:16</div>
+            <strong>Modern Villa with Pool</strong>
+            Finestrat, Alicante · Spain
+          </div>
+        </div>
+        <div class="vid-col-right">
+          <div class="vid-card" style="aspect-ratio:16/9">
+            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+              <source src="https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4" type="video/mp4">
+            </video>
+            <div class="vid-card-label">
+              <div class="vid-format">✦ MLS · 16:9</div>
+              <strong>Sierra Cortina, Costa Blanca</strong>
+              Alicante · Spain
+            </div>
+          </div>
+          <div class="vid-card" style="aspect-ratio:16/9">
+            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+              <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx16x9_en.mp4" type="video/mp4">
+            </video>
+            <div class="vid-card-label">
+              <div class="vid-format">✦ MLS · 16:9</div>
+              <strong>Modern Villa with Pool</strong>
+              Finestrat, Alicante · Spain
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:28px;font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</div>
+    </div>
   </div>
 </section>
 
@@ -802,9 +825,15 @@ document.addEventListener('DOMContentLoaded', function() {
     v.parentElement.addEventListener('mouseenter', function() { v.play().catch(function(){}); });
     v.parentElement.addEventListener('mouseleave', function() { v.pause(); });
   });
-  // Explicit play() for all autoplay videos — Safari requires this even with muted+autoplay attrs
+  // Explicit play() — immediate attempt + canplay retry for uncached cross-origin videos
   document.querySelectorAll('video[autoplay]').forEach(function(v) {
-    v.play().catch(function(){});
+    var started = false;
+    function tryPlay() {
+      if (started) return;
+      v.play().then(function() { started = true; }).catch(function() {});
+    }
+    tryPlay();
+    v.addEventListener('canplay', tryPlay, { once: true });
   });
   // IntersectionObserver for out-of-viewport autoplay videos (Safari scroll-into-view)
   if ('IntersectionObserver' in window) {
@@ -816,6 +845,43 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('video[autoplay]').forEach(function(v) { vio.observe(v); });
   }
 });
+// Live market cards
+(function() {
+  fetch('/api/market-cards').then(function(r) { return r.json(); }).then(function(data) {
+    if (!data.ok || !data.cards) return;
+    var valid = data.cards.filter(function(c) { return c.price; });
+    if (valid.length < 3) return;
+    var grid = document.getElementById('market-cards-grid');
+    if (!grid) return;
+    valid.slice(0, 6).forEach(function(c) {
+      var priceStr = '€' + Number(c.price).toLocaleString('nl-NL');
+      var specs = [];
+      if (c.beds) specs.push(c.beds + ' beds');
+      if (c.area) specs.push(c.area + ' m²');
+      var el = document.createElement('a');
+      el.href = c.url;
+      el.target = '_blank';
+      el.rel = 'noopener';
+      el.className = 'mc';
+      el.innerHTML =
+        '<img class="mc-img" src="' + c.thumbnail + '" alt="' + (c.city || '') + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+        '<div class="mc-body">' +
+          (c.premium ? '<div class="mc-premium">✦ FEATURED</div>' : '') +
+          '<div class="mc-price">' + priceStr + '</div>' +
+          '<div class="mc-city">' + (c.city || '') + '</div>' +
+          (specs.length ? '<div class="mc-specs">' + specs.join(' · ') + '</div>' : '') +
+        '</div>';
+      grid.appendChild(el);
+    });
+    document.getElementById('market-cards-live').style.display = '';
+    document.getElementById('market-cards-fallback').style.display = 'none';
+    var ts = document.getElementById('market-cards-ts');
+    if (ts && data.generated_at) {
+      var d = new Date(data.generated_at);
+      ts.textContent = 'Live data · ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+  }).catch(function() {});
+})();
 // Scrollspy: highlight nav link of section in view
 (function() {
   if (!('IntersectionObserver' in window)) return;
