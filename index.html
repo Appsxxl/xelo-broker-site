@@ -189,6 +189,56 @@ footer a:hover{color:var(--g)}
   footer{padding:24px}
 }
 @media(max-width:600px){.plans-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}}
+@media(min-width:901px){
+  html{scroll-snap-type:y proximity;scroll-padding-top:72px}
+  .hero{scroll-snap-align:start;min-height:100vh;display:flex;align-items:center;padding:88px 0 60px}
+  section{scroll-snap-align:start;min-height:calc(100vh - 72px);scroll-margin-top:72px;display:flex;align-items:center;padding:64px 0}
+  .cta-section{scroll-snap-align:start;min-height:calc(100vh - 72px);scroll-margin-top:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 48px;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
+  .hero>.wrap,section>.wrap,section>.wrap-sm{width:100%}
+  nav{height:72px}
+  .nv a{font-size:14px}
+  .hero-grid{grid-template-columns:1fr 480px;gap:64px}
+  .video-mock{max-height:520px}
+  .hnum{font-size:clamp(30px,2.5vw,44px)}
+  .hstat{padding:30px 24px}
+  .hero-stats{margin-top:40px}
+  .hero-ctas{margin-top:40px}
+  #examples{padding:60px 0}
+  #examples .vid-showcase{gap:24px;margin-top:40px}
+  .market-layout{gap:80px;margin-top:48px}
+  .mcard-body{padding:28px}
+  .mlisting{padding:16px 0}
+  .mthumbnail{width:72px;height:56px}
+  .mprice{font-size:16px}
+  .maddr{font-size:13px}
+  .mperk-text strong{font-size:15px}
+  .mperk-text span{font-size:13px}
+  .mperk{gap:16px}
+  .james-layout{gap:80px;margin-top:48px}
+  .chat-mock{font-size:15px}
+  .chat-bubble{padding:13px 18px}
+  .chat-body{gap:16px;padding:22px}
+  .chat-avatar{width:34px;height:34px;font-size:14px}
+  .james-perks{gap:20px}
+  .embed-layout{gap:80px;margin-top:48px}
+  .code-body{font-size:15px;line-height:2.1;padding:28px 24px}
+  .eperk{font-size:15px}
+  .embed-perks{gap:18px;margin-top:32px}
+  .comp-wrap{margin-top:48px}
+  .comp-table th{font-size:14px;padding:22px 28px}
+  .comp-table td{font-size:15px;padding:20px 28px}
+  .yes,.no{font-size:20px}
+  .wrap-sm{max-width:1040px}
+  .faq-list{margin-top:48px}
+  .faq-q{font-size:17px;padding:26px 36px}
+  .faq-a-inner{font-size:15px;padding:0 36px 28px;line-height:1.9}
+  .faq-arrow{font-size:24px}
+  .cta-tag{font-size:12px;letter-spacing:.2em;margin-bottom:32px}
+  .cta-h{font-size:clamp(52px,6vw,96px)}
+  .cta-btns{margin-top:48px}
+  .cta-note{font-size:13px;margin-top:24px}
+  .btn.big{padding:20px 52px;font-size:17px}
+}
   </style>
 </head>
 <body>
@@ -221,7 +271,7 @@ footer a:hover{color:var(--g)}
           <div class="hstat"><div class="hnum">2</div><div class="hlabel">formats: 16:9 + 9:16</div></div>
           <div class="hstat"><div class="hnum">from €20.75</div><div class="hlabel">per listing video, Professional plan</div></div>
         </div>
-        <div style="margin-top:8px;font-size:10px;color:var(--dim);font-family:ui-monospace,monospace">Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75</div>
+        <div style="margin-top:8px;font-size:12px;color:var(--dim);font-family:ui-monospace,monospace">Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75</div>
         <div class="hero-ctas">
           <a href="https://app.xelo.media/register" class="btn gold big">Start free</a>
           <a href="#how" class="btn ghost big">See how it works</a>
@@ -276,7 +326,7 @@ footer a:hover{color:var(--g)}
     <h2 class="h2">This is what your<br>listings look like <span class="g">with Xelo.</span></h2>
     <p class="sub">Every video below was generated from photos — no videographer, no editing, no studio. MLS 16:9 for portals and social 9:16 for Instagram, delivered together.</p>
     <div class="vid-showcase">
-      <div class="vid-card" style="aspect-ratio:9/16;max-height:540px">
+      <div class="vid-card" style="aspect-ratio:9/16;max-height:680px">
         <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
           <source src="https://app.xelo.media/public/landing/sierra_cortina_9x16.mp4" type="video/mp4">
         </video>
@@ -563,21 +613,21 @@ footer a:hover{color:var(--g)}
     <div class="eyebrow">Buy more, any time</div>
     <h2 class="h2" style="margin-bottom:8px">No subscription needed.</h2>
     <p class="sub" style="margin-bottom:40px">Pay once, activate instantly. Same video quality as any paid plan.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:20px">
-      <div style="background:var(--n4);border:1px solid var(--bdr);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px">Extra listing slot</div>
-        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:36px;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:4px">€89</div>
-        <div style="font-size:12px;color:var(--dim);margin-bottom:18px">One additional active listing</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:20px">
+      <div style="background:var(--n4);border:1px solid var(--bdr);border-radius:14px;padding:36px 32px;display:flex;flex-direction:column">
+        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px">Extra listing slot</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:44px;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:4px">€89</div>
+        <div style="font-size:13px;color:var(--dim);margin-bottom:18px">One additional active listing</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px">
           <div class="pf"><span class="pf-check">✓</span> Same features as your plan</div>
           <div class="pf"><span class="pf-check">✓</span> Valid until you remove the listing</div>
         </div>
         <div style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 20px;font-size:13px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.06em">coming soon</div>
       </div>
-      <div style="background:var(--n4);border:1px solid var(--bdr);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px">Video seconds top-up</div>
-        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:36px;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:4px">€21<span style="font-size:16px;font-weight:400;color:var(--dim);margin-left:6px">for 60s</span></div>
-        <div style="font-size:12px;color:var(--dim);margin-bottom:18px">€0.35 per second · ~7 clips</div>
+      <div style="background:var(--n4);border:1px solid var(--bdr);border-radius:14px;padding:36px 32px;display:flex;flex-direction:column">
+        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px">Video seconds top-up</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:44px;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:4px">€21<span style="font-size:16px;font-weight:400;color:var(--dim);margin-left:6px">for 60s</span></div>
+        <div style="font-size:13px;color:var(--dim);margin-bottom:18px">€0.35 per second · ~7 clips</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px">
           <div class="pf"><span class="pf-check">✓</span> Added to your current month</div>
           <div class="pf"><span class="pf-check">✓</span> Re-renders draw from your pool</div>
@@ -586,14 +636,14 @@ footer a:hover{color:var(--g)}
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bdr);border-radius:12px;overflow:hidden;margin-bottom:20px">
-      <div style="background:var(--n3);padding:24px 28px">
+      <div style="background:var(--n3);padding:28px 36px">
         <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;margin-bottom:10px">Traditional videographer</div>
-        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:26px;color:var(--red);letter-spacing:-.03em;margin-bottom:4px">€345–1,250</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:32px;color:var(--red);letter-spacing:-.03em;margin-bottom:4px">€345–1,250</div>
         <div style="font-size:12px;color:var(--dim)">per property · scheduling, a shoot day, days of editing</div>
       </div>
-      <div style="background:var(--n3);padding:24px 28px">
+      <div style="background:var(--n3);padding:28px 36px">
         <div style="font-size:10px;font-family:ui-monospace,monospace;letter-spacing:.14em;color:var(--g);text-transform:uppercase;margin-bottom:10px">Xelo</div>
-        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:26px;color:var(--g);letter-spacing:-.03em;margin-bottom:4px">€89</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:32px;color:var(--g);letter-spacing:-.03em;margin-bottom:4px">€89</div>
         <div style="font-size:12px;color:var(--dim)">per listing · ready in minutes · video, copy, portal &amp; James included</div>
       </div>
     </div>
