@@ -26,7 +26,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,27,46,.95
 .gold{background:var(--g);color:#0C1B2E}
 .gold:hover{background:var(--g2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.3)}
 .big{padding:15px 36px;font-size:15px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.wrap{max-width:1400px;margin:0 auto;padding:0 48px}
 .wrap-sm{max-width:780px;margin:0 auto;padding:0 48px}
 section{padding:90px 0}
 .eyebrow{font-family:ui-monospace,'SF Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--g);text-transform:uppercase;margin-bottom:18px}
@@ -69,7 +69,7 @@ section{padding:90px 0}
 .vthmb-label{position:absolute;bottom:0;left:0;right:0;padding:4px 6px;background:linear-gradient(transparent,rgba(12,27,46,.85));font-size:9px;font-family:ui-monospace,monospace;color:rgba(255,255,255,.7);letter-spacing:.05em;text-align:center}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:48px}
 .stat-card{background:var(--n3);padding:40px 32px;text-align:center}
-.stat-num{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(40px,5vw,72px);color:var(--g);letter-spacing:-.04em;line-height:1}
+.stat-num{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(48px,5vw,84px);color:var(--g);letter-spacing:-.04em;line-height:1}
 .stat-label{font-size:15px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.55}
 .stat-source{font-size:13px;color:var(--dim);margin-top:12px;font-family:ui-monospace,monospace;letter-spacing:.02em}
 .stat-source a{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
@@ -79,12 +79,13 @@ section{padding:90px 0}
 .step{display:grid;grid-template-columns:40px 1fr;gap:24px;padding:28px 0;align-items:start}
 .step:not(:last-child){border-bottom:1px solid var(--bdr)}
 .step-n{width:40px;height:40px;border-radius:50%;background:rgba(201,168,76,.1);border:1.5px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:14px;color:var(--g);flex-shrink:0;position:relative;z-index:1}
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:56px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:56px}
 .feat{background:var(--n3);padding:28px;transition:background .2s}
 .feat:hover{background:var(--n4)}
-.feat-icon{width:24px;height:24px;margin-bottom:16px;color:#E8ECF4;display:flex;align-items:center;justify-content:center}
+.feat-icon{width:28px;height:28px;margin-bottom:16px;color:#E8ECF4;display:flex;align-items:center;justify-content:center}
+.feat-icon svg{width:28px;height:28px}
 .feat-title{font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.feat-desc{font-size:16px;color:var(--dim);line-height:1.65}
+.feat-desc{font-size:17px;color:var(--dim);line-height:1.65}
 .market-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
 .mcard{background:var(--n3);border:1px solid var(--gbdr);border-radius:16px;overflow:hidden}
 .mcard-header{background:rgba(201,168,76,.07);padding:14px 20px;border-bottom:1px solid var(--gbdr);display:flex;align-items:center;gap:10px;font-size:12px;color:var(--soft)}
@@ -191,11 +192,11 @@ footer a:hover{color:var(--g)}
 }
 @media(max-width:600px){.plans-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}}
 @media(min-width:901px){
-  html{scroll-snap-type:y mandatory;scroll-padding-top:72px}
-  .hero{scroll-snap-align:start;min-height:100vh;display:flex;flex-direction:column;align-items:stretch;padding:0}
+  html{scroll-padding-top:72px}
+  .hero{display:flex;flex-direction:column;align-items:stretch;padding:0}
   .hero>.wrap{padding:88px 48px 88px;flex:1 0 auto;display:flex;align-items:center}
-  section{scroll-snap-align:start;min-height:calc(100vh - 72px);display:flex;flex-direction:column;align-items:center;padding:90px 0}
-  .cta-section{scroll-snap-align:start;min-height:calc(100vh - 72px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 48px;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
+  section{display:flex;flex-direction:column;align-items:center;padding:90px 0}
+  .cta-section{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 48px;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
   .hero>.wrap,section>.wrap,section>.wrap-sm{width:100%}
   nav{height:72px}
   .nv{gap:16px}
@@ -206,7 +207,7 @@ footer a:hover{color:var(--g)}
   .hstat{padding:30px 24px}
   .hero-stats{margin-top:40px}
   .hero-ctas{margin-top:40px}
-  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
   .stat-card{padding:56px 32px}
   #examples{padding:40px 0}
   #examples .vid-showcase{gap:24px;margin-top:32px}
@@ -231,14 +232,13 @@ footer a:hover{color:var(--g)}
   .embed-perks{gap:18px;margin-top:32px}
   .comp-wrap{margin-top:48px}
   .comp-table th{font-size:15px;padding:22px 28px}
-  .comp-table td{font-size:16px;padding:20px 28px}
+  .comp-table td{font-size:17px;padding:20px 28px}
   .yes,.no{font-size:20px}
   .wrap-sm{max-width:1040px}
   .faq-list{margin-top:48px}
   .faq-q{font-size:17px;padding:26px 36px}
   .faq-a-inner{font-size:15px;padding:0 36px 28px;line-height:1.9}
   .faq-arrow{font-size:24px}
-  #faq.faq-expanded{scroll-snap-align:none}
   .cta-tag{font-size:12px;letter-spacing:.2em;margin-bottom:32px}
   .cta-h{font-size:clamp(52px,6vw,96px)}
   .cta-btns{margin-top:48px}
@@ -278,11 +278,10 @@ footer a:hover{color:var(--g)}
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">AI video for European real estate agents</div>
         <h1 class="h1">Every listing.<br><span class="g">9 languages.</span><br>In minutes.</h1>
         <div style="margin-top:22px;font-size:17px;color:var(--soft);line-height:1.75;max-width:520px">Upload your photos. Xelo generates the video and writes your property description in 9 languages — published automatically.</div>
         <div class="hero-stats">
-          <div class="hstat"><div class="hnum">9</div><div class="hlabel">languages, written</div><div title="English, Spanish, Dutch, German, French, Russian, Portuguese, Swedish, Chinese" style="margin-top:7px;font-size:13px;letter-spacing:2px;line-height:1.2">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇵🇹🇸🇪🇨🇳</div></div>
+          <div class="hstat"><div class="hnum">9</div><div class="hlabel">languages, written</div><div title="English, Spanish, Dutch, German, French, Russian, Arabic, Chinese, Swedish" style="margin-top:7px;font-size:13px;letter-spacing:2px;line-height:1.2">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇸🇦🇨🇳🇸🇪</div></div>
           <div class="hstat"><div class="hnum">2</div><div class="hlabel">formats: 16:9 + 9:16</div></div>
           <div class="hstat"><div class="hnum">from €20.75</div><div class="hlabel">per listing video, Professional plan</div></div>
         </div>
@@ -320,7 +319,6 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="stats">
   <div class="wrap">
-    <div class="eyebrow ctr">The research</div>
     <h2 class="h2 ctr">Why video wins.</h2>
     <p class="sub ctr" style="margin-top:16px">The numbers behind listings with video.</p>
     <div class="stats-grid">
@@ -335,6 +333,11 @@ footer a:hover{color:var(--g)}
         <div class="stat-source">Source: <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
       </div>
       <div class="stat-card">
+        <div class="stat-num">58%</div>
+        <div class="stat-label">of buyers expect video<br>tours as standard</div>
+        <div class="stat-source">Source: <a href="https://www.amplifiles.ai/blog/8-real-estate-video-statistics-every-realtor-should-know" target="_blank" rel="noopener">real-estate video statistics 2025</a>, via amplifiles.ai</div>
+      </div>
+      <div class="stat-card">
         <div class="stat-num">1 in 10</div>
         <div class="stat-label">listings<br>actually has video</div>
         <div class="stat-source">Source: <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
@@ -345,7 +348,6 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="examples">
   <div class="wrap">
-    <div class="eyebrow">Real output — no mockups</div>
     <h2 class="h2">This is what your<br>listings look like <span class="g">with Xelo.</span></h2>
     <p class="sub">Every video below was generated from photos — no videographer, no editing, no studio. MLS 16:9 for portals and social 9:16 for Instagram, delivered together.</p>
     <div class="vid-showcase">
@@ -388,13 +390,12 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="how">
   <div class="wrap">
-    <div class="eyebrow">How it works</div>
     <h2 class="h2">Five steps.<br><span class="g">All automatic.</span></h2>
     <p class="sub">From photos to published video in less time than it takes to write one email.</p>
     <div class="steps">
       <div class="step"><div class="step-n">1</div><div><div class="h3">Upload your listing photos</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Upload 5–30 photos from your phone, camera, or MLS export. Xelo accepts any format.</div></div></div>
       <div class="step"><div class="step-n">2</div><div><div class="h3">AI writes your property description</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Xelo analyses the photos and generates a professional property description tailored to European buyers — highlights, neighbourhood, price context.</div></div></div>
-      <div class="step"><div class="step-n">3</div><div><div class="h3">Copy in 9 languages, ready for every buyer</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your property description is written in 9 languages — English, Spanish, Dutch, German, French, Russian, Portuguese, Mandarin, Swedish. Formatted for MLS (16:9) and social (9:16).</div></div></div>
+      <div class="step"><div class="step-n">3</div><div><div class="h3">Copy in 9 languages, ready for every buyer</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your property description is written in 9 languages — English, Spanish, Dutch, German, French, Russian, Arabic, Mandarin, Swedish. Formatted for MLS (16:9) and social (9:16).</div></div></div>
       <div class="step"><div class="step-n">4</div><div><div class="h3">Published to Xelo Market automatically</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your listing appears on Xelo Market, the property portal built around video. It goes live to buyers when the portal launches — founding brokers are first in the queue.</div></div></div>
       <div class="step"><div class="step-n">5</div><div><div class="h3">James answers buyer questions 24/7</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">James, Xelo's AI buyer assistant, responds to enquiries, qualifies leads, and forwards serious buyers to you — in their language, any hour.</div></div></div>
     </div>
@@ -403,14 +404,13 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="features">
   <div class="wrap">
-    <div class="eyebrow">What's included</div>
     <h2 class="h2">Everything.<br><span class="g">In one subscription.</span></h2>
     <p class="sub">No agencies, no freelancers, no separate tools. One platform handles the full listing workflow.</p>
     <div class="feat-grid">
       <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="15" height="14" x="1" y="5" rx="2"/><polygon points="23 7 16 12 23 17 23 7"/></svg></div><div class="feat-title">AI Video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">MLS 16:9 + social 9:16. Generated from photos in minutes. No footage needed.</div></div>
       <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div><div class="feat-title">Voice narration <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc">Natural AI speech narrates your listing in the broker's language. Clear and professional — no robotic tone.</div></div>
       <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="feat-title">AI copywriting <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Xelo writes the narration, the listing description, and SEO-ready portal text — all from your photos.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="feat-title">9 languages <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">EN, NL, DE, FR, ES, PT, RU, ZH, SV. Buyers read your listing copy in their own language.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="feat-title">9 languages <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">EN, NL, DE, FR, ES, AR, RU, ZH, SV. Buyers read your listing copy in their own language.</div></div>
       <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div><div class="feat-title">Aerial video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">AI-generated aerial flyover from satellite imagery — added automatically to your listing video.</div></div>
       <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg></div><div class="feat-title">Portal export <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc">Formatted video and copy ready for Idealista, Funda, Immowelt, Rightmove, and 30+ other EU portals.</div></div>
       <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></div><div class="feat-title">James AI assistant <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Buyer enquiry AI that qualifies leads and answers questions in any language — 24/7.</div></div>
@@ -422,7 +422,7 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="market">
   <div class="wrap">
-    <div class="eyebrow">Exclusive to Xelo <span class="live" style="margin-left:0"><span class="live-dot"></span>live now</span></div>
+    <div class="eyebrow"><span class="live"><span class="live-dot"></span>live now</span></div>
     <div class="market-layout">
       <div>
         <h2 class="h2">The property portal<br>built around<br><span class="g">professional video.</span></h2>
@@ -452,7 +452,7 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="james">
   <div class="wrap">
-    <div class="eyebrow">XELO INBOX · James AI assistant <span class="live" style="margin-left:0"><span class="live-dot"></span>live now</span></div>
+    <div class="eyebrow"><span class="live"><span class="live-dot"></span>live now</span></div>
     <div class="james-layout">
       <div>
         <div class="chat-mock">
@@ -488,7 +488,7 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="embed">
   <div class="wrap">
-    <div class="eyebrow">Embed widget <span class="live" style="margin-left:4px"><span class="live-dot"></span>live now</span></div>
+    <div class="eyebrow"><span class="live"><span class="live-dot"></span>live now</span></div>
     <div class="embed-layout">
       <div>
         <h2 class="h2">Put Xelo on<br>your own website.<br><span class="g">One line of code.</span></h2>
@@ -533,7 +533,6 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="compare">
   <div class="wrap">
-    <div class="eyebrow">How Xelo compares</div>
     <h2 class="h2 ctr">Built for European agents.<br><span class="g">Nothing else comes close.</span></h2>
     <div class="comp-wrap">
       <table class="comp-table">
@@ -561,7 +560,6 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="pricing">
   <div class="wrap">
-    <div class="eyebrow ctr">Plans</div>
     <h2 class="h2 ctr">One price per listing.<br><span class="g">Everything included.</span></h2>
     <p class="sub ctr">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
     <div class="plans-grid" id="plans-grid">
@@ -573,15 +571,17 @@ footer a:hover{color:var(--g)}
         <div class="plan-features">
           <div class="pf"><span class="pf-check">✓</span> 1 listing video</div>
           <div class="pf trial-seconds-pf"><span class="pf-check">✓</span> 36 seconds of video</div>
+          <div class="pf"><span class="pf-check">✓</span> 6 clips of 6 seconds — one complete property tour</div>
           <div class="pf"><span class="pf-check">✓</span> All 9 languages</div>
           <div class="pf"><span class="pf-check">✓</span> 16:9 portal + 9:16 social</div>
           <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
           <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
           <div class="pf"><span class="pf-check">✓</span> <span class="training-text">Free live training every week</span></div>
           <div class="pf"><span class="pf-check">✓</span> Personal onboarding with our founder</div>
-          <div class="pf" style="color:var(--dim)"><span class="pf-check" style="color:var(--dim)">i</span> Watermark on trial videos — removed free when you upgrade</div>
+          <div class="pf" style="color:#f59e0b"><span class="pf-check" style="color:#f59e0b">⚠</span> Trial videos carry a small Xelo watermark. When you upgrade, your tour is re-rendered watermark-free, free.</div>
         </div>
-        <div class="plan-flags" title="English · Spanish · Dutch · German · French · Russian · Portuguese · Swedish · Chinese">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇵🇹🇸🇪🇨🇳</div>
+        <div class="plan-flags" title="English · Spanish · Dutch · German · French · Russian · Arabic · Chinese · Swedish">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇸🇦🇨🇳🇸🇪</div>
+        <div style="margin-bottom:16px;padding:10px 14px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.6">Attend the free training and earn your first month free: 192 seconds, 4 listings, no watermark. <span style="color:rgba(255,255,255,.35)">Training link coming soon.</span></div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Start free</a>
       </div>
       <div class="plan">
@@ -595,7 +595,7 @@ footer a:hover{color:var(--g)}
           <div class="pf"><span class="pf-check">✓</span> Portal &amp; social posting</div>
           <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
         </div>
-        <div class="plan-flags" title="English · Spanish · Dutch · German · French · Russian · Portuguese · Swedish · Chinese">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇵🇹🇸🇪🇨🇳</div>
+        <div class="plan-flags" title="English · Spanish · Dutch · German · French · Russian · Arabic · Chinese · Swedish">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇸🇦🇨🇳🇸🇪</div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Get Starter</a>
       </div>
       <div class="plan plan-popular">
@@ -608,7 +608,7 @@ footer a:hover{color:var(--g)}
           <div class="pf"><span class="pf-check">✓</span> 12 listing videos per month</div>
           <div class="pf"><span class="pf-check">✓</span> Everything in Starter</div>
         </div>
-        <div class="plan-flags" title="English · Spanish · Dutch · German · French · Russian · Portuguese · Swedish · Chinese">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇵🇹🇸🇪🇨🇳</div>
+        <div class="plan-flags" title="English · Spanish · Dutch · German · French · Russian · Arabic · Chinese · Swedish">🇬🇧🇪🇸🇳🇱🇩🇪🇫🇷🇷🇺🇸🇦🇨🇳🇸🇪</div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-gold">Get Professional</a>
       </div>
       <div class="plan plan-agency">
@@ -632,7 +632,6 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="buy-more" style="padding:80px 0">
   <div class="wrap">
-    <div class="eyebrow">Buy more, any time</div>
     <h2 class="h2" style="margin-bottom:8px">No subscription needed.</h2>
     <p class="sub" style="margin-bottom:40px">Pay once, activate instantly. Same video quality as any paid plan.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:20px">
@@ -675,13 +674,12 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="faq">
   <div class="wrap-sm">
-    <div class="eyebrow ctr">FAQ</div>
     <h2 class="h2 ctr">Everything you need<br>to <span class="g">know.</span></h2>
     <div class="faq-list" style="margin-top:56px">
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to get my first video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Upload your photos and Xelo delivers both the MLS and social video in minutes. No editing, no approvals — it's ready to publish.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which languages does Xelo support? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">9 languages: English, Dutch, German, French, Spanish, Portuguese, Russian, Mandarin, and Swedish. Xelo writes your property description in all 9 languages automatically. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which languages does Xelo support? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">9 languages: English, Dutch, German, French, Spanish, Arabic, Russian, Mandarin, and Swedish. Xelo writes your property description in all 9 languages automatically. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is Xelo Market and do I have to pay extra for it? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Xelo Market is included in every plan, including Trial. It's a property portal built around video — every listing comes with a professional video, multilingual copy, and James AI for buyer enquiries. Your listings are published automatically when you create them — no extra upload step.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the video time allowance work? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner faq-allowances-text">Each plan includes a monthly video seconds allowance. One 8-second clip costs 8 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month; unused seconds do not roll over. Trial includes 36 seconds (4 clips). Starter includes 192 seconds (24 clips). Professional includes 576 seconds (72 clips). Agency has no cap.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the video time allowance work? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner faq-allowances-text">Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month; unused seconds do not roll over. Trial includes 36 seconds (6 clips). Starter includes 192 seconds (~32 clips). Professional includes 576 seconds (~96 clips). Agency has no cap.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use Xelo on my existing website? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. The embed widget lets you add a Xelo video player to any website with one line of HTML. Your listings already live on Xelo Market — the embed just mirrors them on your own site. No API key or backend needed.</div></div></div>
     </div>
   </div>
@@ -729,7 +727,7 @@ function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');v
     var trpf=document.querySelector('.trial-seconds-pf');if(trpf)trpf.innerHTML='<span class="pf-check">✓</span> '+t.seconds+' seconds of video';
     // Update FAQ allowances text
     var faqAllowances=document.querySelector('.faq-allowances-text');
-    if(faqAllowances){var trClips=Math.round(t.seconds/8);var stClips=Math.round(s.seconds/8);var prClips=Math.round(pr.seconds/8);faqAllowances.textContent='Each plan includes a monthly video seconds allowance. Every clip you generate or re-render draws from that pool. Allowances reset on the 1st of each month — unused seconds do not roll over. Trial includes '+t.seconds+' seconds. Starter includes '+s.seconds+' seconds (~'+stClips+' clips). Professional includes '+pr.seconds+' seconds (~'+prClips+' clips). Agency has no cap.';}
+    if(faqAllowances){var trClips=Math.round(t.seconds/6);var stClips=Math.round(s.seconds/6);var prClips=Math.round(pr.seconds/6);faqAllowances.textContent='Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month — unused seconds do not roll over. Trial includes '+t.seconds+' seconds ('+trClips+' clips). Starter includes '+s.seconds+' seconds (~'+stClips+' clips). Professional includes '+pr.seconds+' seconds (~'+prClips+' clips). Agency has no cap.';}
   }
   fetch('/api/pricing').then(function(r){return r.json()}).then(applyPricing).catch(function(){});
 })();
@@ -744,13 +742,54 @@ function switchHero(thumb, src, label, ratio) {
   mock.style.aspectRatio = ratio;
   mock.style.maxHeight = ratio === '9/16' ? '420px' : '';
 }
-// autoplay thumbnail videos on hover
+// autoplay thumbnail videos on hover + Safari autoplay fix
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.vthmb video').forEach(function(v) {
-    v.parentElement.addEventListener('mouseenter', function() { v.play() });
-    v.parentElement.addEventListener('mouseleave', function() { v.pause() });
+    v.parentElement.addEventListener('mouseenter', function() { v.play().catch(function(){}); });
+    v.parentElement.addEventListener('mouseleave', function() { v.pause(); });
   });
+  // Explicit play() for all autoplay videos — Safari requires this even with muted+autoplay attrs
+  document.querySelectorAll('video[autoplay]').forEach(function(v) {
+    v.play().catch(function(){});
+  });
+  // IntersectionObserver for out-of-viewport autoplay videos (Safari scroll-into-view)
+  if ('IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) e.target.play().catch(function(){});
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('video[autoplay]').forEach(function(v) { vio.observe(v); });
+  }
 });
+// Scrollspy: highlight nav link of section in view
+(function() {
+  if (!('IntersectionObserver' in window)) return;
+  var nv = document.querySelector('.nv');
+  if (!nv) return;
+  var linkMap = {};
+  var sectionOrder = [];
+  nv.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    if (id && document.getElementById(id)) { linkMap[id] = a; sectionOrder.push(id); }
+  });
+  var visible = new Set();
+  var prevActive = null;
+  function update() {
+    var active = null;
+    for (var i = 0; i < sectionOrder.length; i++) {
+      if (visible.has(sectionOrder[i])) { active = sectionOrder[i]; break; }
+    }
+    if (prevActive) prevActive.style.color = '';
+    prevActive = active ? linkMap[active] : null;
+    if (prevActive) prevActive.style.color = 'var(--g)';
+  }
+  var sio = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { e.isIntersecting ? visible.add(e.target.id) : visible.delete(e.target.id); });
+    update();
+  }, { rootMargin: '-15% 0px -55% 0px' });
+  sectionOrder.forEach(function(id) { sio.observe(document.getElementById(id)); });
+})();
 </script>
 </body>
 </html>
