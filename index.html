@@ -275,6 +275,23 @@ footer a:hover{color:var(--g)}
   .cta-left .cta-note{text-align:left}
   .btn.big{padding:20px 52px;font-size:17px}
 }
+.market-iframe-wrap{margin-top:40px}
+.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;display:flex;align-items:center;gap:10px;width:calc(1440px * .72)}
+.browser-dots{display:flex;gap:6px;flex-shrink:0}
+.browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
+.browser-dots span:nth-child(1){background:#ff5f57}
+.browser-dots span:nth-child(2){background:#febc2e}
+.browser-dots span:nth-child(3){background:#28c840}
+.browser-url{background:#0d1321;border-radius:6px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.45);font-family:ui-monospace,monospace;letter-spacing:.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iframe-clip{width:calc(1440px * .72);height:calc(900px * .72);overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
+.iframe-clip iframe{width:1440px;height:900px;transform:scale(.72);transform-origin:top left;pointer-events:none;border:none;display:block}
+.market-iframe-cta{text-align:center;margin-top:24px}
+@media(max-width:1100px) and (min-width:640px){
+  .browser-chrome,.iframe-clip{width:calc(1440px * .50)}
+  .iframe-clip{height:calc(900px * .50)}
+  .iframe-clip iframe{transform:scale(.50)}
+}
+@media(max-width:639px){.market-iframe-wrap{display:none}}
   </style>
 </head>
 <body>
@@ -381,12 +398,17 @@ footer a:hover{color:var(--g)}
     <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
     <p class="sub">Every listing below has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
 
-    <!-- Live market cards — populated by JS; hidden until data arrives -->
-    <div id="market-cards-live" style="display:none">
-      <div class="market-live-grid" id="market-cards-grid"></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;flex-wrap:wrap;gap:12px">
-        <div style="font-size:11px;color:var(--dim);font-family:ui-monospace,monospace;letter-spacing:.04em" id="market-cards-ts"></div>
-        <a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn ghost" style="font-size:14px;padding:10px 22px">View all on Xelo Market →</a>
+    <!-- Live market iframe — desktop only; mobile falls through to static fallback below -->
+    <div id="market-iframe-wrap" class="market-iframe-wrap">
+      <div class="browser-chrome">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="browser-url">app.xelo.media/market</div>
+      </div>
+      <div class="iframe-clip">
+        <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — live listings"></iframe>
+      </div>
+      <div class="market-iframe-cta">
+        <a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a>
       </div>
     </div>
 
@@ -846,42 +868,24 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('video[autoplay]').forEach(function(v) { vio.observe(v); });
   }
 });
-// Live market cards
+// Market iframe: mobile fallback + 4s load timeout
 (function() {
-  fetch('/api/market-cards').then(function(r) { return r.json(); }).then(function(data) {
-    if (!data.ok || !data.cards) return;
-    var valid = data.cards.filter(function(c) { return c.price; });
-    if (valid.length < 3) return;
-    var grid = document.getElementById('market-cards-grid');
-    if (!grid) return;
-    valid.slice(0, 6).forEach(function(c) {
-      var priceStr = '€' + Number(c.price).toLocaleString('nl-NL');
-      var specs = [];
-      if (c.beds) specs.push(c.beds + ' beds');
-      if (c.area) specs.push(c.area + ' m²');
-      var el = document.createElement('a');
-      el.href = c.url;
-      el.target = '_blank';
-      el.rel = 'noopener';
-      el.className = 'mc';
-      el.innerHTML =
-        '<img class="mc-img" src="' + c.thumbnail + '" alt="' + (c.city || '') + '" loading="lazy" onerror="this.style.display=\'none\'">' +
-        '<div class="mc-body">' +
-          (c.premium ? '<div class="mc-premium">✦ FEATURED</div>' : '') +
-          '<div class="mc-price">' + priceStr + '</div>' +
-          '<div class="mc-city">' + (c.city || '') + '</div>' +
-          (specs.length ? '<div class="mc-specs">' + specs.join(' · ') + '</div>' : '') +
-        '</div>';
-      grid.appendChild(el);
-    });
-    document.getElementById('market-cards-live').style.display = '';
-    document.getElementById('market-cards-fallback').style.display = 'none';
-    var ts = document.getElementById('market-cards-ts');
-    if (ts && data.generated_at) {
-      var d = new Date(data.generated_at);
-      ts.textContent = 'Live data · ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  var wrap = document.getElementById('market-iframe-wrap');
+  var fallback = document.getElementById('market-cards-fallback');
+  if (!wrap || !fallback) return;
+  if (window.innerWidth < 640) {
+    wrap.style.display = 'none';
+    return;
+  }
+  var loaded = false;
+  var iframe = document.getElementById('market-iframe');
+  if (iframe) { iframe.addEventListener('load', function() { loaded = true; }); }
+  setTimeout(function() {
+    if (!loaded) {
+      wrap.style.display = 'none';
+      fallback.style.display = '';
     }
-  }).catch(function() {});
+  }, 4000);
 })();
 // Scrollspy: highlight nav link of section in view
 (function() {
