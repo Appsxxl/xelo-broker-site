@@ -284,7 +284,7 @@ footer a:hover{color:var(--g)}
 .market-preview-desktop{flex-shrink:0}
 /* MacBook-style near-black laptop frame — 16:10 ratio */
 .macbook-outer{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
-.macbook-lid{width:516px;background:#0f0f11;border-radius:16px 16px 0 0;padding:6px 6px 0;position:relative}
+.macbook-lid{width:516px;background:#060608;border-radius:16px 16px 0 0;padding:6px 6px 0;position:relative}
 .macbook-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:14px;height:8px;background:#000;border-radius:0 0 6px 6px;z-index:5}
 .macbook-screen-inner{background:#000;border-radius:2px 2px 0 0;overflow:hidden}
 .macbook-hinge{width:516px;height:2px;background:#050507;box-shadow:0 1px 0 rgba(255,255,255,.03)}
@@ -302,17 +302,19 @@ footer a:hover{color:var(--g)}
 .browser-dots span:nth-child(3){background:#28c840}
 .iframe-clip{width:504px;height:315px;overflow:hidden}
 .iframe-clip iframe{width:1440px;height:900px;transform:scale(.35);transform-origin:top left;pointer-events:none;border:none;display:block}
-/* Realistic iPhone mockup — 390×844 natural viewport, clipped at 720px */
+/* iPhone mockup — scaled to match laptop height (405px) */
 .market-preview-phone{flex-shrink:0;margin-left:-24px}
-.phone-bezel{width:420px;height:750px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:52px;padding:15px;position:relative;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 3px rgba(0,0,0,.8),0 32px 80px rgba(0,0,0,.8),0 8px 24px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
-.phone-bezel::before{content:'';position:absolute;right:-4px;top:165px;width:4px;height:80px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 3px 3px 0;box-shadow:1px 0 3px rgba(0,0,0,.5)}
-.phone-bezel::after{content:'';position:absolute;left:-4px;top:110px;width:4px;height:88px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:3px 0 0 3px;box-shadow:-1px 0 3px rgba(0,0,0,.5)}
-.phone-screen-inner{width:100%;height:100%;border-radius:38px;overflow:hidden;background:#000;position:relative;display:flex;flex-direction:column}
-.phone-di{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:32px;background:#000;border-radius:20px;z-index:10;pointer-events:none}
-.phone-status-bar{height:44px;flex-shrink:0;background:#0d1321;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 16px;position:relative;z-index:8;border-radius:38px 38px 0 0}
-.psb-time{font-family:system-ui,-apple-system,sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.01em;line-height:1}
-.psb-icons{display:flex;align-items:center;gap:6px}
-.phone-screen-inner iframe{width:390px;height:844px;border:none;display:block;pointer-events:none;flex-shrink:0}
+.phone-bezel{width:227px;height:405px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:28px;padding:8px;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 0 2px rgba(0,0,0,.8),0 17px 43px rgba(0,0,0,.8),0 4px 13px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
+.phone-bezel::before{content:'';position:absolute;right:-3px;top:89px;width:3px;height:43px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 2px 2px 0;box-shadow:1px 0 2px rgba(0,0,0,.5)}
+.phone-bezel::after{content:'';position:absolute;left:-3px;top:59px;width:3px;height:48px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:2px 0 0 2px;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
+.phone-screen-inner{width:100%;height:100%;border-radius:21px;overflow:hidden;background:#000;position:relative;display:flex;flex-direction:column}
+.phone-di{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:59px;height:17px;background:#000;border-radius:11px;z-index:10;pointer-events:none}
+.phone-status-bar{height:26px;flex-shrink:0;background:#0d1321;display:flex;align-items:center;justify-content:space-between;padding:0 11px 0 9px;position:relative;z-index:8;border-radius:21px 21px 0 0}
+.psb-time{font-family:system-ui,-apple-system,sans-serif;font-size:8px;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.01em;line-height:1}
+.psb-icons{display:flex;align-items:center;gap:3px}
+.psb-icons svg{height:7px;width:auto}
+.phone-iframe-clip{overflow:hidden;flex:1}
+.phone-iframe-clip iframe{width:390px;height:844px;transform:scale(0.541);transform-origin:top left;border:none;display:block;pointer-events:none}
 .market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
 /* At 1700px+: desktop scale grows to ~0.52 (750px clip), fills wider stage */
 @media(min-width:1700px){
@@ -475,7 +477,9 @@ footer a:hover{color:var(--g)}
                     <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x=".6" y="1.8" width="21" height="8.4" rx="2" stroke="rgba(255,255,255,.85)" stroke-width="1.2"/><rect x="22.2" y="4" width="3" height="4" rx="1" fill="rgba(255,255,255,.45)"/><rect x="2" y="3.1" width="16" height="5.8" rx="1.2" fill="rgba(255,255,255,.9)"/></svg>
                   </div>
                 </div>
-                <iframe id="market-iframe-phone" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — mobile"></iframe>
+                <div class="phone-iframe-clip">
+                  <iframe id="market-iframe-phone" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — mobile"></iframe>
+                </div>
               </div>
             </div>
           </div>
