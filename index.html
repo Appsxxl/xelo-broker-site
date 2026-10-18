@@ -282,18 +282,15 @@ footer a:hover{color:var(--g)}
 .examples-text .h2,.examples-text .sub{max-width:100%}
 .market-preview-pair{display:flex;justify-content:space-between;align-items:flex-end;width:100%}
 .market-preview-desktop{flex-shrink:0}
-/* iMac-style Studio Display frame — 16:10 ratio */
-.imac-outer{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
-.imac-body{width:520px;border-radius:12px 12px 0 0;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 40px rgba(0,0,0,.55)}
-.imac-top-bezel{background:linear-gradient(180deg,#2c2c2e 0%,#1e1e20 100%);height:10px;display:flex;align-items:center;justify-content:center}
-.imac-cam{width:5px;height:5px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#666,#222);box-shadow:0 0 0 1px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
-.imac-screen-wrap{background:#1a1a1c;padding:0 8px}
-.imac-screen-inner{width:504px;background:#000;overflow:hidden}
+/* MacBook-style graphite laptop frame — 16:10 ratio */
+.macbook-outer{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.macbook-lid{width:520px;background:linear-gradient(175deg,#282828 0%,#1c1c1e 55%,#232325 100%);border-radius:10px 10px 0 0;padding:8px 8px 0;box-shadow:0 0 0 1px rgba(255,255,255,.07),inset 0 1px 0 rgba(255,255,255,.12),0 8px 40px rgba(0,0,0,.6)}
+.macbook-screen-inner{background:#000;border-radius:4px 4px 0 0;overflow:hidden}
+.macbook-hinge{width:520px;height:3px;background:linear-gradient(90deg,#0d0d0f 0%,#1c1c1e 25%,#141416 50%,#1c1c1e 75%,#0d0d0f 100%);box-shadow:0 1px 0 rgba(255,255,255,.04),0 -1px 0 rgba(0,0,0,.7)}
+.macbook-deck{width:520px;height:62px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.032) 0,rgba(255,255,255,.032) 1px,transparent 1px,transparent 13px),repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0,rgba(255,255,255,.022) 1px,transparent 1px,transparent 13px),linear-gradient(180deg,#2c2c2e 0%,#363638 100%);border-radius:0 0 8px 8px;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.macbook-trackpad{width:88px;height:40px;background:linear-gradient(160deg,#3c3c3e 0%,#343436 100%);border-radius:5px;border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 1px 4px rgba(0,0,0,.4)}
 .browser-bar-inner{height:40px;background:#0d1321;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
 .browser-url-inner{background:rgba(255,255,255,.06);border-radius:6px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.35);font-family:ui-monospace,monospace;letter-spacing:.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.imac-chin{height:20px;background:linear-gradient(90deg,#b8b8bc 0%,#dcdcde 25%,#f0f0f2 50%,#dcdcde 75%,#b8b8bc 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.1)}
-.imac-neck{width:24px;height:16px;background:linear-gradient(180deg,#c8c8ca,#b0b0b2);clip-path:polygon(10% 0%,90% 0%,100% 100%,0% 100%)}
-.imac-base{width:100px;height:8px;background:linear-gradient(90deg,#a0a0a2 0%,#c8c8ca 50%,#a0a0a2 100%);border-radius:0 0 50% 50%/0 0 100% 100%;box-shadow:0 4px 14px rgba(0,0,0,.5)}
 .browser-dots{display:flex;gap:6px;flex-shrink:0}
 .browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
 .browser-dots span:nth-child(1){background:#ff5f57}
@@ -315,11 +312,11 @@ footer a:hover{color:var(--g)}
 .market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
 /* At 1700px+: desktop scale grows to ~0.52 (750px clip), fills wider stage */
 @media(min-width:1700px){
-  .imac-body{width:766px}
-  .imac-screen-inner{width:750px}
+  .macbook-lid{width:766px}
+  .macbook-hinge{width:766px}
+  .macbook-deck{width:766px}
   .iframe-clip{width:750px;height:469px}
   .iframe-clip iframe{transform:scale(.521);height:900px}
-  .imac-chin{height:28px}
 }
 @media(max-width:1380px){.market-preview-desktop{display:none}}
 @media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:space-around}}
@@ -437,26 +434,24 @@ footer a:hover{color:var(--g)}
       <!-- Right: frames -->
       <div class="examples-frames">
         <div id="market-preview-pair" class="market-preview-pair">
-          <!-- Desktop iMac-style frame -->
+          <!-- Desktop MacBook-style frame -->
           <div class="market-preview-desktop">
-            <div class="imac-outer">
-              <div class="imac-body">
-                <div class="imac-top-bezel"><div class="imac-cam"></div></div>
-                <div class="imac-screen-wrap">
-                  <div class="imac-screen-inner">
-                    <div class="browser-bar-inner">
-                      <div class="browser-dots"><span></span><span></span><span></span></div>
-                      <div class="browser-url-inner">app.xelo.media/market</div>
-                    </div>
-                    <div class="iframe-clip">
-                      <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — desktop"></iframe>
-                    </div>
+            <div class="macbook-outer">
+              <div class="macbook-lid">
+                <div class="macbook-screen-inner">
+                  <div class="browser-bar-inner">
+                    <div class="browser-dots"><span></span><span></span><span></span></div>
+                    <div class="browser-url-inner">app.xelo.media/market</div>
+                  </div>
+                  <div class="iframe-clip">
+                    <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — desktop"></iframe>
                   </div>
                 </div>
-                <div class="imac-chin"></div>
               </div>
-              <div class="imac-neck"></div>
-              <div class="imac-base"></div>
+              <div class="macbook-hinge"></div>
+              <div class="macbook-deck">
+                <div class="macbook-trackpad"></div>
+              </div>
             </div>
           </div>
           <!-- Realistic iPhone mockup -->
