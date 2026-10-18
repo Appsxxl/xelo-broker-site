@@ -70,7 +70,7 @@ section{padding:90px 0}
 .vthmb-label{position:absolute;bottom:0;left:0;right:0;padding:4px 6px;background:linear-gradient(transparent,rgba(12,27,46,.85));font-size:9px;font-family:ui-monospace,monospace;color:rgba(255,255,255,.7);letter-spacing:.05em;text-align:center}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:48px}
 .stat-card{background:var(--n3);padding:40px 32px;text-align:center}
-.stat-num{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(48px,5vw,84px);color:var(--g);letter-spacing:-.04em;line-height:1}
+.stat-num{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(48px,6vw,100px);color:var(--g);letter-spacing:-.04em;line-height:1}
 .stat-label{font-size:15px;color:rgba(255,255,255,.75);margin-top:12px;line-height:1.55}
 .stat-source{font-size:13px;color:var(--dim);margin-top:12px;font-family:ui-monospace,monospace;letter-spacing:.02em}
 .stat-source a{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
@@ -190,7 +190,7 @@ section{padding:90px 0}
 .cta-h{font-family:Arial,Helvetica,sans-serif;font-size:clamp(32px,5vw,62px);font-weight:800;line-height:1;letter-spacing:-.045em;color:#fff;text-wrap:balance}
 .cta-h span{color:var(--g)}
 .cta-sub{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:clamp(18px,2.2vw,28px);color:var(--g);margin-top:16px;letter-spacing:-.025em;line-height:1.1}
-.cta-grid{display:grid;grid-template-columns:1fr;gap:40px;width:100%;max-width:1400px}
+.cta-grid{display:grid;grid-template-columns:1fr;gap:40px;width:100%}
 .cta-btns{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
 .cta-note{margin-top:18px;font-size:12px;color:var(--dim)}
 .cta-proof{display:flex;flex-direction:column;gap:2px;background:var(--bdr);border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
@@ -222,8 +222,8 @@ footer a:hover{color:var(--g)}
   .hero{display:flex;flex-direction:column;align-items:stretch;padding:0}
   .hero>.wrap-wide{padding:88px 48px 88px;flex:1 0 auto;display:flex;align-items:center}
   section{display:flex;flex-direction:column;align-items:center;padding:90px 0}
-  .cta-section{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 48px;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
-  .hero>.wrap,.hero>.wrap-wide,section>.wrap,section>.wrap-sm,section>.wrap-wide{width:100%}
+  .cta-section{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 0;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
+  .hero>.wrap,.hero>.wrap-wide,section>.wrap,section>.wrap-sm,section>.wrap-wide,.cta-section>.wrap-wide{width:100%}
   nav{height:72px}
   .nv{gap:16px}
   .nv a{font-size:12px}
@@ -382,7 +382,7 @@ footer a:hover{color:var(--g)}
 </div>
 
 <section class="bg1" id="stats">
-  <div class="wrap">
+  <div class="wrap-wide">
     <h2 class="h2 ctr">Why video wins.</h2>
     <p class="sub ctr" style="margin-top:16px">The numbers behind listings with video.</p>
     <div class="stats-grid">
@@ -469,7 +469,7 @@ footer a:hover{color:var(--g)}
 </section>
 
 <section class="bg0" id="features">
-  <div class="wrap">
+  <div class="wrap-wide">
     <h2 class="h2">Everything.<br><span class="g">In one subscription.</span></h2>
     <p class="sub">No agencies, no freelancers, no separate tools. One platform handles the full listing workflow.</p>
     <div class="feat-grid">
@@ -598,7 +598,7 @@ footer a:hover{color:var(--g)}
 </section>
 
 <section class="bg0" id="compare">
-  <div class="wrap">
+  <div class="wrap-wide">
     <h2 class="h2 ctr">Built for European agents.<br><span class="g">Nothing else comes close.</span></h2>
     <div class="comp-wrap">
       <table class="comp-table">
@@ -625,7 +625,7 @@ footer a:hover{color:var(--g)}
 <!-- testimonials removed — placeholder quotes only; real ones with permission to be added post-launch -->
 
 <section class="bg0" id="pricing">
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="pricing-top">
       <div class="pricing-hd">
         <h2 class="h2">One price per listing.<br><span class="g">Everything included.</span></h2>
@@ -764,6 +764,7 @@ footer a:hover{color:var(--g)}
 </section>
 
 <div class="cta-section" id="contact">
+  <div class="wrap-wide">
   <div class="cta-grid">
     <div class="cta-left">
       <h2 class="cta-h">Stop losing buyers to agents<br>with <span>better video.</span></h2>
@@ -794,6 +795,7 @@ footer a:hover{color:var(--g)}
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
