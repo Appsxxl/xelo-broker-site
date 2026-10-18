@@ -28,6 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,27,46,.95
 .big{padding:15px 36px;font-size:15px}
 .wrap{max-width:1400px;margin:0 auto;padding:0 48px}
 .wrap-sm{max-width:780px;margin:0 auto;padding:0 48px}
+.wrap-wide{max-width:1700px;margin:0 auto;padding:0 24px}
 section{padding:90px 0}
 .eyebrow{font-family:ui-monospace,'SF Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--g);text-transform:uppercase;margin-bottom:18px}
 .h1{font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(40px,6.5vw,80px);line-height:.98;letter-spacing:-.045em;color:#fff;text-wrap:balance}
@@ -222,7 +223,7 @@ footer a:hover{color:var(--g)}
   .hero>.wrap{padding:88px 48px 88px;flex:1 0 auto;display:flex;align-items:center}
   section{display:flex;flex-direction:column;align-items:center;padding:90px 0}
   .cta-section{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 48px;background:radial-gradient(ellipse 70% 50% at 50% 45%,rgba(201,168,76,.07) 0%,transparent 65%) var(--n2)}
-  .hero>.wrap,section>.wrap,section>.wrap-sm{width:100%}
+  .hero>.wrap,section>.wrap,section>.wrap-sm,section>.wrap-wide{width:100%}
   nav{height:72px}
   .nv{gap:16px}
   .nv a{font-size:12px}
@@ -234,7 +235,7 @@ footer a:hover{color:var(--g)}
   .hero-ctas{margin-top:40px}
   .stats-grid{grid-template-columns:repeat(4,1fr)}
   .stat-card{padding:56px 32px}
-  #examples{padding:40px 0}
+  #examples{padding:80px 0 100px}
   #examples .vid-showcase{gap:24px;margin-top:32px}
   .market-layout{gap:80px;margin-top:48px}
   .mcard-body{padding:28px}
@@ -275,32 +276,38 @@ footer a:hover{color:var(--g)}
   .cta-left .cta-note{text-align:left}
   .btn.big{padding:20px 52px;font-size:17px}
 }
-/* Examples — Option B: text left, frames right */
-.examples-layout{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center}
+/* Examples — Option B: text left, frames right; wrap-wide for full-row fill */
+.examples-layout{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:center}
 .examples-text{display:flex;flex-direction:column;gap:20px}
 .examples-text .h2,.examples-text .sub{max-width:100%}
-.market-preview-pair{display:flex;gap:20px;align-items:flex-start}
+.market-preview-pair{display:flex;justify-content:space-between;align-items:flex-start;width:100%}
 .market-preview-desktop{flex-shrink:0}
-.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;height:40px;display:flex;align-items:center;gap:10px;width:547px}
+.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;height:40px;display:flex;align-items:center;gap:10px;width:504px}
 .browser-dots{display:flex;gap:6px;flex-shrink:0}
 .browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
 .browser-dots span:nth-child(1){background:#ff5f57}
 .browser-dots span:nth-child(2){background:#febc2e}
 .browser-dots span:nth-child(3){background:#28c840}
 .browser-url{background:#0d1321;border-radius:6px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.45);font-family:ui-monospace,monospace;letter-spacing:.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.iframe-clip{width:547px;height:560px;overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
-.iframe-clip iframe{width:1440px;height:1474px;transform:scale(.38);transform-origin:top left;pointer-events:none;border:none;display:block}
-/* Realistic iPhone mockup */
+.iframe-clip{width:504px;height:710px;overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
+.iframe-clip iframe{width:1440px;height:2029px;transform:scale(.35);transform-origin:top left;pointer-events:none;border:none;display:block}
+/* Realistic iPhone mockup — 390×844 natural viewport, clipped at 720px */
 .market-preview-phone{flex-shrink:0}
-.phone-bezel{width:388px;height:600px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:48px;padding:14px;position:relative;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 3px rgba(0,0,0,.8),0 24px 64px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
-.phone-bezel::before{content:'';position:absolute;right:-4px;top:145px;width:4px;height:70px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 3px 3px 0;box-shadow:1px 0 3px rgba(0,0,0,.5)}
-.phone-bezel::after{content:'';position:absolute;left:-4px;top:100px;width:4px;height:76px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:3px 0 0 3px;box-shadow:-1px 0 3px rgba(0,0,0,.5)}
-.phone-screen-inner{width:100%;height:100%;border-radius:36px;overflow:hidden;background:#000;position:relative}
+.phone-bezel{width:420px;height:750px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:52px;padding:15px;position:relative;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 3px rgba(0,0,0,.8),0 24px 64px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
+.phone-bezel::before{content:'';position:absolute;right:-4px;top:165px;width:4px;height:80px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 3px 3px 0;box-shadow:1px 0 3px rgba(0,0,0,.5)}
+.phone-bezel::after{content:'';position:absolute;left:-4px;top:110px;width:4px;height:88px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:3px 0 0 3px;box-shadow:-1px 0 3px rgba(0,0,0,.5)}
+.phone-screen-inner{width:100%;height:100%;border-radius:38px;overflow:hidden;background:#000;position:relative}
 .phone-di{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:32px;background:#000;border-radius:20px;z-index:10;pointer-events:none}
-.phone-screen-inner iframe{width:360px;height:572px;border:none;display:block;pointer-events:none}
+.phone-screen-inner iframe{width:390px;height:844px;border:none;display:block;pointer-events:none}
 .market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
+/* At 1700px+: desktop scale grows to ~0.52 (750px clip), fills wider stage */
+@media(min-width:1700px){
+  .browser-chrome{width:750px}
+  .iframe-clip{width:750px}
+  .iframe-clip iframe{transform:scale(.521);height:1363px}
+}
 @media(max-width:1380px){.market-preview-desktop{display:none}}
-@media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:center}}
+@media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:space-around}}
 @media(max-width:639px){.market-preview-pair{display:none}}
   </style>
 </head>
@@ -404,12 +411,12 @@ footer a:hover{color:var(--g)}
 </section>
 
 <section class="bg0" id="examples">
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="examples-layout">
       <!-- Left: headline + sub + CTA -->
       <div class="examples-text">
         <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
-        <p class="sub">Every listing below has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
+        <p class="sub">Every listing on Xelo Market has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
         <div><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
       </div>
       <!-- Right: frames -->
