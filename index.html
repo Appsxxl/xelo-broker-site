@@ -275,25 +275,32 @@ footer a:hover{color:var(--g)}
   .cta-left .cta-note{text-align:left}
   .btn.big{padding:20px 52px;font-size:17px}
 }
-.market-preview-pair{display:flex;gap:32px;align-items:flex-start;justify-content:center;margin-top:40px}
+/* Examples — Option B: text left, frames right */
+.examples-layout{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center}
+.examples-text{display:flex;flex-direction:column;gap:20px}
+.examples-text .h2,.examples-text .sub{max-width:100%}
+.market-preview-pair{display:flex;gap:20px;align-items:flex-start}
 .market-preview-desktop{flex-shrink:0}
-.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;display:flex;align-items:center;gap:10px;width:calc(1440px * .45)}
+.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;height:40px;display:flex;align-items:center;gap:10px;width:547px}
 .browser-dots{display:flex;gap:6px;flex-shrink:0}
 .browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
 .browser-dots span:nth-child(1){background:#ff5f57}
 .browser-dots span:nth-child(2){background:#febc2e}
 .browser-dots span:nth-child(3){background:#28c840}
 .browser-url{background:#0d1321;border-radius:6px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.45);font-family:ui-monospace,monospace;letter-spacing:.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.iframe-clip{width:calc(1440px * .45);height:calc(900px * .45);overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
-.iframe-clip iframe{width:1440px;height:900px;transform:scale(.45);transform-origin:top left;pointer-events:none;border:none;display:block}
+.iframe-clip{width:547px;height:560px;overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
+.iframe-clip iframe{width:1440px;height:1474px;transform:scale(.38);transform-origin:top left;pointer-events:none;border:none;display:block}
+/* Realistic iPhone mockup */
 .market-preview-phone{flex-shrink:0}
-.phone-frame{background:#1a2540;border-radius:44px;padding:14px;border:2px solid #252f47;box-shadow:0 16px 48px rgba(0,0,0,.5)}
-.phone-notch{width:90px;height:6px;background:#252f47;border-radius:3px;margin:0 auto 10px}
-.phone-screen{width:390px;height:680px;overflow:hidden;border-radius:28px}
-.phone-screen iframe{width:390px;height:680px;pointer-events:none;border:none;display:block}
-.market-cta-block{text-align:center;margin-top:28px}
-.market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center;margin-top:40px}
-@media(max-width:900px){.market-preview-desktop{display:none}}
+.phone-bezel{width:388px;height:600px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:48px;padding:14px;position:relative;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 3px rgba(0,0,0,.8),0 24px 64px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
+.phone-bezel::before{content:'';position:absolute;right:-4px;top:145px;width:4px;height:70px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 3px 3px 0;box-shadow:1px 0 3px rgba(0,0,0,.5)}
+.phone-bezel::after{content:'';position:absolute;left:-4px;top:100px;width:4px;height:76px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:3px 0 0 3px;box-shadow:-1px 0 3px rgba(0,0,0,.5)}
+.phone-screen-inner{width:100%;height:100%;border-radius:36px;overflow:hidden;background:#000;position:relative}
+.phone-di{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:32px;background:#000;border-radius:20px;z-index:10;pointer-events:none}
+.phone-screen-inner iframe{width:360px;height:572px;border:none;display:block;pointer-events:none}
+.market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
+@media(max-width:1380px){.market-preview-desktop{display:none}}
+@media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:center}}
 @media(max-width:639px){.market-preview-pair{display:none}}
   </style>
 </head>
@@ -398,38 +405,43 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="examples">
   <div class="wrap">
-    <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
-    <p class="sub">Every listing below has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
-
-    <!-- Desktop browser + phone mockup side by side -->
-    <div id="market-preview-pair" class="market-preview-pair">
-      <div class="market-preview-desktop">
-        <div class="browser-chrome">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <div class="browser-url">app.xelo.media/market</div>
-        </div>
-        <div class="iframe-clip">
-          <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — desktop"></iframe>
-        </div>
+    <div class="examples-layout">
+      <!-- Left: headline + sub + CTA -->
+      <div class="examples-text">
+        <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
+        <p class="sub">Every listing below has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
+        <div><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
       </div>
-      <div class="market-preview-phone">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <iframe id="market-iframe-phone" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — mobile"></iframe>
+      <!-- Right: frames -->
+      <div class="examples-frames">
+        <div id="market-preview-pair" class="market-preview-pair">
+          <!-- Desktop browser mockup -->
+          <div class="market-preview-desktop">
+            <div class="browser-chrome">
+              <div class="browser-dots"><span></span><span></span><span></span></div>
+              <div class="browser-url">app.xelo.media/market</div>
+            </div>
+            <div class="iframe-clip">
+              <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — desktop"></iframe>
+            </div>
+          </div>
+          <!-- Realistic iPhone mockup -->
+          <div class="market-preview-phone">
+            <div class="phone-bezel">
+              <div class="phone-screen-inner">
+                <div class="phone-di"></div>
+                <iframe id="market-iframe-phone" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — mobile"></iframe>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="market-cta-block">
-      <a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a>
-    </div>
-
-    <!-- Fallback: dark card shown on failure or mobile <640px, never videos -->
-    <div id="market-cards-fallback" style="display:none">
-      <div class="market-fallback-card">
-        <p style="font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</p>
-        <div style="margin-top:20px"><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
+        <!-- Fallback: dark card on iframe failure or <640px -->
+        <div id="market-cards-fallback" style="display:none">
+          <div class="market-fallback-card">
+            <p style="font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</p>
+            <div style="margin-top:20px"><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
