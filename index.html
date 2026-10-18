@@ -275,23 +275,26 @@ footer a:hover{color:var(--g)}
   .cta-left .cta-note{text-align:left}
   .btn.big{padding:20px 52px;font-size:17px}
 }
-.market-iframe-wrap{margin-top:40px}
-.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;display:flex;align-items:center;gap:10px;width:calc(1440px * .72)}
+.market-preview-pair{display:flex;gap:32px;align-items:flex-start;justify-content:center;margin-top:40px}
+.market-preview-desktop{flex-shrink:0}
+.browser-chrome{background:#1a2540;border-radius:10px 10px 0 0;padding:10px 14px;display:flex;align-items:center;gap:10px;width:calc(1440px * .45)}
 .browser-dots{display:flex;gap:6px;flex-shrink:0}
 .browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
 .browser-dots span:nth-child(1){background:#ff5f57}
 .browser-dots span:nth-child(2){background:#febc2e}
 .browser-dots span:nth-child(3){background:#28c840}
 .browser-url{background:#0d1321;border-radius:6px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.45);font-family:ui-monospace,monospace;letter-spacing:.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.iframe-clip{width:calc(1440px * .72);height:calc(900px * .72);overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
-.iframe-clip iframe{width:1440px;height:900px;transform:scale(.72);transform-origin:top left;pointer-events:none;border:none;display:block}
-.market-iframe-cta{text-align:center;margin-top:24px}
-@media(max-width:1100px) and (min-width:640px){
-  .browser-chrome,.iframe-clip{width:calc(1440px * .50)}
-  .iframe-clip{height:calc(900px * .50)}
-  .iframe-clip iframe{transform:scale(.50)}
-}
-@media(max-width:639px){.market-iframe-wrap{display:none}}
+.iframe-clip{width:calc(1440px * .45);height:calc(900px * .45);overflow:hidden;border-radius:0 0 10px 10px;border:1px solid #1c2740;border-top:none}
+.iframe-clip iframe{width:1440px;height:900px;transform:scale(.45);transform-origin:top left;pointer-events:none;border:none;display:block}
+.market-preview-phone{flex-shrink:0}
+.phone-frame{background:#1a2540;border-radius:44px;padding:14px;border:2px solid #252f47;box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.phone-notch{width:90px;height:6px;background:#252f47;border-radius:3px;margin:0 auto 10px}
+.phone-screen{width:390px;height:680px;overflow:hidden;border-radius:28px}
+.phone-screen iframe{width:390px;height:680px;pointer-events:none;border:none;display:block}
+.market-cta-block{text-align:center;margin-top:28px}
+.market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center;margin-top:40px}
+@media(max-width:900px){.market-preview-desktop{display:none}}
+@media(max-width:639px){.market-preview-pair{display:none}}
   </style>
 </head>
 <body>
@@ -398,72 +401,51 @@ footer a:hover{color:var(--g)}
     <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
     <p class="sub">Every listing below has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
 
-    <!-- Live market iframe — desktop only; mobile falls through to static fallback below -->
-    <div id="market-iframe-wrap" class="market-iframe-wrap">
-      <div class="browser-chrome">
-        <div class="browser-dots"><span></span><span></span><span></span></div>
-        <div class="browser-url">app.xelo.media/market</div>
+    <!-- Desktop browser + phone mockup side by side -->
+    <div id="market-preview-pair" class="market-preview-pair">
+      <div class="market-preview-desktop">
+        <div class="browser-chrome">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url">app.xelo.media/market</div>
+        </div>
+        <div class="iframe-clip">
+          <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — desktop"></iframe>
+        </div>
       </div>
-      <div class="iframe-clip">
-        <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — live listings"></iframe>
-      </div>
-      <div class="market-iframe-cta">
-        <a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a>
+      <div class="market-preview-phone">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <iframe id="market-iframe-phone" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — mobile"></iframe>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="market-cta-block">
+      <a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a>
+    </div>
 
-    <!-- Static fallback — shown if fetch fails -->
-    <div id="market-cards-fallback">
-      <div class="vid-showcase">
-        <div class="vid-card" style="aspect-ratio:9/16;max-height:400px">
-          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-            <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx9x16_en.mp4" type="video/mp4">
-          </video>
-          <div class="vid-card-label">
-            <div class="vid-format">✦ SOCIAL · 9:16</div>
-            <strong>Modern Villa with Pool</strong>
-            Finestrat, Alicante · Spain
-          </div>
-        </div>
-        <div class="vid-col-right">
-          <div class="vid-card" style="aspect-ratio:16/9">
-            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-              <source src="https://app.xelo.media/public/listings/328ed521-9a66-42fc-b419-cd5ce9183f9e/video_walkthroughx16x9_en.mp4" type="video/mp4">
-            </video>
-            <div class="vid-card-label">
-              <div class="vid-format">✦ MLS · 16:9</div>
-              <strong>Sierra Cortina, Costa Blanca</strong>
-              Alicante · Spain
-            </div>
-          </div>
-          <div class="vid-card" style="aspect-ratio:16/9">
-            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
-              <source src="https://app.xelo.media/public/listings/a2c5a5ff-8ba3-4123-b396-8d16215c6283/video_walkthroughx16x9_en.mp4" type="video/mp4">
-            </video>
-            <div class="vid-card-label">
-              <div class="vid-format">✦ MLS · 16:9</div>
-              <strong>Modern Villa with Pool</strong>
-              Finestrat, Alicante · Spain
-            </div>
-          </div>
-        </div>
+    <!-- Fallback: dark card shown on failure or mobile <640px, never videos -->
+    <div id="market-cards-fallback" style="display:none">
+      <div class="market-fallback-card">
+        <p style="font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</p>
+        <div style="margin-top:20px"><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
       </div>
-      <div style="text-align:center;margin-top:28px;font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</div>
     </div>
   </div>
 </section>
 
 <section class="bg1" id="how">
   <div class="wrap">
-    <h2 class="h2">Five steps.<br><span class="g">All automatic.</span></h2>
-    <p class="sub">From photos to published video in less time than it takes to write one email.</p>
+    <h2 class="h2">From photos to video<br><span class="g">in 4 steps.</span></h2>
+    <p class="sub">You upload the photos and approve the result. Xelo does everything in between.</p>
     <div class="steps">
-      <div class="step"><div class="step-n">1</div><div><div class="h3">Upload your listing photos</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Upload 5–30 photos from your phone, camera, or MLS export. Xelo accepts any format.</div></div></div>
-      <div class="step"><div class="step-n">2</div><div><div class="h3">AI writes your property description</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Xelo analyses the photos and generates a professional property description tailored to European buyers — highlights, neighbourhood, price context.</div></div></div>
-      <div class="step"><div class="step-n">3</div><div><div class="h3">Copy in 12 languages, ready for every buyer</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your property description is written in 12 languages — English, Dutch, German, French, Spanish, Portuguese, Russian, Mandarin, Arabic, Polish, Italian, Norwegian. Formatted for MLS (16:9) and social (9:16).</div></div></div>
-      <div class="step"><div class="step-n">4</div><div><div class="h3">Published to Xelo Market automatically</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your listing appears on Xelo Market, the property portal built around video. It goes live to buyers when the portal launches — founding brokers are first in the queue.</div></div></div>
-      <div class="step"><div class="step-n">5</div><div><div class="h3">James answers buyer questions 24/7</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">James, Xelo's AI buyer assistant, responds to enquiries, qualifies leads, and forwards serious buyers to you — in their language, any hour.</div></div></div>
+      <div class="step"><div class="step-n">1</div><div><div class="h3">Upload your photos</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">5 to 30 photos from your phone, camera or property portal. Any format works.</div></div></div>
+      <div class="step"><div class="step-n">2</div><div><div class="h3">Xelo makes your video</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">A wide video for property portals and a vertical video for Instagram and other social media.</div></div></div>
+      <div class="step"><div class="step-n">3</div><div><div class="h3">Xelo writes your description in 12 languages</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">The home's best features and the area, written for buyers across Europe: English, Spanish, German, French, Dutch, Italian, Portuguese, Polish, Norwegian, Russian, Arabic and Mandarin.</div></div></div>
+      <div class="step"><div class="step-n">4</div><div><div class="h3">Buyers find it, and James answers them</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your listing goes on Xelo Market. James answers buyers in their own language, day and night, and sends you only the serious ones.</div></div></div>
     </div>
+    <p style="margin-top:36px;font-size:14px;color:var(--dim);font-style:italic">Xelo Market opens soon. Listings from founding brokers go live first.</p>
   </div>
 </section>
 
@@ -607,7 +589,7 @@ footer a:hover{color:var(--g)}
         <tbody>
           <tr><td>Cost per listing</td><td class="xelo-col">from €20.75</td><td>€345–€1,250</td><td>€15–€40</td><td>€0</td></tr>
           <tr><td>Time to publish</td><td class="xelo-col">9 minutes</td><td>3–5 days</td><td>2–4 hours</td><td>—</td></tr>
-          <tr><td>9 EU languages</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>12 languages</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>MLS + social formats</td><td class="xelo-col yes">✓</td><td>Extra cost</td><td>Manual export</td><td class="no">✕</td></tr>
           <tr><td>Xelo Market listing</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td>James AI buyer assistant</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
@@ -868,21 +850,27 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('video[autoplay]').forEach(function(v) { vio.observe(v); });
   }
 });
-// Market iframe: mobile fallback + 4s load timeout
+// Market preview: mobile fallback + 4s load timeout
 (function() {
-  var wrap = document.getElementById('market-iframe-wrap');
+  var pair = document.getElementById('market-preview-pair');
+  var cta = document.querySelector('.market-cta-block');
   var fallback = document.getElementById('market-cards-fallback');
-  if (!wrap || !fallback) return;
+  if (!pair || !fallback) return;
   if (window.innerWidth < 640) {
-    wrap.style.display = 'none';
+    pair.style.display = 'none';
+    if (cta) cta.style.display = 'none';
+    fallback.style.display = '';
     return;
   }
   var loaded = false;
-  var iframe = document.getElementById('market-iframe');
-  if (iframe) { iframe.addEventListener('load', function() { loaded = true; }); }
+  ['market-iframe', 'market-iframe-phone'].forEach(function(id) {
+    var f = document.getElementById(id);
+    if (f) f.addEventListener('load', function() { loaded = true; });
+  });
   setTimeout(function() {
     if (!loaded) {
-      wrap.style.display = 'none';
+      pair.style.display = 'none';
+      if (cta) cta.style.display = 'none';
       fallback.style.display = '';
     }
   }, 4000);
