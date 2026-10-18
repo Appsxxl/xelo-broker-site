@@ -281,28 +281,28 @@ footer a:hover{color:var(--g)}
 .examples-text .h2,.examples-text .sub{max-width:100%}
 .market-preview-pair{display:flex;justify-content:space-between;align-items:flex-end;width:100%}
 .market-preview-desktop{flex-shrink:0}
-/* Real MacBook Air photo composite */
-.macbook-photo-wrap{position:relative;width:680px;aspect-ratio:1208/680;flex-shrink:0;border-radius:6px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.65)}
+/* MacBook Pro photo composite — straight-on AI image, no perspective */
+.macbook-photo-wrap{position:relative;width:680px;aspect-ratio:2528/1684;flex-shrink:0;border-radius:6px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.65)}
 .macbook-photo-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.macbook-photo-overlay{position:absolute;left:13%;top:3.5%;width:73%;height:51%;overflow:hidden;border-radius:3px;transform:perspective(1200px) rotateX(-4deg);transform-origin:top center}
-.macbook-photo-overlay iframe{width:1440px;height:900px;transform:scale(0.344);transform-origin:top left;border:none;display:block;pointer-events:none}
-/* iPhone mockup — scaled to match photo laptop height (382px) */
+.macbook-photo-overlay{position:absolute;left:12%;top:22%;width:78%;height:51%;overflow:hidden;border-radius:2px}
+.macbook-photo-overlay iframe{width:1440px;height:900px;transform:scale(0.368);transform-origin:top left;border:none;display:block;pointer-events:none}
+/* iPhone mockup — scaled to match laptop image height (453px) */
 .market-preview-phone{flex-shrink:0;margin-left:-24px}
-.phone-bezel{width:214px;height:382px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:26px;padding:8px;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 0 2px rgba(0,0,0,.8),0 16px 40px rgba(0,0,0,.8),0 4px 12px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
-.phone-bezel::before{content:'';position:absolute;right:-3px;top:84px;width:3px;height:41px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 2px 2px 0;box-shadow:1px 0 2px rgba(0,0,0,.5)}
-.phone-bezel::after{content:'';position:absolute;left:-3px;top:56px;width:3px;height:45px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:2px 0 0 2px;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
-.phone-screen-inner{width:100%;height:100%;border-radius:20px;overflow:hidden;background:#000;position:relative;display:flex;flex-direction:column}
-.phone-di{position:absolute;top:5px;left:50%;transform:translateX(-50%);width:56px;height:16px;background:#000;border-radius:10px;z-index:10;pointer-events:none}
-.phone-status-bar{height:24px;flex-shrink:0;background:#0d1321;display:flex;align-items:center;justify-content:space-between;padding:0 10px 0 9px;position:relative;z-index:8;border-radius:20px 20px 0 0}
-.psb-time{font-family:system-ui,-apple-system,sans-serif;font-size:8px;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.01em;line-height:1}
+.phone-bezel{width:254px;height:453px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:31px;padding:9px;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 0 2px rgba(0,0,0,.8),0 16px 40px rgba(0,0,0,.8),0 4px 12px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
+.phone-bezel::before{content:'';position:absolute;right:-3px;top:100px;width:3px;height:49px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 2px 2px 0;box-shadow:1px 0 2px rgba(0,0,0,.5)}
+.phone-bezel::after{content:'';position:absolute;left:-3px;top:66px;width:3px;height:53px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:2px 0 0 2px;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
+.phone-screen-inner{width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000;position:relative;display:flex;flex-direction:column}
+.phone-di{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:66px;height:19px;background:#000;border-radius:10px;z-index:10;pointer-events:none}
+.phone-status-bar{height:28px;flex-shrink:0;background:#0d1321;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 11px;position:relative;z-index:8;border-radius:24px 24px 0 0}
+.psb-time{font-family:system-ui,-apple-system,sans-serif;font-size:10px;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.01em;line-height:1}
 .psb-icons{display:flex;align-items:center;gap:3px}
-.psb-icons svg{height:7px;width:auto}
+.psb-icons svg{height:8px;width:auto}
 .phone-iframe-clip{overflow:hidden;flex:1}
-.phone-iframe-clip iframe{width:390px;height:844px;transform:scale(0.508);transform-origin:top left;border:none;display:block;pointer-events:none}
+.phone-iframe-clip iframe{width:390px;height:844px;transform:scale(0.605);transform-origin:top left;border:none;display:block;pointer-events:none}
 .market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
-/* At 1700px+: desktop scale grows to ~0.52 (750px clip), fills wider stage */
 @media(min-width:1700px){
   .macbook-photo-wrap{width:800px}
+  .macbook-photo-overlay iframe{transform:scale(0.433)}
 }
 @media(max-width:1380px){.market-preview-desktop{display:none}}
 @media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:space-around}}
@@ -420,10 +420,10 @@ footer a:hover{color:var(--g)}
       <!-- Right: frames -->
       <div class="examples-frames">
         <div id="market-preview-pair" class="market-preview-pair">
-          <!-- Douglas's real MacBook Air — live market composited over screen -->
+          <!-- MacBook Pro composite — straight-on image, iframe covers content area -->
           <div class="market-preview-desktop">
             <div class="macbook-photo-wrap">
-              <img src="macbook-photo.jpg" alt="Xelo Market on MacBook Air" loading="eager">
+              <img src="macbook-frame.jpg" alt="Xelo Market on MacBook Pro" loading="eager">
               <div class="macbook-photo-overlay">
                 <iframe id="market-iframe" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — desktop"></iframe>
               </div>
