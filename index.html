@@ -280,30 +280,30 @@ footer a:hover{color:var(--g)}
 .examples-layout{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:center}
 .examples-text{display:flex;flex-direction:column;gap:20px}
 .examples-text .h2,.examples-text .sub{max-width:100%}
-.market-preview-pair{display:flex;justify-content:space-between;align-items:flex-start;width:100%}
+.market-preview-pair{display:flex;justify-content:space-between;align-items:flex-end;width:100%}
 .market-preview-desktop{flex-shrink:0}
-/* iMac-style Studio Display frame */
+/* iMac-style Studio Display frame — 16:10 ratio */
 .imac-outer{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
-.imac-body{width:524px;border-radius:14px 14px 0 0;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 48px rgba(0,0,0,.6)}
-.imac-top-bezel{background:linear-gradient(180deg,#2c2c2e 0%,#1e1e20 100%);height:22px;display:flex;align-items:center;justify-content:center}
-.imac-cam{width:6px;height:6px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#666,#222);box-shadow:0 0 0 1.5px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
-.imac-screen-wrap{background:#1a1a1c;padding:0 10px}
+.imac-body{width:520px;border-radius:12px 12px 0 0;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 40px rgba(0,0,0,.55)}
+.imac-top-bezel{background:linear-gradient(180deg,#2c2c2e 0%,#1e1e20 100%);height:10px;display:flex;align-items:center;justify-content:center}
+.imac-cam{width:5px;height:5px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#666,#222);box-shadow:0 0 0 1px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08)}
+.imac-screen-wrap{background:#1a1a1c;padding:0 8px}
 .imac-screen-inner{width:504px;background:#000;overflow:hidden}
-.browser-bar-inner{height:34px;background:#0d1321;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
+.browser-bar-inner{height:40px;background:#0d1321;display:flex;align-items:center;gap:8px;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
 .browser-url-inner{background:rgba(255,255,255,.06);border-radius:6px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.35);font-family:ui-monospace,monospace;letter-spacing:.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.imac-chin{height:40px;background:linear-gradient(90deg,#b8b8bc 0%,#dcdcde 25%,#f0f0f2 50%,#dcdcde 75%,#b8b8bc 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.1)}
-.imac-neck{width:32px;height:20px;background:linear-gradient(180deg,#c8c8ca,#b0b0b2);clip-path:polygon(15% 0%,85% 0%,100% 100%,0% 100%)}
-.imac-base{width:120px;height:10px;background:linear-gradient(90deg,#a0a0a2 0%,#c8c8ca 50%,#a0a0a2 100%);border-radius:0 0 50% 50%/0 0 100% 100%;box-shadow:0 3px 10px rgba(0,0,0,.4)}
+.imac-chin{height:20px;background:linear-gradient(90deg,#b8b8bc 0%,#dcdcde 25%,#f0f0f2 50%,#dcdcde 75%,#b8b8bc 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.1)}
+.imac-neck{width:24px;height:16px;background:linear-gradient(180deg,#c8c8ca,#b0b0b2);clip-path:polygon(10% 0%,90% 0%,100% 100%,0% 100%)}
+.imac-base{width:100px;height:8px;background:linear-gradient(90deg,#a0a0a2 0%,#c8c8ca 50%,#a0a0a2 100%);border-radius:0 0 50% 50%/0 0 100% 100%;box-shadow:0 4px 14px rgba(0,0,0,.5)}
 .browser-dots{display:flex;gap:6px;flex-shrink:0}
 .browser-dots span{width:11px;height:11px;border-radius:50%;display:block}
 .browser-dots span:nth-child(1){background:#ff5f57}
 .browser-dots span:nth-child(2){background:#febc2e}
 .browser-dots span:nth-child(3){background:#28c840}
-.iframe-clip{width:504px;height:710px;overflow:hidden}
-.iframe-clip iframe{width:1440px;height:2029px;transform:scale(.35);transform-origin:top left;pointer-events:none;border:none;display:block}
+.iframe-clip{width:504px;height:315px;overflow:hidden}
+.iframe-clip iframe{width:1440px;height:900px;transform:scale(.35);transform-origin:top left;pointer-events:none;border:none;display:block}
 /* Realistic iPhone mockup — 390×844 natural viewport, clipped at 720px */
-.market-preview-phone{flex-shrink:0}
-.phone-bezel{width:420px;height:750px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:52px;padding:15px;position:relative;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 3px rgba(0,0,0,.8),0 24px 64px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
+.market-preview-phone{flex-shrink:0;margin-left:-24px}
+.phone-bezel{width:420px;height:750px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:52px;padding:15px;position:relative;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 0 0 3px rgba(0,0,0,.8),0 32px 80px rgba(0,0,0,.8),0 8px 24px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
 .phone-bezel::before{content:'';position:absolute;right:-4px;top:165px;width:4px;height:80px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 3px 3px 0;box-shadow:1px 0 3px rgba(0,0,0,.5)}
 .phone-bezel::after{content:'';position:absolute;left:-4px;top:110px;width:4px;height:88px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:3px 0 0 3px;box-shadow:-1px 0 3px rgba(0,0,0,.5)}
 .phone-screen-inner{width:100%;height:100%;border-radius:38px;overflow:hidden;background:#000;position:relative}
@@ -312,10 +312,11 @@ footer a:hover{color:var(--g)}
 .market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
 /* At 1700px+: desktop scale grows to ~0.52 (750px clip), fills wider stage */
 @media(min-width:1700px){
-  .imac-body{width:770px}
+  .imac-body{width:766px}
   .imac-screen-inner{width:750px}
-  .iframe-clip{width:750px}
-  .iframe-clip iframe{transform:scale(.521);height:1363px}
+  .iframe-clip{width:750px;height:469px}
+  .iframe-clip iframe{transform:scale(.521);height:900px}
+  .imac-chin{height:28px}
 }
 @media(max-width:1380px){.market-preview-desktop{display:none}}
 @media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:space-around}}
