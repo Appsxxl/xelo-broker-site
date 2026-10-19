@@ -21,6 +21,7 @@ window.XELO_I18N_DE = {
 "stats.s2.label":"der Verkäufer bevorzugen einen Makler,<br>der mit Video vermarktet",
 "stats.s3.label":"der Käufer erwarten Video-<br>touren als Standard",
 "stats.s4.label":"der Objekte<br>haben tatsächlich ein Video",
+"stats.src":"Quelle:","stats.s1.tail":"Fachportal-Daten",
 /* examples */
 "examples.h2":"Echte Objekte<br><span class=\"g\">live auf Xelo Market.</span>",
 "examples.sub":"Jedes Objekt auf Xelo Market hat einen kinematischen Rundgang, Text in 12 Sprachen und James, der Käuferanfragen beantwortet — jetzt sofort.",
@@ -86,6 +87,12 @@ window.XELO_I18N_DE = {
 "compare.r3.feat":"12 Sprachen","compare.r4.feat":"MLS + Social-Formate",
 "compare.r5.feat":"Xelo Market Listing","compare.r6.feat":"James KI-Käuferassistent",
 "compare.r7.feat":"KI-Objekttexterstellung","compare.r8.feat":"Anfrage-Konversionssteigerung",
+"compare.r2.xelo":"Minuten, nicht Tage","compare.r2.vid":"3–5 Tage","compare.r2.diy":"2–4 Stunden",
+"compare.r4.vid":"Mehrkosten","compare.r4.diy":"Manueller Export",
+"compare.r8.xelo":"4× vs. kein Video","compare.r8.vid":"4× vs. kein Video","compare.r8.none":"Ausgangswert",
+"compare.footnote":"Starter €99/Mon. ÷ 4 Objekt-Videos = €24,75 · Professional €249/Mon. ÷ 12 Objekt-Videos = €20,75",
+"compare.foot1":"¹ Steigerung der Anfrage-Konversionsrate — Quelle: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> Portaldaten; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Videograf-Spanne basiert auf typischen veröffentlichten Freelance-Tarifen in Spanien, den Niederlanden und Deutschland. DIY-Tool-Spanne basiert auf veröffentlichten Listenpreisen der wichtigsten DIY-Video-Tools.",
 /* pricing */
 "pricing.h2":"Ein Preis pro Objekt.<br><span class=\"g\">Alles inklusive.</span>",
 "pricing.sub":"Kinematischer Rundgang · Text in jeder Sprache · Ihr Listing-Portal · James beantwortet Interessenten 24/7 · automatisiertes Social-Posting.",

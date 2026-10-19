@@ -21,6 +21,7 @@ window.XELO_I18N_SV = {
 "stats.s2.label":"av säljare föredrar en mäklare<br>som använder video",
 "stats.s3.label":"av köpare förväntar sig videoturer<br>som standard",
 "stats.s4.label":"av annonserna<br>har faktiskt video",
+"stats.src":"Källa:","stats.s1.tail":"professionell portaldata",
 /* examples */
 "examples.h2":"Riktiga fastigheter<br><span class=\"g\">live på Xelo Market.</span>",
 "examples.sub":"Varje fastighet på Xelo Market har en filmisk visning, text på 12 språk och James som svarar på köparfrågor — just nu.",
@@ -86,6 +87,12 @@ window.XELO_I18N_SV = {
 "compare.r3.feat":"12 språk","compare.r4.feat":"MLS + sociala format",
 "compare.r5.feat":"Annons på Xelo Market","compare.r6.feat":"James AI köparassistent",
 "compare.r7.feat":"AI fastighetstextskrivning","compare.r8.feat":"Ökning i förfrågningskonvertering",
+"compare.r2.xelo":"minuter, inte dagar","compare.r2.vid":"3–5 dagar","compare.r2.diy":"2–4 timmar",
+"compare.r4.vid":"Extra kostnad","compare.r4.diy":"Manuell export",
+"compare.r8.xelo":"4× vs utan video","compare.r8.vid":"4× vs utan video","compare.r8.none":"Baslinje",
+"compare.footnote":"Starter €99/mån ÷ 4 fastighetsvideor = €24,75 · Professional €249/mån ÷ 12 fastighetsvideor = €20,75",
+"compare.foot1":"¹ Ökning i förfrågningskonvertering — Källa: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> portaldata; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Videografintervall baserat på typiska publicerade frilanspriser i Spanien, Nederländerna och Tyskland. DIY-verktygintervall baserat på publicerade listpriser för stora DIY-videoverktyg.",
 /* pricing */
 "pricing.h2":"Ett pris per fastighet.<br><span class=\"g\">Allt ingår.</span>",
 "pricing.sub":"Filmisk visning · text på varje språk · din annonseringsportal · James som svarar på prospekt dygnet runt · automatiserad social publicering.",

@@ -21,6 +21,7 @@ window.XELO_I18N_PL = {
 "stats.s2.label":"sprzedających woli agenta<br>używającego wideo",
 "stats.s3.label":"kupujących oczekuje wirtualnych<br>spacerów jako standardu",
 "stats.s4.label":"ofert<br>faktycznie ma wideo",
+"stats.src":"Źródło:","stats.s1.tail":"dane profesjonalnego portalu",
 /* examples */
 "examples.h2":"Prawdziwe nieruchomości<br><span class=\"g\">na żywo na Xelo Market.</span>",
 "examples.sub":"Każda nieruchomość na Xelo Market ma kinowy spacer, tekst w 12 językach i Jamesa odpowiadającego na pytania kupujących — właśnie teraz.",
@@ -86,6 +87,12 @@ window.XELO_I18N_PL = {
 "compare.r3.feat":"12 języków","compare.r4.feat":"Formaty MLS + social",
 "compare.r5.feat":"Oferta na Xelo Market","compare.r6.feat":"Asystent AI James dla kupujących",
 "compare.r7.feat":"Copywriting AI nieruchomości","compare.r8.feat":"Wzrost konwersji zapytań",
+"compare.r2.xelo":"minuty, nie dni","compare.r2.vid":"3–5 dni","compare.r2.diy":"2–4 godziny",
+"compare.r4.vid":"Dodatkowy koszt","compare.r4.diy":"Ręczny eksport",
+"compare.r8.xelo":"4× vs bez wideo","compare.r8.vid":"4× vs bez wideo","compare.r8.none":"Punkt odniesienia",
+"compare.footnote":"Starter €99/mies. ÷ 4 filmy nieruchomości = €24,75 · Professional €249/mies. ÷ 12 filmów nieruchomości = €20,75",
+"compare.foot1":"¹ Wzrost konwersji zapytań — Źródło: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> dane portalu; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Zakres videografa oparty na typowych opublikowanych stawkach freelance w Hiszpanii, Holandii i Niemczech. Zakres narzędzi DIY oparty na opublikowanych cenach katalogowych głównych narzędzi wideo DIY.",
 /* pricing */
 "pricing.h2":"Jedna cena za nieruchomość.<br><span class=\"g\">Wszystko w cenie.</span>",
 "pricing.sub":"Kinowy spacer · tekst w każdym języku · Twój portal ofert · James odpowiadający prospektom 24/7 · zautomatyzowane publikowanie w mediach społecznościowych.",

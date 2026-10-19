@@ -75,6 +75,7 @@ section{padding:90px 0}
 .stat-source{font-size:13px;color:var(--dim);margin-top:12px;font-family:ui-monospace,monospace;letter-spacing:.02em}
 .stat-source a{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 .stat-source a:hover{color:var(--g)}
+.dl{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}.dl:hover{color:var(--g)}
 .steps{display:flex;flex-direction:column;gap:0;margin-top:56px;position:relative}
 .steps::before{content:'';position:absolute;left:19px;top:38px;bottom:38px;width:2px;background:linear-gradient(to bottom,var(--g),rgba(201,168,76,.1));opacity:.4}
 .step{display:grid;grid-template-columns:40px 1fr;gap:24px;padding:28px 0;align-items:start}
@@ -434,22 +435,22 @@ footer a:hover{color:var(--g)}
       <div class="stat-card">
         <div class="stat-num">4×</div>
         <div class="stat-label" data-i18n-html="stats.s1.label">more contacts on listings<br>with video</div>
-        <div class="stat-source">Source: <a href="https://pedra.ai/blog/how-to-rank-higher-on-idealista" target="_blank" rel="noopener">idealista</a>, professional portal data</div>
+        <div class="stat-source"><span data-i18n="stats.src">Source:</span> <a href="https://pedra.ai/blog/how-to-rank-higher-on-idealista" target="_blank" rel="noopener">idealista</a>, <span data-i18n="stats.s1.tail">professional portal data</span></div>
       </div>
       <div class="stat-card">
         <div class="stat-num">73%</div>
         <div class="stat-label" data-i18n-html="stats.s2.label">of sellers prefer an agent<br>who markets with video</div>
-        <div class="stat-source">Source: <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
+        <div class="stat-source"><span data-i18n="stats.src">Source:</span> <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">58%</div>
         <div class="stat-label" data-i18n-html="stats.s3.label">of buyers expect video<br>tours as standard</div>
-        <div class="stat-source">Source: <a href="https://www.amplifiles.ai/blog/8-real-estate-video-statistics-every-realtor-should-know" target="_blank" rel="noopener">real-estate video statistics 2025</a>, via amplifiles.ai</div>
+        <div class="stat-source"><span data-i18n="stats.src">Source:</span> <a href="https://www.amplifiles.ai/blog/8-real-estate-video-statistics-every-realtor-should-know" target="_blank" rel="noopener">real-estate video statistics 2025</a>, via amplifiles.ai</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">1 in 10</div>
         <div class="stat-label" data-i18n-html="stats.s4.label">listings<br>actually has video</div>
-        <div class="stat-source">Source: <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
+        <div class="stat-source"><span data-i18n="stats.src">Source:</span> <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
       </div>
     </div>
   </div>
@@ -661,18 +662,18 @@ footer a:hover{color:var(--g)}
         </thead>
         <tbody>
           <tr><td data-i18n="compare.r1.feat">Cost per listing</td><td class="xelo-col">from €20.75</td><td>€345–€1,250</td><td>€15–€40</td><td>€0</td></tr>
-          <tr><td data-i18n="compare.r2.feat">Time to publish</td><td class="xelo-col">minutes, not days</td><td>3–5 days</td><td>2–4 hours</td><td>—</td></tr>
+          <tr><td data-i18n="compare.r2.feat">Time to publish</td><td class="xelo-col" data-i18n="compare.r2.xelo">minutes, not days</td><td data-i18n="compare.r2.vid">3–5 days</td><td data-i18n="compare.r2.diy">2–4 hours</td><td>—</td></tr>
           <tr><td data-i18n="compare.r3.feat">12 languages</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td data-i18n="compare.r4.feat">MLS + social formats</td><td class="xelo-col yes">✓</td><td>Extra cost</td><td>Manual export</td><td class="no">✕</td></tr>
+          <tr><td data-i18n="compare.r4.feat">MLS + social formats</td><td class="xelo-col yes">✓</td><td data-i18n="compare.r4.vid">Extra cost</td><td data-i18n="compare.r4.diy">Manual export</td><td class="no">✕</td></tr>
           <tr><td data-i18n="compare.r5.feat">Xelo Market listing</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td data-i18n="compare.r6.feat">James AI buyer assistant</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
           <tr><td data-i18n="compare.r7.feat">AI listing copywriting</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td data-i18n="compare.r8.feat">Enquiry conversion uplift <sup style="font-size:9px;color:var(--dim)">¹</sup></td><td class="xelo-col">4× vs no video</td><td>4× vs no video</td><td>—</td><td>Baseline</td></tr>
+          <tr><td data-i18n="compare.r8.feat">Enquiry conversion uplift <sup style="font-size:9px;color:var(--dim)">¹</sup></td><td class="xelo-col" data-i18n="compare.r8.xelo">4× vs no video</td><td data-i18n="compare.r8.vid">4× vs no video</td><td>—</td><td data-i18n="compare.r8.none">Baseline</td></tr>
         </tbody>
       </table>
-    <div style="margin-top:10px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace">Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75</div>
-    <div style="margin-top:4px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace">¹ Enquiry conversion uplift — Source: <a href="https://pedra.ai/blog/how-to-rank-higher-on-idealista" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px">idealista</a> portal data; <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px">NAR</a> 2025</div>
-    <div style="margin-top:4px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace">Videographer range based on typical published freelance rates in Spain, the Netherlands and Germany. DIY tool range based on published list prices of major DIY video tools.</div>
+    <div style="margin-top:10px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace" data-i18n="compare.footnote">Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75</div>
+    <div style="margin-top:4px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace" data-i18n-html="compare.foot1">¹ Enquiry conversion uplift — Source: <a href="https://pedra.ai/blog/how-to-rank-higher-on-idealista" target="_blank" rel="noopener" class="dl">idealista</a> portal data; <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener" class="dl">NAR</a> 2025</div>
+    <div style="margin-top:4px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace" data-i18n="compare.method">Videographer range based on typical published freelance rates in Spain, the Netherlands and Germany. DIY tool range based on published list prices of major DIY video tools.</div>
   </div>
 </section>
 

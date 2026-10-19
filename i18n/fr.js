@@ -21,6 +21,7 @@ window.XELO_I18N_FR = {
 "stats.s2.label":"des vendeurs préfèrent un agent<br>qui utilise la vidéo",
 "stats.s3.label":"des acheteurs attendent des visites<br>vidéo comme standard",
 "stats.s4.label":"des annonces<br>ont réellement une vidéo",
+"stats.src":"Source :","stats.s1.tail":"données de portail professionnel",
 /* examples */
 "examples.h2":"Vrais biens<br><span class=\"g\">en direct sur Xelo Market.</span>",
 "examples.sub":"Chaque bien sur Xelo Market a un tour cinématographique, du texte en 12 langues et James qui répond aux questions des acheteurs — en ce moment même.",
@@ -86,6 +87,12 @@ window.XELO_I18N_FR = {
 "compare.r3.feat":"12 langues","compare.r4.feat":"Formats MLS + social",
 "compare.r5.feat":"Listing Xelo Market","compare.r6.feat":"Assistant acheteur IA James",
 "compare.r7.feat":"Rédaction IA du bien","compare.r8.feat":"Hausse de conversion des demandes",
+"compare.r2.xelo":"en minutes, pas des jours","compare.r2.vid":"3–5 jours","compare.r2.diy":"2–4 heures",
+"compare.r4.vid":"Coût supplémentaire","compare.r4.diy":"Export manuel",
+"compare.r8.xelo":"4× vs sans vidéo","compare.r8.vid":"4× vs sans vidéo","compare.r8.none":"Référence",
+"compare.footnote":"Starter €99/mois ÷ 4 vidéos de bien = €24,75 · Professional €249/mois ÷ 12 vidéos de bien = €20,75",
+"compare.foot1":"¹ Hausse du taux de conversion des demandes — Source : <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> données de portail ; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Fourchette vidéaste basée sur les tarifs freelance publiés typiques en Espagne, aux Pays-Bas et en Allemagne. Fourchette outil DIY basée sur les prix catalogue publiés des principaux outils vidéo DIY.",
 /* pricing */
 "pricing.h2":"Un prix par bien.<br><span class=\"g\">Tout inclus.</span>",
 "pricing.sub":"Visite cinématographique · texte dans chaque langue · votre portail d'annonces · James qui répond aux prospects 24h/24 · publication sociale automatisée.",

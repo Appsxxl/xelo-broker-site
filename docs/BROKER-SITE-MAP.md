@@ -145,6 +145,8 @@ Generated 19 Oct 2026. Reference for every future change.
 
 **Standing sweep rule (locked 19 Oct 2026):** The FAQ allowance answer (`faq.a4`) and the trial seconds line (`pricing.trial.f2`) contain hardcoded numbers from the KV pricing config (currently 36 s trial / 192 s Starter / 576 s Professional). In English, the page shows live numbers from the KV API. In the other 12 languages it shows translated static numbers. These are identical today because KV is locked at those values — but **any KV duration change forces a sweep of all 12 broker-site language files** to update the hardcoded numbers before the change goes live.
 
+**Plan price sweep rule (locked 19 Oct 2026):** The compare footnote (`compare.footnote`) contains the plan prices verbatim: `Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75`. These static prices appear in all 12 language files. **Any plan price change (€99, €249, 4 videos, 12 videos) forces a sweep of all 12 broker-site language files** for `compare.footnote` before the change goes live.
+
 **Switcher:** globe button in `.nc` nav; CSS class `.xi18n-btn-nav` (not `.ghost`) so mobile `nav .nv,.nc .ghost{display:none}` rule does not hide it. Dropdown `.xi18n-dd` lists all 13 languages including SV. Product claims 12 (SV generates silently per language canon).
 
 ---

@@ -21,6 +21,7 @@ window.XELO_I18N_ES = {
 "stats.s2.label":"de los vendedores prefieren un agente<br>que use el vídeo",
 "stats.s3.label":"de los compradores espera visitas<br>en vídeo como estándar",
 "stats.s4.label":"de los anuncios<br>tienen realmente vídeo",
+"stats.src":"Fuente:","stats.s1.tail":"datos de portal profesional",
 /* examples */
 "examples.h2":"Propiedades reales<br><span class=\"g\">en directo en Xelo Market.</span>",
 "examples.sub":"Cada propiedad en Xelo Market tiene un recorrido cinematográfico, texto en 12 idiomas y James respondiendo consultas de compradores — ahora mismo.",
@@ -86,6 +87,12 @@ window.XELO_I18N_ES = {
 "compare.r3.feat":"12 idiomas","compare.r4.feat":"Formatos MLS + social",
 "compare.r5.feat":"Anuncio en Xelo Market","compare.r6.feat":"Asistente IA James para compradores",
 "compare.r7.feat":"Redacción IA de la propiedad","compare.r8.feat":"Mejora en conversión de consultas",
+"compare.r2.xelo":"minutos, no días","compare.r2.vid":"3–5 días","compare.r2.diy":"2–4 horas",
+"compare.r4.vid":"Coste adicional","compare.r4.diy":"Exportación manual",
+"compare.r8.xelo":"4× vs sin vídeo","compare.r8.vid":"4× vs sin vídeo","compare.r8.none":"Referencia",
+"compare.footnote":"Starter €99/mes ÷ 4 vídeos de inmueble = €24,75 · Professional €249/mes ÷ 12 vídeos de inmueble = €20,75",
+"compare.foot1":"¹ Aumento de conversión de consultas — Fuente: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> datos de portal; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Rango del videógrafo basado en tarifas freelance publicadas típicas en España, los Países Bajos y Alemania. Rango de herramientas DIY basado en precios de lista publicados de las principales herramientas de vídeo DIY.",
 /* pricing */
 "pricing.h2":"Un precio por propiedad.<br><span class=\"g\">Todo incluido.</span>",
 "pricing.sub":"Recorrido cinematográfico · texto en cada idioma · tu portal de anuncios · James respondiendo a prospectos 24/7 · publicación social automatizada.",

@@ -21,6 +21,7 @@ window.XELO_I18N_NL = {
 "stats.s2.label":"van verkopers kiest een makelaar<br>die met video werkt",
 "stats.s3.label":"van kopers verwacht video<br>als standaard",
 "stats.s4.label":"woningen<br>heeft daadwerkelijk video",
+"stats.src":"Bron:","stats.s1.tail":"professionele portaldata",
 /* examples */
 "examples.h2":"Echte woningen<br><span class=\"g\">live op Xelo Market.</span>",
 "examples.sub":"Elke woning op Xelo Market heeft een cinematische tour, tekst in 12 talen en James die kopervragen beantwoordt — nu meteen.",
@@ -86,6 +87,12 @@ window.XELO_I18N_NL = {
 "compare.r3.feat":"12 talen","compare.r4.feat":"MLS + sociale formaten",
 "compare.r5.feat":"Xelo Market listing","compare.r6.feat":"James AI kopassistent",
 "compare.r7.feat":"AI woningcopywriting","compare.r8.feat":"Verhoging enquêteconversie",
+"compare.r2.xelo":"minuten, niet dagen","compare.r2.vid":"3–5 dagen","compare.r2.diy":"2–4 uur",
+"compare.r4.vid":"Bijkomende kosten","compare.r4.diy":"Handmatige export",
+"compare.r8.xelo":"4× t.o.v. geen video","compare.r8.vid":"4× t.o.v. geen video","compare.r8.none":"Nulmeting",
+"compare.footnote":"Starter €99/mnd ÷ 4 woningvideo's = €24,75 · Professional €249/mnd ÷ 12 woningvideo's = €20,75",
+"compare.foot1":"¹ Stijging enquêteconversie — Bron: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> portaldata; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Bereik videograaf gebaseerd op typische gepubliceerde freelancetarieven in Spanje, Nederland en Duitsland. Bereik DIY-videotool gebaseerd op gepubliceerde catalogusprijzen van grote DIY-videotools.",
 /* pricing */
 "pricing.h2":"Eén prijs per woning.<br><span class=\"g\">Alles inbegrepen.</span>",
 "pricing.sub":"Cinematische tour · tekst in elke taal · jouw listingportaal · James die prospects 24/7 beantwoordt · geautomatiseerde sociale publicatie.",

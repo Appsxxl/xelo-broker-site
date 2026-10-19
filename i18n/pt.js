@@ -21,6 +21,7 @@ window.XELO_I18N_PT = {
 "stats.s2.label":"dos vendedores preferem um agente<br>que usa o vídeo",
 "stats.s3.label":"dos compradores esperam visitas<br>em vídeo como padrão",
 "stats.s4.label":"dos anúncios<br>têm realmente vídeo",
+"stats.src":"Fonte:","stats.s1.tail":"dados de portal profissional",
 /* examples */
 "examples.h2":"Imóveis reais<br><span class=\"g\">ao vivo no Xelo Market.</span>",
 "examples.sub":"Cada imóvel no Xelo Market tem uma visita cinematográfica, texto em 12 idiomas e o James a responder a perguntas de compradores — agora mesmo.",
@@ -86,6 +87,12 @@ window.XELO_I18N_PT = {
 "compare.r3.feat":"12 idiomas","compare.r4.feat":"Formatos MLS + social",
 "compare.r5.feat":"Anúncio no Xelo Market","compare.r6.feat":"Assistente IA James para compradores",
 "compare.r7.feat":"Redação IA do imóvel","compare.r8.feat":"Melhoria na conversão de consultas",
+"compare.r2.xelo":"minutos, não dias","compare.r2.vid":"3–5 dias","compare.r2.diy":"2–4 horas",
+"compare.r4.vid":"Custo extra","compare.r4.diy":"Exportação manual",
+"compare.r8.xelo":"4× vs sem vídeo","compare.r8.vid":"4× vs sem vídeo","compare.r8.none":"Referência",
+"compare.footnote":"Starter €99/mês ÷ 4 vídeos de imóvel = €24,75 · Professional €249/mês ÷ 12 vídeos de imóvel = €20,75",
+"compare.foot1":"¹ Melhoria na conversão de contactos — Fonte: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> dados de portal; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Intervalo do videógrafo baseado em tarifas freelance típicas publicadas em Espanha, Países Baixos e Alemanha. Intervalo de ferramentas DIY baseado em preços de lista publicados das principais ferramentas de vídeo DIY.",
 /* pricing */
 "pricing.h2":"Um preço por imóvel.<br><span class=\"g\">Tudo incluído.</span>",
 "pricing.sub":"Visita cinematográfica · texto em cada idioma · o seu portal de anúncios · James a responder a prospects 24/7 · publicação social automatizada.",

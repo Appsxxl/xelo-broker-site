@@ -21,6 +21,7 @@ window.XELO_I18N_AR = {
 "stats.s2.label":"من البائعين يفضلون وسيطاً<br>يستخدم الفيديو",
 "stats.s3.label":"من المشترين يتوقعون جولات<br>بالفيديو كمعيار أساسي",
 "stats.s4.label":"من الإعلانات<br>تحتوي فعلاً على فيديو",
+"stats.src":"المصدر:","stats.s1.tail":"بيانات البوابة المهنية",
 /* examples */
 "examples.h2":"عقارات حقيقية<br><span class=\"g\">مباشرة على Xelo Market.</span>",
 "examples.sub":"كل عقار على Xelo Market يتضمن جولة سينمائية ونصاً بـ12 لغة وـJames يجيب على أسئلة المشترين — الآن.",
@@ -86,6 +87,12 @@ window.XELO_I18N_AR = {
 "compare.r3.feat":"12 لغة","compare.r4.feat":"صيغ MLS + الاجتماعية",
 "compare.r5.feat":"إدراج في Xelo Market","compare.r6.feat":"مساعد James للمشترين",
 "compare.r7.feat":"كتابة محتوى العقار","compare.r8.feat":"تحسين معدل تحويل الاستفسارات",
+"compare.r2.xelo":"دقائق، لا أيام","compare.r2.vid":"3–5 أيام","compare.r2.diy":"2–4 ساعات",
+"compare.r4.vid":"تكلفة إضافية","compare.r4.diy":"تصدير يدوي",
+"compare.r8.xelo":"4× مقارنة بدون فيديو","compare.r8.vid":"4× مقارنة بدون فيديو","compare.r8.none":"مستوى مرجعي",
+"compare.footnote":"Starter €99/شهر ÷ 4 فيديوهات عقارية = €24.75 · Professional €249/شهر ÷ 12 فيديو عقاري = €20.75",
+"compare.foot1":"¹ تحسين معدل تحويل الاستفسارات — المصدر: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> بيانات البوابة؛ <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"نطاق الأسعار للمصورين مبني على الأسعار النموذجية المنشورة للعمل الحر في إسبانيا وهولندا وألمانيا. نطاق أدوات DIY مبني على أسعار القائمة المنشورة لأدوات الفيديو DIY الرئيسية.",
 /* pricing */
 "pricing.h2":"سعر واحد لكل عقار.<br><span class=\"g\">كل شيء مشمول.</span>",
 "pricing.sub":"جولة سينمائية · نص بكل لغة · بوابة إدراجك · James يرد على العملاء المحتملين 24/7 · نشر اجتماعي آلي.",

@@ -21,6 +21,7 @@ window.XELO_I18N_RU = {
 "stats.s2.label":"продавцов предпочитают агента<br>который использует видео",
 "stats.s3.label":"покупателей ожидают видеотуры<br>как стандарт",
 "stats.s4.label":"объявлений<br>реально имеют видео",
+"stats.src":"Источник:","stats.s1.tail":"данные профессионального портала",
 /* examples */
 "examples.h2":"Реальные объекты<br><span class=\"g\">в прямом эфире на Xelo Market.</span>",
 "examples.sub":"Каждый объект на Xelo Market имеет кинематографический тур, текст на 12 языках и James, отвечающего на вопросы покупателей — прямо сейчас.",
@@ -86,6 +87,12 @@ window.XELO_I18N_RU = {
 "compare.r3.feat":"12 языков","compare.r4.feat":"Форматы MLS + social",
 "compare.r5.feat":"Объявление на Xelo Market","compare.r6.feat":"ИИ-ассистент James для покупателей",
 "compare.r7.feat":"ИИ-копирайтинг объекта","compare.r8.feat":"Рост конверсии запросов",
+"compare.r2.xelo":"минуты, не дни","compare.r2.vid":"3–5 дней","compare.r2.diy":"2–4 часа",
+"compare.r4.vid":"Дополнительная оплата","compare.r4.diy":"Ручной экспорт",
+"compare.r8.xelo":"4× против отсутствия видео","compare.r8.vid":"4× против отсутствия видео","compare.r8.none":"Базовый уровень",
+"compare.footnote":"Starter €99/мес. ÷ 4 видео объектов = €24,75 · Professional €249/мес. ÷ 12 видео объектов = €20,75",
+"compare.foot1":"¹ Рост конверсии запросов — Источник: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> данные портала; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Диапазон цен видеографов основан на типичных опубликованных ставках фрилансеров в Испании, Нидерландах и Германии. Диапазон DIY-инструментов основан на опубликованных прайс-листах крупных DIY-видеоинструментов.",
 /* pricing */
 "pricing.h2":"Одна цена за объект.<br><span class=\"g\">Всё включено.</span>",
 "pricing.sub":"Кинематографический тур · текст на каждом языке · ваш портал объявлений · James, отвечающий на запросы 24/7 · автоматическая публикация в соцсетях.",

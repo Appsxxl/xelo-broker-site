@@ -21,6 +21,7 @@ window.XELO_I18N_IT = {
 "stats.s2.label":"dei venditori preferisce un agente<br>che usa il video",
 "stats.s3.label":"degli acquirenti si aspetta tour<br>in video come standard",
 "stats.s4.label":"degli annunci<br>ha davvero un video",
+"stats.src":"Fonte:","stats.s1.tail":"dati di portale professionale",
 /* examples */
 "examples.h2":"Immobili reali<br><span class=\"g\">in diretta su Xelo Market.</span>",
 "examples.sub":"Ogni immobile su Xelo Market ha un tour cinematografico, testo in 12 lingue e James che risponde alle domande degli acquirenti — proprio adesso.",
@@ -86,6 +87,12 @@ window.XELO_I18N_IT = {
 "compare.r3.feat":"12 lingue","compare.r4.feat":"Formati MLS + social",
 "compare.r5.feat":"Annuncio su Xelo Market","compare.r6.feat":"Assistente IA James per acquirenti",
 "compare.r7.feat":"Copywriting IA dell'immobile","compare.r8.feat":"Miglioramento conversione richieste",
+"compare.r2.xelo":"minuti, non giorni","compare.r2.vid":"3–5 giorni","compare.r2.diy":"2–4 ore",
+"compare.r4.vid":"Costo aggiuntivo","compare.r4.diy":"Esportazione manuale",
+"compare.r8.xelo":"4× vs senza video","compare.r8.vid":"4× vs senza video","compare.r8.none":"Riferimento",
+"compare.footnote":"Starter €99/mese ÷ 4 video immobili = €24,75 · Professional €249/mese ÷ 12 video immobili = €20,75",
+"compare.foot1":"¹ Miglioramento conversione richieste — Fonte: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> dati portale; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Fascia videografo basata su tariffe freelance tipiche pubblicate in Spagna, Paesi Bassi e Germania. Fascia strumenti DIY basata sui prezzi di listino pubblicati dei principali strumenti video DIY.",
 /* pricing */
 "pricing.h2":"Un prezzo per immobile.<br><span class=\"g\">Tutto incluso.</span>",
 "pricing.sub":"Tour cinematografico · testo in ogni lingua · il tuo portale annunci · James che risponde ai prospect 24/7 · pubblicazione social automatizzata.",

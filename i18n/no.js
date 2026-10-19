@@ -21,6 +21,7 @@ window.XELO_I18N_NO = {
 "stats.s2.label":"av selgere foretrekker en megler<br>som bruker video",
 "stats.s3.label":"av kjøpere forventer video<br>som standard",
 "stats.s4.label":"av annonser<br>har faktisk video",
+"stats.src":"Kilde:","stats.s1.tail":"profesjonelle portaldata",
 /* examples */
 "examples.h2":"Ekte eiendommer<br><span class=\"g\">direkte på Xelo Market.</span>",
 "examples.sub":"Hver eiendom på Xelo Market har en kinematisk omvisning, tekst på 12 språk og James som svarer på kjøperhenvendelser — akkurat nå.",
@@ -86,6 +87,12 @@ window.XELO_I18N_NO = {
 "compare.r3.feat":"12 språk","compare.r4.feat":"MLS + sosiale formater",
 "compare.r5.feat":"Xelo Market-annonse","compare.r6.feat":"James AI kjøperassistent",
 "compare.r7.feat":"AI eiendomstekstforfatning","compare.r8.feat":"Økning i henvendelseskonvertering",
+"compare.r2.xelo":"minutter, ikke dager","compare.r2.vid":"3–5 dager","compare.r2.diy":"2–4 timer",
+"compare.r4.vid":"Ekstra kostnad","compare.r4.diy":"Manuell eksport",
+"compare.r8.xelo":"4× vs ingen video","compare.r8.vid":"4× vs ingen video","compare.r8.none":"Grunnlinje",
+"compare.footnote":"Starter €99/mnd ÷ 4 eiendomsvideoer = €24,75 · Professional €249/mnd ÷ 12 eiendomsvideoer = €20,75",
+"compare.foot1":"¹ Økning i henvendelseskonvertering — Kilde: <a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a> portaldata; <a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"Videograf-spekter basert på typiske publiserte frilanssatser i Spania, Nederland og Tyskland. DIY-verktøy-spekter basert på publiserte listepriser for store DIY-videoverktøy.",
 /* pricing */
 "pricing.h2":"Én pris per eiendom.<br><span class=\"g\">Alt inkludert.</span>",
 "pricing.sub":"Kinematisk omvisning · tekst på hvert språk · portalannonsen din · James som svarer på prospekter 24/7 · automatisert sosial publisering.",

@@ -21,6 +21,7 @@ window.XELO_I18N_ZH = {
 "stats.s2.label":"的卖家更偏好<br>使用视频的经纪人",
 "stats.s3.label":"的买家将视频导览<br>视为标准配置",
 "stats.s4.label":"的房源<br>实际拥有视频",
+"stats.src":"来源：","stats.s1.tail":"专业门户数据",
 /* examples */
 "examples.h2":"真实房产<br><span class=\"g\">在 Xelo Market 实时展示。</span>",
 "examples.sub":"Xelo Market 上的每套房产都有电影级导览、12种语言文案，以及 James 实时回答买家问题。",
@@ -86,6 +87,12 @@ window.XELO_I18N_ZH = {
 "compare.r3.feat":"12种语言","compare.r4.feat":"MLS + 社交格式",
 "compare.r5.feat":"Xelo Market 上架","compare.r6.feat":"James AI买家助手",
 "compare.r7.feat":"AI房产文案","compare.r8.feat":"询价转化率提升",
+"compare.r2.xelo":"分钟，而非数天","compare.r2.vid":"3–5天","compare.r2.diy":"2–4小时",
+"compare.r4.vid":"额外费用","compare.r4.diy":"手动导出",
+"compare.r8.xelo":"4×（对比无视频）","compare.r8.vid":"4×（对比无视频）","compare.r8.none":"基准",
+"compare.footnote":"Starter €99/月 ÷ 4个房产视频 = €24.75 · Professional €249/月 ÷ 12个房产视频 = €20.75",
+"compare.foot1":"¹ 询价转化率提升 — 来源：<a href=\"https://pedra.ai/blog/how-to-rank-higher-on-idealista\" target=\"_blank\" rel=\"noopener\" class=\"dl\">idealista</a>门户数据；<a href=\"https://sofabrain.com/learn/real-estate-video-marketing-statistics/\" target=\"_blank\" rel=\"noopener\" class=\"dl\">NAR</a> 2025",
+"compare.method":"摄像师价格范围基于西班牙、荷兰和德国典型的公开自由职业费率。DIY工具价格范围基于主要DIY视频工具的公开定价。",
 /* pricing */
 "pricing.h2":"每套房产统一价格。<br><span class=\"g\">全部功能包含。</span>",
 "pricing.sub":"电影级导览 · 每种语言文案 · 您的发布平台 · James全天候回复潜在客户 · 自动社交发布。",
