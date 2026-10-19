@@ -1041,11 +1041,11 @@ document.addEventListener('DOMContentLoaded', function() {
       cur=lang; applyDict(cache[lang]); localStorage.setItem('xelo_ui_lang',lang); setSwitcher(lang); return;
     }
     var s=document.createElement('script');
-    s.src='/i18n/'+lang+'.js';
+    s.src='/i18n/'+lang+'.js?v=2';
     s.onerror=function(){ console.warn('Xelo i18n: failed to load',lang); };
     s.onload=function(){
       var dict=window['XELO_I18N_'+lang.toUpperCase()]||{};
-      if(dict.__lang&&dict.__lang!==lang){console.warn('Xelo i18n: marker mismatch for',lang,'got',dict.__lang);return;}
+      if(!dict.__lang||dict.__lang!==lang){console.warn('Xelo i18n: bad or missing dict for',lang,'got',dict.__lang);return;}
       cache[lang]=dict;
       cur=lang; applyDict(cache[lang]); localStorage.setItem('xelo_ui_lang',lang); setSwitcher(lang);
     };
