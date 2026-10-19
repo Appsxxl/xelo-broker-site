@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_NO = {
+"__lang":"no",
 /* nav */
 "nav.home":"Hjem","nav.research":"Forskning","nav.examples":"Eksempler",
 "nav.how":"Slik fungerer det","nav.features":"Funksjoner","nav.market":"Marked",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"Flersetes tilgang",
 "pricing.agency.f5":"Alle språk og formater",
 "pricing.agency.cta":"Kontakt oss",
+"pricing.vat":"ekskl. mva",
 "pricing.note":"Grenser tilbakestilles månedlig. Re-renderinger trekker fra videosekundene dine. Ubrukte sekunder overføres ikke. Grunnleggende meglere: pris låst i 12 måneder. Priser ekskl. MVA.",
 /* buy more */
 "buymore.h2":"Uten abonnement.",

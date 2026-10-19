@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_PL = {
+"__lang":"pl",
 /* nav */
 "nav.home":"Strona główna","nav.research":"Badania","nav.examples":"Przykłady",
 "nav.how":"Jak to działa","nav.features":"Funkcje","nav.market":"Rynek",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"Dostęp wieloosobowy",
 "pricing.agency.f5":"Wszystkie języki i formaty",
 "pricing.agency.cta":"Skontaktuj się z nami",
+"pricing.vat":"bez VAT",
 "pricing.note":"Limity są resetowane miesięcznie. Ponowne renderowanie pochłania Twoje sekundy wideo. Niewykorzystane sekundy nie przechodzą. Agenci założyciele: cena zablokowana na 12 miesięcy. Ceny bez VAT.",
 /* buy more */
 "buymore.h2":"Bez subskrypcji.",

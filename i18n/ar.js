@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_AR = {
+"__lang":"ar",
 /* nav */
 "nav.home":"الرئيسية","nav.research":"الأبحاث","nav.examples":"أمثلة",
 "nav.how":"كيف يعمل","nav.features":"الميزات","nav.market":"السوق",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"وصول متعدد المقاعد",
 "pricing.agency.f5":"جميع اللغات والصيغ",
 "pricing.agency.cta":"تواصل معنا",
+"pricing.vat":"غير شامل ضريبة القيمة المضافة",
 "pricing.note":"الحدود تُعاد شهرياً. إعادة المعالجة تستهلك ثواني الفيديو. الثواني غير المستخدمة لا تنتقل. وسطاء مؤسسون: السعر مُثبَّت لـ12 شهراً. الأسعار بدون ضريبة القيمة المضافة.",
 /* buy more */
 "buymore.h2":"بدون اشتراك.",

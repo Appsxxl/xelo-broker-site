@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_ZH = {
+"__lang":"zh",
 /* nav */
 "nav.home":"首页","nav.research":"研究","nav.examples":"案例",
 "nav.how":"使用方法","nav.features":"功能","nav.market":"市场",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"多席位访问",
 "pricing.agency.f5":"所有语言和格式",
 "pricing.agency.cta":"联系我们",
+"pricing.vat":"不含增值税",
 "pricing.note":"配额每月重置。重新渲染消耗视频秒数。未使用的秒数不累积。创始经纪人：价格锁定12个月。价格不含增值税。",
 /* buy more */
 "buymore.h2":"无需订阅。",

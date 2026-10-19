@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_IT = {
+"__lang":"it",
 /* nav */
 "nav.home":"Home","nav.research":"Ricerca","nav.examples":"Esempi",
 "nav.how":"Come funziona","nav.features":"Funzionalità","nav.market":"Mercato",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"Accesso multi-utente",
 "pricing.agency.f5":"Tutte le lingue e formati",
 "pricing.agency.cta":"Contattaci",
+"pricing.vat":"IVA esclusa",
 "pricing.note":"I limiti si azzerano mensilmente. I re-render attingono dai secondi video. I secondi inutilizzati non vengono trasferiti. Agenti fondatori: prezzo bloccato per 12 mesi. Prezzi IVA esclusa.",
 /* buy more */
 "buymore.h2":"Senza abbonamento.",

@@ -689,7 +689,7 @@ footer a:hover{color:var(--g)}
         <div class="plan-name" data-i18n="pricing.trial.name">Trial</div>
         <div class="free-badge">FREE</div>
         <div class="plan-price">€0</div>
-        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-vat" data-i18n="pricing.vat">excl. VAT</div>
         <div class="plan-sub" data-i18n="pricing.trial.sub">Free to start · 1 listing video · 36s of video</div>
         <div class="plan-features">
           <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f1">1 listing video</span></div>
@@ -712,7 +712,7 @@ footer a:hover{color:var(--g)}
       <div class="plan">
         <div class="plan-name" data-i18n="pricing.starter.name">Starter</div>
         <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
-        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-vat" data-i18n="pricing.vat">excl. VAT</div>
         <div class="plan-sub" id="sub-starter" data-i18n="pricing.starter.f1">4 listing videos per month</div>
         <div class="plan-features">
           <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.starter.f1">4 listing videos per month</span></div>
@@ -728,7 +728,7 @@ footer a:hover{color:var(--g)}
         <div class="popular-tag" data-i18n="pricing.pro.tag">MOST POPULAR</div>
         <div class="plan-name" data-i18n="pricing.pro.name">Professional</div>
         <div class="plan-price"><span id="price-professional">€249</span><span style="font-size:16px;font-weight:400">/mo</span></div>
-        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-vat" data-i18n="pricing.vat">excl. VAT</div>
         <div class="plan-sub" id="sub-professional" data-i18n="pricing.pro.f1">12 listing videos per month</div>
         <div class="plan-features">
           <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.pro.f1">12 listing videos per month</span></div>
@@ -741,7 +741,7 @@ footer a:hover{color:var(--g)}
       <div class="plan plan-agency">
         <div class="plan-name" data-i18n="pricing.agency.name">Agency</div>
         <div class="plan-price" id="price-agency">From €690<span style="font-size:16px;font-weight:400">/mo</span></div>
-        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-vat" data-i18n="pricing.vat">excl. VAT</div>
         <div class="plan-sub" data-i18n="pricing.agency.sub">Multi-seat · 720p · unlimited listings</div>
         <div class="plan-features">
           <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.agency.f1">Unlimited listings</span></div>
@@ -882,8 +882,6 @@ function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');v
     var sp=document.getElementById('sub-professional');if(sp)sp.textContent=pr.listings+' listing videos per month';
     var cta=document.getElementById('agency-cta');if(cta&&data.agency_contact_email)cta.href='mailto:'+data.agency_contact_email+'?subject=Agency plan enquiry';
     var tt=data.training_offer_text;if(tt){document.querySelectorAll('.training-text').forEach(function(el){el.textContent=tt});}
-    // Update trial seconds (shown in trial card only)
-    var trpf=document.querySelector('.trial-seconds-pf');if(trpf)trpf.innerHTML='<span class="pf-check">✓</span> '+t.seconds+' seconds of video';
     // Update FAQ allowances text
     var faqAllowances=document.querySelector('.faq-allowances-text');
     if(faqAllowances){var trClips=Math.round(t.seconds/6);var stClips=Math.round(s.seconds/6);var prClips=Math.round(pr.seconds/6);faqAllowances.textContent='Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month — unused seconds do not roll over. Trial includes '+t.seconds+' seconds ('+trClips+' clips). Starter includes '+s.seconds+' seconds (~'+stClips+' clips). Professional includes '+pr.seconds+' seconds (~'+prClips+' clips). Agency has no cap.';}
@@ -1046,7 +1044,9 @@ document.addEventListener('DOMContentLoaded', function() {
     s.src='/i18n/'+lang+'.js';
     s.onerror=function(){ console.warn('Xelo i18n: failed to load',lang); };
     s.onload=function(){
-      cache[lang]=window.XELO_I18N||{};
+      var dict=window['XELO_I18N_'+lang.toUpperCase()]||{};
+      if(dict.__lang&&dict.__lang!==lang){console.warn('Xelo i18n: marker mismatch for',lang,'got',dict.__lang);return;}
+      cache[lang]=dict;
       cur=lang; applyDict(cache[lang]); localStorage.setItem('xelo_ui_lang',lang); setSwitcher(lang);
     };
     document.head.appendChild(s);

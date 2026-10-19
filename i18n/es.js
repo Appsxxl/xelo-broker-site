@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_ES = {
+"__lang":"es",
 /* nav */
 "nav.home":"Inicio","nav.research":"Investigación","nav.examples":"Ejemplos",
 "nav.how":"Cómo funciona","nav.features":"Funciones","nav.market":"Mercado",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"Acceso multi-usuario",
 "pricing.agency.f5":"Todos los idiomas y formatos",
 "pricing.agency.cta":"Contactar",
+"pricing.vat":"excl. IVA",
 "pricing.note":"Los límites se restablecen mensualmente. Los rerenderizados consumen tus segundos de vídeo. Los segundos no utilizados no se acumulan. Agentes fundadores: precio garantizado 12 meses. Precios sin IVA.",
 /* buy more */
 "buymore.h2":"Sin suscripción.",

@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_NL = {
+"__lang":"nl",
 /* nav */
 "nav.home":"Home","nav.research":"Onderzoek","nav.examples":"Voorbeelden",
 "nav.how":"Hoe het werkt","nav.features":"Functies","nav.market":"Markt",
@@ -105,8 +106,8 @@ window.XELO_I18N = {
 "pricing.trial.cta":"Gratis starten",
 "pricing.starter.name":"Starter",
 "pricing.starter.f1":"4 woningvideo’s per maand",
-"pricing.starter.f2":"Alle 12 talen &amp; formaten",
-"pricing.starter.f3":"Portaal &amp; sociale publicatie",
+"pricing.starter.f2":"Alle 12 talen & formaten",
+"pricing.starter.f3":"Portaal & sociale publicatie",
 "pricing.starter.f4":"Xelo Market listing",
 "pricing.starter.f5":"James AI assistent",
 "pricing.starter.cta":"Kies Starter",
@@ -122,8 +123,9 @@ window.XELO_I18N = {
 "pricing.agency.f2":"Onbeperkte videotijd",
 "pricing.agency.f3":"720p kwaliteit",
 "pricing.agency.f4":"Multi-seat toegang",
-"pricing.agency.f5":"Alle talen &amp; formaten",
+"pricing.agency.f5":"Alle talen & formaten",
 "pricing.agency.cta":"Neem contact op",
+"pricing.vat":"excl. btw",
 "pricing.note":"Limieten worden maandelijks gereset. Hervertoningen putten uit je videoseconden. Ongebruikte seconden worden niet overgedragen. Founding brokers: prijs vastzet voor 12 maanden. Prijzen excl. btw.",
 /* buy more */
 "buymore.h2":"Geen abonnement nodig.",
@@ -141,7 +143,7 @@ window.XELO_I18N = {
 "buymore.trad.label":"Traditionele videograaf",
 "buymore.trad.desc":"per woning<br>planning · opnamedag · dagen bewerking",
 "buymore.xelo.label":"Xelo",
-"buymore.xelo.desc":"per woning · klaar in minuten<br>video, tekst, portaal &amp; James inbegrepen",
+"buymore.xelo.desc":"per woning · klaar in minuten<br>video, tekst, portaal & James inbegrepen",
 "buymore.save.pre":"Je bespaart tot",
 "buymore.save.post":"per woning",
 "buymore.footnote":"Limieten worden maandelijks gereset. Hervertoningen putten uit je videoseconden. Ongebruikte seconden worden niet overgedragen. Founding brokers: prijs vastzet voor 12 maanden. Prijzen excl. btw.",

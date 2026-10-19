@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_FR = {
+"__lang":"fr",
 /* nav */
 "nav.home":"Accueil","nav.research":"Recherche","nav.examples":"Exemples",
 "nav.how":"Comment ça marche","nav.features":"Fonctionnalités","nav.market":"Marché",
@@ -105,8 +106,8 @@ window.XELO_I18N = {
 "pricing.trial.cta":"Démarrer gratuitement",
 "pricing.starter.name":"Starter",
 "pricing.starter.f1":"4 vidéos de biens par mois",
-"pricing.starter.f2":"Les 12 langues &amp; formats",
-"pricing.starter.f3":"Portail &amp; publication sociale",
+"pricing.starter.f2":"Les 12 langues & formats",
+"pricing.starter.f3":"Portail & publication sociale",
 "pricing.starter.f4":"Listing Xelo Market",
 "pricing.starter.f5":"Assistant IA James",
 "pricing.starter.cta":"Choisir Starter",
@@ -122,8 +123,9 @@ window.XELO_I18N = {
 "pricing.agency.f2":"Temps vidéo illimité",
 "pricing.agency.f3":"Qualité 720p",
 "pricing.agency.f4":"Accès multi-poste",
-"pricing.agency.f5":"Toutes langues &amp; formats",
+"pricing.agency.f5":"Toutes langues & formats",
 "pricing.agency.cta":"Nous contacter",
+"pricing.vat":"hors TVA",
 "pricing.note":"Les limites se réinitialisent mensuellement. Les re-rendus sont imputés sur vos secondes vidéo. Les secondes inutilisées ne sont pas reportées. Agents fondateurs : prix garanti 12 mois. Prix hors TVA.",
 /* buy more */
 "buymore.h2":"Sans abonnement.",
@@ -141,7 +143,7 @@ window.XELO_I18N = {
 "buymore.trad.label":"Vidéographe traditionnel",
 "buymore.trad.desc":"par bien<br>planification · jour de tournage · jours de montage",
 "buymore.xelo.label":"Xelo",
-"buymore.xelo.desc":"par bien · prêt en quelques minutes<br>vidéo, texte, portail &amp; James inclus",
+"buymore.xelo.desc":"par bien · prêt en quelques minutes<br>vidéo, texte, portail & James inclus",
 "buymore.save.pre":"Vous économisez jusqu'à",
 "buymore.save.post":"par bien",
 "buymore.footnote":"Les limites se réinitialisent mensuellement. Les re-rendus sont imputés sur vos secondes vidéo. Les secondes inutilisées ne sont pas reportées. Agents fondateurs : prix garanti 12 mois. Prix hors TVA.",

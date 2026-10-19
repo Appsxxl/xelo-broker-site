@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_SV = {
+"__lang":"sv",
 /* nav */
 "nav.home":"Hem","nav.research":"Forskning","nav.examples":"Exempel",
 "nav.how":"Så fungerar det","nav.features":"Funktioner","nav.market":"Marknad",
@@ -124,6 +125,7 @@ window.XELO_I18N = {
 "pricing.agency.f4":"Flersätes tillgång",
 "pricing.agency.f5":"Alla språk och format",
 "pricing.agency.cta":"Kontakta oss",
+"pricing.vat":"exkl. moms",
 "pricing.note":"Gränserna återställs månadsvis. Omrenderingar drar från dina videosekunder. Oanvända sekunder överförs inte. Grundarmäklare: pris låst i 12 månader. Priser exkl. moms.",
 /* buy more */
 "buymore.h2":"Utan abonnemang.",

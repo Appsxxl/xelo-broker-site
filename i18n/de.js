@@ -1,4 +1,5 @@
-window.XELO_I18N = {
+window.XELO_I18N_DE = {
+"__lang":"de",
 /* nav */
 "nav.home":"Startseite","nav.research":"Forschung","nav.examples":"Beispiele",
 "nav.how":"So funktioniert es","nav.features":"Funktionen","nav.market":"Markt",
@@ -75,7 +76,7 @@ window.XELO_I18N = {
 "embed.p2":"Spielt das MLS- und Social-Video, wechselt das Format automatisch",
 "embed.p3":"Käufer können James direkt über das Einbett-Widget erreichen",
 "embed.p4":"Keine Hosting- oder Bandbreitenkosten auf Ihrer Seite",
-"embed.note":"<strong style=\"color:rgba(255,255,255,.75)\">Für alle Abonnenten verfügbar</strong> — finden Sie Ihr Einbett-Snippet auf Ihrer Einstellungsseite unter „Auf Ihrer Website einbetten".",
+"embed.note":"<strong style=\"color:rgba(255,255,255,.75)\">Für alle Abonnenten verfügbar</strong> — finden Sie Ihr Einbett-Snippet auf Ihrer Einstellungsseite unter „Auf Ihrer Website einbetten\".",
 "embed.code.note":"Das ist die gesamte Integration. Kein API-Schlüssel, kein SDK, kein Backend.",
 /* compare */
 "compare.h2":"Für europäische Makler gebaut.<br><span class=\"g\">Nichts kommt auch nur annähernd ran.</span>",
@@ -105,8 +106,8 @@ window.XELO_I18N = {
 "pricing.trial.cta":"Kostenlos starten",
 "pricing.starter.name":"Starter",
 "pricing.starter.f1":"4 Objektvideos pro Monat",
-"pricing.starter.f2":"Alle 12 Sprachen &amp; Formate",
-"pricing.starter.f3":"Portal &amp; Social-Posting",
+"pricing.starter.f2":"Alle 12 Sprachen & Formate",
+"pricing.starter.f3":"Portal & Social-Posting",
 "pricing.starter.f4":"Xelo Market Listing",
 "pricing.starter.f5":"James KI-Assistent",
 "pricing.starter.cta":"Starter wählen",
@@ -122,8 +123,9 @@ window.XELO_I18N = {
 "pricing.agency.f2":"Unbegrenzte Videozeit",
 "pricing.agency.f3":"720p Qualität",
 "pricing.agency.f4":"Multi-Seat-Zugang",
-"pricing.agency.f5":"Alle Sprachen &amp; Formate",
+"pricing.agency.f5":"Alle Sprachen & Formate",
 "pricing.agency.cta":"Kontakt aufnehmen",
+"pricing.vat":"zzgl. MwSt.",
 "pricing.note":"Limits werden monatlich zurückgesetzt. Re-Renderings belasten Ihr Videosekunden-Kontingent. Nicht genutzte Sekunden verfallen. Gründungsmakler: Preis für 12 Monate festgeschrieben. Preise zzgl. MwSt.",
 /* buy more */
 "buymore.h2":"Kein Abonnement nötig.",
@@ -141,7 +143,7 @@ window.XELO_I18N = {
 "buymore.trad.label":"Traditioneller Videograf",
 "buymore.trad.desc":"pro Objekt<br>Planung · Drehtag · Tage der Bearbeitung",
 "buymore.xelo.label":"Xelo",
-"buymore.xelo.desc":"pro Objekt · in Minuten fertig<br>Video, Text, Portal &amp; James inklusive",
+"buymore.xelo.desc":"pro Objekt · in Minuten fertig<br>Video, Text, Portal & James inklusive",
 "buymore.save.pre":"Sie sparen bis zu",
 "buymore.save.post":"pro Objekt",
 "buymore.footnote":"Limits werden monatlich zurückgesetzt. Re-Renderings belasten Ihr Videosekunden-Kontingent. Nicht genutzte Sekunden verfallen. Gründungsmakler: Preis für 12 Monate festgeschrieben. Preise zzgl. MwSt.",
