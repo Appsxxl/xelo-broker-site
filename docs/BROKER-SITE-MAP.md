@@ -116,6 +116,39 @@ Generated 19 Oct 2026. Reference for every future change.
 
 ---
 
+## i18n architecture
+
+**Engine:** inline `<script>` before `</body>`, IIFE. Snapshot-and-restore: on DOMContentLoaded the engine snapshots every `data-i18n` and `data-i18n-html` element's text/innerHTML as the EN baseline. Switching to EN restores the snapshot — no EN file needed, no flash.
+
+**Language files:** `/i18n/{lang}.js` lazy-loaded per language. Each file assigns `window.XELO_I18N = { "key": "value", ... }`. Files: nl, de, fr, es, pt, it, pl, no, sv, ru, zh, ar.
+
+**Attributes:**
+- `data-i18n="key"` → sets `textContent`
+- `data-i18n-html="key"` → sets `innerHTML` (elements that contain `<br>`, `<span class="g">`, `<strong>`)
+
+**Shared state:** `xelo_ui_lang` localStorage key — same key the dashboard app reads. A logged-in broker's language follows them to the broker site.
+
+**RTL:** engine sets `<html dir="rtl">` when `cur === 'ar'`, `dir="ltr"` for all others.
+
+**JS-hydrated elements excluded from i18n attributes** (written by `applyPricing` in English):
+- `#price-starter`, `#price-professional`, `#price-agency` — currency display, no translation needed
+- `#agency-cta` — email link, no text
+
+**JS-hydrated elements that ARE now attributed** (engine re-asserts after API via `_xeloReapply`):
+- `#sub-starter` → `data-i18n="pricing.starter.f1"`
+- `#sub-professional` → `data-i18n="pricing.pro.f1"`
+- `.trial-seconds-pf [data-i18n]` → `pricing.trial.f2`
+- `.training-text` → `data-i18n="pricing.trial.f8"`
+- `.faq-allowances-text` → `data-i18n="faq.a4"`
+
+**Race condition guard:** `window._xeloReapply` is exposed from the i18n IIFE. `applyPricing` calls it as its last step. For EN (`cur === 'en'`) it is a no-op; for all other languages it re-applies the full current language dict so the API fetch cannot stomp translated text.
+
+**Standing sweep rule (locked 19 Oct 2026):** The FAQ allowance answer (`faq.a4`) and the trial seconds line (`pricing.trial.f2`) contain hardcoded numbers from the KV pricing config (currently 36 s trial / 192 s Starter / 576 s Professional). In English, the page shows live numbers from the KV API. In the other 12 languages it shows translated static numbers. These are identical today because KV is locked at those values — but **any KV duration change forces a sweep of all 12 broker-site language files** to update the hardcoded numbers before the change goes live.
+
+**Switcher:** globe button in `.nc` nav; CSS class `.xi18n-btn-nav` (not `.ghost`) so mobile `nav .nv,.nc .ghost{display:none}` rule does not hide it. Dropdown `.xi18n-dd` lists all 13 languages including SV. Product claims 12 (SV generates silently per language canon).
+
+---
+
 ## All media queries (order of declaration)
 
 | Query | What it does |
@@ -137,7 +170,7 @@ Generated 19 Oct 2026. Reference for every future change.
 | Function / block | Line | What it does |
 |---|---|---|
 | `toggleFaq(el)` | ~794 | Accordion open/close on FAQ items |
-| `applyPricing(data)` IIFE | ~796 | Fetches `/api/pricing`, hydrates plan prices + seconds + training text |
+| `applyPricing(data)` IIFE | ~796 | Fetches `/api/pricing`, hydrates plan prices + seconds + training text; calls `_xeloReapply()` at end so non-EN languages re-assert after API write |
 | `switchHero(thumb, src, label, ratio)` | ~815 | Swaps hero video, updates aspect ratio + label |
 | DOMContentLoaded autoplay block | ~827 | Explicit play() for all `video[autoplay]` + IntersectionObserver for scroll-into-view |
 | Market preview fallback IIFE | ~853 | Hides pair at <640px width; 4s timeout fires fallback if neither iframe loads |
