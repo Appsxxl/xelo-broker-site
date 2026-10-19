@@ -91,6 +91,8 @@ window.XELO_I18N = {
 "pricing.trial.name":"Prøve",
 "pricing.trial.sub":"Gratis å starte · 1 eiendomsvideo · 36 s video",
 "pricing.trial.f1":"1 eiendomsvideo",
+"pricing.trial.f2":"36 sekunder med video",
+"pricing.trial.f8":"Gratis live-opplæring hver uke",
 "pricing.trial.f3":"6 klipp à 6 sekunder — én komplett eiendomsomvisning",
 "pricing.trial.f4":"Alle 12 språk",
 "pricing.trial.f5":"Portal 16:9 + social 9:16",
@@ -152,6 +154,7 @@ window.XELO_I18N = {
 "faq.q3":"Hva er Xelo Market, og må jeg betale ekstra for det?",
 "faq.a3":"Xelo Market er inkludert i alle planer, inkludert prøveplanen. Det er en eiendomsportal bygget rundt video — hver eiendom leveres med profesjonell video, flerspråklig tekst og James AI for kjøperhenvendelser. Eiendommene dine publiseres automatisk når du oppretter dem — ingen ekstra opplastingstrinn.",
 "faq.q4":"Hvordan fungerer videotidkvoten?",
+"faq.a4":"Hver plan inkluderer en månedlig kvote med videosekunder. Et klipp på 6 sekunder koster 6 sekunder fra den kvoten — generering eller gjengivelse trekker fra den samme poolen. Kvotene tilbakestilles den 1. i hver måned; ubrukte sekunder overføres ikke. Trial inkluderer 36 sekunder (6 klipp). Starter inkluderer 192 sekunder (~32 klipp). Professional inkluderer 576 sekunder (~96 klipp). Agency har ingen begrensning.",
 "faq.q5":"Kan jeg bruke Xelo på nettstedet mitt?",
 "faq.a5":"Ja. Integreringswidgeten lar deg legge til en Xelo-videospiller på ethvert nettsted med én HTML-linje. Eiendommene dine bor allerede på Xelo Market — widgeten speiler dem bare på ditt eget nettsted. Ingen API-nøkkel eller backend nødvendig.",
 /* cta */
@@ -173,5 +176,6 @@ window.XELO_I18N = {
 "footer.privacy":"Personvern",
 "footer.terms":"Vilkår",
 "footer.market":"Xelo Market",
-"footer.register":"Registrer"
+"footer.register":"Registrer",
+"feat.soon":"kommer snart"
 };

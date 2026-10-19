@@ -91,6 +91,8 @@ window.XELO_I18N = {
 "pricing.trial.name":"试用",
 "pricing.trial.sub":"免费开始 · 1套房产视频 · 36秒视频",
 "pricing.trial.f1":"1套房产视频",
+"pricing.trial.f2":"36秒视频",
+"pricing.trial.f8":"每周免费在线培训",
 "pricing.trial.f3":"6段6秒短片——完整房产导览",
 "pricing.trial.f4":"全部12种语言",
 "pricing.trial.f5":"平台 16:9 + 社交 9:16",
@@ -152,6 +154,7 @@ window.XELO_I18N = {
 "faq.q3":"什么是 Xelo Market？需要额外付费吗？",
 "faq.a3":"Xelo Market 包含在所有方案中，包括试用版。这是一个以视频为核心的房产平台——每套房产都有专业视频、多语言文案和 James AI 处理买家咨询。您的房产在创建时自动发布，无需额外上传步骤。",
 "faq.q4":"视频时长配额如何运作？",
+"faq.a4":"每个方案包含每月视频秒数配额。一段6秒短片消耗6秒配额——生成或重新渲染均从同一配额池中扣除。配额每月1日重置，未使用的秒数不累积。试用包含36秒（6段短片）。Starter包含192秒（约32段）。Professional包含576秒（约96段）。机构版无上限。",
 "faq.q5":"我可以在现有网站上使用 Xelo 吗？",
 "faq.a5":"可以。嵌入组件只需一行HTML，即可在任何网站上添加Xelo视频播放器。您的房产已经在Xelo Market上——组件只是将它们镜像到您自己的网站。无需API密钥或后端。",
 /* cta */
@@ -173,5 +176,6 @@ window.XELO_I18N = {
 "footer.privacy":"隐私政策",
 "footer.terms":"服务条款",
 "footer.market":"Xelo Market",
-"footer.register":"注册"
+"footer.register":"注册",
+"feat.soon":"即将推出"
 };

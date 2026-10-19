@@ -91,6 +91,8 @@ window.XELO_I18N = {
 "pricing.trial.name":"Provperiod",
 "pricing.trial.sub":"Gratis att starta · 1 fastighetsvideo · 36 s video",
 "pricing.trial.f1":"1 fastighetsvideo",
+"pricing.trial.f2":"36 sekunder video",
+"pricing.trial.f8":"Gratis liveträning varje vecka",
 "pricing.trial.f3":"6 klipp à 6 sekunder — en komplett fastighetsvisning",
 "pricing.trial.f4":"Alla 12 språk",
 "pricing.trial.f5":"Portal 16:9 + social 9:16",
@@ -152,6 +154,7 @@ window.XELO_I18N = {
 "faq.q3":"Vad är Xelo Market och måste jag betala extra för det?",
 "faq.a3":"Xelo Market ingår i alla planer, inklusive provperioden. Det är en fastighetsportal byggd kring video — varje fastighet levereras med professionell video, flerspråkig text och James AI för köparförfrågningar. Dina fastigheter publiceras automatiskt när du skapar dem — inget extra uppladdningssteg.",
 "faq.q4":"Hur fungerar videotidskvoten?",
+"faq.a4":"Varje plan inkluderar en månadskvot för videosekunder. Ett klipp på 6 sekunder kostar 6 sekunder från den kvoten — generering eller återrendering drar från samma pool. Kvoterna återställs den 1:a varje månad; oanvända sekunder förs inte över. Trial inkluderar 36 sekunder (6 klipp). Starter inkluderar 192 sekunder (~32 klipp). Professional inkluderar 576 sekunder (~96 klipp). Agency har ingen begränsning.",
 "faq.q5":"Kan jag använda Xelo på min befintliga webbplats?",
 "faq.a5":"Ja. Inbäddningswidgeten låter dig lägga till en Xelo-videospelare på vilken webbplats som helst med en HTML-rad. Dina fastigheter finns redan på Xelo Market — widgeten speglar dem bara på din egen webbplats. Ingen API-nyckel eller backend behövs.",
 /* cta */
@@ -173,5 +176,6 @@ window.XELO_I18N = {
 "footer.privacy":"Integritet",
 "footer.terms":"Villkor",
 "footer.market":"Xelo Market",
-"footer.register":"Registrera"
+"footer.register":"Registrera",
+"feat.soon":"kommer snart"
 };

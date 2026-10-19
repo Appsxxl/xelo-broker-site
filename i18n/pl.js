@@ -91,6 +91,8 @@ window.XELO_I18N = {
 "pricing.trial.name":"Próbny",
 "pricing.trial.sub":"Bezpłatny start · 1 film o nieruchomości · 36 s wideo",
 "pricing.trial.f1":"1 film o nieruchomości",
+"pricing.trial.f2":"36 sekund wideo",
+"pricing.trial.f8":"Bezpłatne szkolenie na żywo co tydzień",
 "pricing.trial.f3":"6 klipów po 6 sekund — kompletny spacer po nieruchomości",
 "pricing.trial.f4":"Wszystkie 12 języków",
 "pricing.trial.f5":"Portal 16:9 + social 9:16",
@@ -152,6 +154,7 @@ window.XELO_I18N = {
 "faq.q3":"Co to jest Xelo Market i czy trzeba za to płacić dodatkowo?",
 "faq.a3":"Xelo Market jest wliczony w każdy plan, w tym próbny. To portal nieruchomości zbudowany wokół wideo — każda nieruchomość ma profesjonalne wideo, tekst wielojęzyczny i James AI do zapytań kupujących. Twoje nieruchomości są automatycznie publikowane podczas tworzenia — bez dodatkowego kroku importu.",
 "faq.q4":"Jak działa limit czasu wideo?",
+"faq.a4":"Każdy plan zawiera miesięczny limit sekund wideo. Jeden klip 6-sekundowy kosztuje 6 sekund z tego limitu — generowanie lub ponowne renderowanie czerpie z tej samej puli. Limity resetują się 1. dnia każdego miesiąca; niewykorzystane sekundy nie są przenoszone. Trial zawiera 36 sekund (6 klipów). Starter zawiera 192 sekundy (~32 klipy). Professional zawiera 576 sekund (~96 klipów). Agency nie ma limitu.",
 "faq.q5":"Czy mogę używać Xelo na mojej istniejącej stronie?",
 "faq.a5":"Tak. Widget osadzania pozwala dodać odtwarzacz wideo Xelo do dowolnej strony za pomocą jednej linii HTML. Twoje nieruchomości już są na Xelo Market — widget tylko je odzwierciedla na Twojej własnej stronie. Bez klucza API ani backendu.",
 /* cta */
@@ -173,5 +176,6 @@ window.XELO_I18N = {
 "footer.privacy":"Prywatność",
 "footer.terms":"Warunki",
 "footer.market":"Xelo Market",
-"footer.register":"Zarejestruj się"
+"footer.register":"Zarejestruj się",
+"feat.soon":"wkrótce"
 };

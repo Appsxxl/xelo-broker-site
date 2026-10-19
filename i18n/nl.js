@@ -91,6 +91,8 @@ window.XELO_I18N = {
 "pricing.trial.name":"Trial",
 "pricing.trial.sub":"Gratis starten · 1 woningvideo · 36s video",
 "pricing.trial.f1":"1 woningvideo",
+"pricing.trial.f2":"36 seconden video",
+"pricing.trial.f8":"Gratis live training elke week",
 "pricing.trial.f3":"6 clips van 6 seconden — één complete woningtour",
 "pricing.trial.f4":"Alle 12 talen",
 "pricing.trial.f5":"16:9 portaal + 9:16 social",
@@ -152,6 +154,7 @@ window.XELO_I18N = {
 "faq.q3":"Wat is Xelo Market en moet ik er extra voor betalen?",
 "faq.a3":"Xelo Market is inbegrepen in elk abonnement, inclusief Trial. Het is een woningportaal gebouwd rond video — elke woning heeft een professionele video, meertalige tekst en James AI voor kopervragen. Je woningen worden automatisch gepubliceerd zodra je ze aanmaakt — geen extra uploadstap.",
 "faq.q4":"Hoe werkt de videotijdlimiet?",
+"faq.a4":"Elk abonnement bevat een maandelijks tegoed aan videoseconden. Eén clip van 6 seconden kost 6 seconden van dat tegoed — genereren of opnieuw renderen put uit dezelfde pool. Tegoeden worden op de 1e van elke maand gereset; ongebruikte seconden vervallen. Trial bevat 36 seconden (6 clips). Starter bevat 192 seconden (~32 clips). Professional bevat 576 seconden (~96 clips). Agency heeft geen limiet.",
 "faq.q5":"Kan ik Xelo op mijn bestaande website gebruiken?",
 "faq.a5":"Ja. Met de insluitwidget kun je een Xelo videospeler aan elke website toevoegen met één regel HTML. Je woningen leven al op Xelo Market — de insluit weerspiegelt ze gewoon op je eigen site. Geen API-sleutel of backend nodig.",
 /* cta */
@@ -173,5 +176,6 @@ window.XELO_I18N = {
 "footer.privacy":"Privacy",
 "footer.terms":"Voorwaarden",
 "footer.market":"Xelo Market",
-"footer.register":"Registreren"
+"footer.register":"Registreren",
+"feat.soon":"binnenkort"
 };
