@@ -150,10 +150,9 @@ section{padding:90px 0}
 .testi-name{font-size:13px;font-weight:700;color:#fff}
 .testi-meta{font-size:11px;color:var(--dim)}
 .testi-tag{font-size:9px;color:var(--g);letter-spacing:.1em;font-family:ui-monospace,monospace;margin-top:3px;text-transform:uppercase}
-.pricing-layout{display:grid;grid-template-columns:1fr 3fr;gap:48px;align-items:start;margin-bottom:24px}
+.pricing-top{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;margin-bottom:14px}
 .pricing-hd{display:flex;flex-direction:column;justify-content:flex-start;padding-top:4px}
-.pricing-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.trial-banner{display:flex;align-items:center;justify-content:space-between;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.22);border-radius:12px;padding:20px 28px;gap:20px;flex-wrap:wrap}
+.plans-lower{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.3);color:#3fb950;font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:6px;margin-bottom:10px;width:fit-content}
 .plan-vat{font-size:10px;color:var(--dim);margin-top:3px;letter-spacing:.02em}
 .plan-agency{background:linear-gradient(135deg,rgba(20,18,12,1) 0%,rgba(35,28,15,1) 100%);border:1px solid rgba(201,168,76,.35);border-radius:14px}
@@ -205,8 +204,8 @@ footer a:hover{color:var(--g)}
 @media(max-width:900px){
   .hero-grid,.market-layout,.james-layout,.embed-layout{grid-template-columns:1fr}
   .feat-grid{grid-template-columns:repeat(2,1fr)}
-  .pricing-layout{grid-template-columns:1fr}
-  .pricing-cards{grid-template-columns:1fr}
+  .pricing-top{grid-template-columns:1fr}
+  .plans-lower{grid-template-columns:repeat(2,1fr)}
   .market-live-grid{grid-template-columns:repeat(2,1fr)}
   .testi-grid{grid-template-columns:1fr}
   nav .nv,.nc .ghost{display:none}
@@ -215,7 +214,7 @@ footer a:hover{color:var(--g)}
   nav{padding:0 24px}
   footer{padding:24px}
 }
-@media(max-width:600px){.feat-grid{grid-template-columns:1fr}.pricing-cards{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}.market-live-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.feat-grid{grid-template-columns:1fr}.plans-lower{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr}.market-live-grid{grid-template-columns:1fr}}
 @media(min-width:901px){
   html{scroll-padding-top:72px}
   .hero{display:flex;flex-direction:column;align-items:stretch;padding:0}
@@ -286,26 +285,48 @@ footer a:hover{color:var(--g)}
 .macbook-photo-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .macbook-photo-overlay{position:absolute;left:18%;top:17%;width:63%;height:55%;overflow:hidden;border-radius:2px}
 .macbook-photo-overlay iframe{width:1440px;height:900px;transform:scale(0.298);transform-origin:top left;border:none;display:block;pointer-events:none}
-/* Dashboard screenshot — shown when MacBook is hidden (≤1380px) */
-.market-preview-screenshot{display:none}
+/* iPhone mockup */
+.market-preview-phone{flex-shrink:0;margin-left:-24px}
+.phone-bezel{width:254px;height:453px;background:linear-gradient(160deg,#48484a 0%,#1e1e20 45%,#2c2c2e 100%);border-radius:31px;padding:9px;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 0 2px rgba(0,0,0,.8),0 16px 40px rgba(0,0,0,.8),0 4px 12px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.3)}
+.phone-bezel::before{content:'';position:absolute;right:-3px;top:100px;width:3px;height:49px;background:linear-gradient(to right,#2c2c2e,#48484a);border-radius:0 2px 2px 0;box-shadow:1px 0 2px rgba(0,0,0,.5)}
+.phone-bezel::after{content:'';position:absolute;left:-3px;top:66px;width:3px;height:53px;background:linear-gradient(to left,#2c2c2e,#48484a);border-radius:2px 0 0 2px;box-shadow:-1px 0 2px rgba(0,0,0,.5)}
+.phone-screen-inner{width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000;position:relative;display:flex;flex-direction:column}
+.phone-di{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:66px;height:19px;background:#000;border-radius:10px;z-index:10;pointer-events:none}
+.phone-status-bar{height:28px;flex-shrink:0;background:#0d1321;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 11px;position:relative;z-index:8;border-radius:24px 24px 0 0}
+.psb-time{font-family:system-ui,-apple-system,sans-serif;font-size:10px;font-weight:600;color:rgba(255,255,255,.92);letter-spacing:.01em;line-height:1}
+.psb-icons{display:flex;align-items:center;gap:3px}
+.psb-icons svg{height:8px;width:auto}
+.phone-iframe-clip{overflow:hidden;flex:1}
+.phone-iframe-clip iframe{width:390px;height:844px;transform:scale(0.605);transform-origin:top left;border:none;display:block;pointer-events:none}
 .market-fallback-card{background:#121a2b;border:1px solid #1c2740;border-radius:16px;padding:48px 32px;text-align:center}
 @media(min-width:1700px){
   .macbook-photo-wrap{width:800px}
   .macbook-photo-overlay iframe{transform:scale(0.350)}
 }
-@media(max-width:1380px){
+@media(max-width:1400px){
+  .examples-layout{grid-template-columns:1fr}
+}
+@media(max-width:1000px){
   .market-preview-desktop{display:none}
   .market-preview-pair{justify-content:center}
-  .market-preview-screenshot{display:block;width:100%;max-width:700px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.08)}
-  .market-preview-screenshot img{width:100%;height:auto;display:block;border-radius:12px}
+  .market-preview-phone{margin-left:0}
+  .phone-bezel{width:310px;height:553px;border-radius:37px;padding:11px}
+  .phone-bezel::before{top:122px;height:60px}
+  .phone-bezel::after{top:80px;height:65px}
+  .phone-screen-inner{border-radius:29px}
+  .phone-di{width:81px;height:23px;top:7px}
+  .phone-status-bar{height:34px;border-radius:29px 29px 0 0}
+  .psb-time{font-size:12px}
+  .psb-icons svg{height:10px}
+  .phone-iframe-clip iframe{transform:scale(0.738)}
 }
-/* Nav: prevent overflow at tight desktop widths (~1280px Mac Mini) */
+/* Nav: reduce padding/gap at tight widths; all buttons remain visible */
 @media(max-width:1300px){
   nav{padding:0 28px}
   .nv{gap:8px}
-  .fp-btn{display:none}
 }
-@media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:center}}
+@media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:space-around}}
+@media(max-width:639px){.market-preview-pair{display:none}}
   </style>
 </head>
 <body>
@@ -428,9 +449,24 @@ footer a:hover{color:var(--g)}
               </div>
             </div>
           </div>
-          <!-- Dashboard screenshot — broker My Videos view -->
-          <div class="market-preview-screenshot">
-            <img src="dashboard-screenshot.jpg" alt="Xelo dashboard — My Videos" loading="lazy">
+          <!-- Realistic iPhone mockup -->
+          <div class="market-preview-phone">
+            <div class="phone-bezel">
+              <div class="phone-screen-inner">
+                <div class="phone-di"></div>
+                <div class="phone-status-bar">
+                  <span class="psb-time" id="psb-time"></span>
+                  <div class="psb-icons">
+                    <svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".5" fill="rgba(255,255,255,.9)"/><rect x="4.5" y="5.5" width="3" height="6.5" rx=".5" fill="rgba(255,255,255,.9)"/><rect x="9" y="3" width="3" height="9" rx=".5" fill="rgba(255,255,255,.9)"/><rect x="13.5" y="0" width="3" height="12" rx=".5" fill="rgba(255,255,255,.9)"/></svg>
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><circle cx="8" cy="11" r="1.4" fill="rgba(255,255,255,.9)"/><path d="M4.2 7.2A5.3 5.3 0 0 1 8 5.6a5.3 5.3 0 0 1 3.8 1.6" stroke="rgba(255,255,255,.9)" stroke-width="1.4" stroke-linecap="round" fill="none"/><path d="M1.5 4.5A8.6 8.6 0 0 1 8 2a8.6 8.6 0 0 1 6.5 2.8" stroke="rgba(255,255,255,.9)" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+                    <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true"><rect x=".6" y="1.8" width="21" height="8.4" rx="2" stroke="rgba(255,255,255,.85)" stroke-width="1.2"/><rect x="22.2" y="4" width="3" height="4" rx="1" fill="rgba(255,255,255,.45)"/><rect x="2" y="3.1" width="16" height="5.8" rx="1.2" fill="rgba(255,255,255,.9)"/></svg>
+                  </div>
+                </div>
+                <div class="phone-iframe-clip">
+                  <iframe id="market-iframe-phone" src="https://app.xelo.media/market" loading="lazy" scrolling="no" title="Xelo Market — mobile"></iframe>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Fallback: dark card on iframe failure or <640px -->
@@ -617,65 +653,80 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="pricing">
   <div class="wrap-wide">
-    <div class="pricing-layout">
+    <div class="pricing-top">
       <div class="pricing-hd">
         <h2 class="h2">One price per listing.<br><span class="g">Everything included.</span></h2>
         <p class="sub" style="margin-top:16px">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
-        <div class="credit-note" style="margin-top:32px;text-align:left">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
       </div>
-      <div class="pricing-cards" id="plans-grid">
-        <div class="plan">
-          <div class="plan-name">Starter</div>
-          <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-sub" id="sub-starter">4 listing videos per month</div>
-          <div class="plan-features">
-            <div class="pf"><span class="pf-check">✓</span> 4 listing videos per month</div>
-            <div class="pf"><span class="pf-check">✓</span> All 12 languages &amp; formats</div>
-            <div class="pf"><span class="pf-check">✓</span> Portal &amp; social posting</div>
-            <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
-            <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
-          </div>
-          <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
-          <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Get Starter</a>
+      <div class="plan">
+        <div class="plan-name">Trial</div>
+        <div class="free-badge">FREE</div>
+        <div class="plan-price">€0</div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub">Free to start · 1 listing video · 36s of video</div>
+        <div class="plan-features">
+          <div class="pf"><span class="pf-check">✓</span> 1 listing video</div>
+          <div class="pf trial-seconds-pf"><span class="pf-check">✓</span> 36 seconds of video</div>
+          <div class="pf"><span class="pf-check">✓</span> 6 clips of 6 seconds — one complete property tour</div>
+          <div class="pf"><span class="pf-check">✓</span> All 12 languages</div>
+          <div class="pf"><span class="pf-check">✓</span> 16:9 portal + 9:16 social</div>
+          <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
+          <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
+          <div class="pf"><span class="pf-check">✓</span> <span class="training-text">Free live training every week</span></div>
+          <div class="pf"><span class="pf-check">✓</span> Personal onboarding with our founder</div>
+          <div class="pf" style="color:#f59e0b"><span class="pf-check" style="color:#f59e0b">⚠</span> Trial videos carry a small Xelo watermark. When you upgrade, your tour is re-rendered watermark-free, free.</div>
         </div>
-        <div class="plan plan-popular">
-          <div class="popular-tag">MOST POPULAR</div>
-          <div class="plan-name">Professional</div>
-          <div class="plan-price"><span id="price-professional">€249</span><span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-sub" id="sub-professional">12 listing videos per month</div>
-          <div class="plan-features">
-            <div class="pf"><span class="pf-check">✓</span> 12 listing videos per month</div>
-            <div class="pf"><span class="pf-check">✓</span> Everything in Starter</div>
-            <div class="pf"><span class="pf-check">✓</span> Priority support</div>
-          </div>
-          <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
-          <a href="https://app.xelo.media/register" class="plan-btn plan-btn-gold">Get Professional</a>
-        </div>
-        <div class="plan plan-agency">
-          <div class="plan-name">Agency</div>
-          <div class="plan-price" id="price-agency">From €690<span style="font-size:16px;font-weight:400">/mo</span></div>
-          <div class="plan-vat">excl. VAT</div>
-          <div class="plan-sub">Multi-seat · 720p · unlimited listings</div>
-          <div class="plan-features">
-            <div class="pf"><span class="pf-check">✓</span> Unlimited listings</div>
-            <div class="pf"><span class="pf-check">✓</span> Unlimited video time</div>
-            <div class="pf"><span class="pf-check">✓</span> 720p quality</div>
-            <div class="pf"><span class="pf-check">✓</span> Multi-seat access</div>
-            <div class="pf"><span class="pf-check">✓</span> All languages &amp; formats</div>
-          </div>
-          <a href="mailto:douglashoe@gmail.com?subject=Agency plan enquiry" class="plan-btn plan-btn-gold" id="agency-cta">Contact us</a>
-        </div>
+        <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
+        <div style="margin-bottom:16px;padding:10px 14px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.6">Attend the free training and earn your first month free: 192 seconds, 4 listings, no watermark. <span style="color:rgba(255,255,255,.35)">Training link coming soon.</span></div>
+        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Start free</a>
       </div>
     </div>
-    <div class="trial-banner">
-      <div>
-        <span style="font-family:Arial,Helvetica,sans-serif;font-weight:700;color:#fff;font-size:16px">Free to start</span>
-        <span style="color:var(--dim);font-size:15px"> — 1 listing video · 36 seconds · no credit card required</span>
+    <div class="plans-lower" id="plans-grid">
+      <div class="plan">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub" id="sub-starter">4 listing videos per month</div>
+        <div class="plan-features">
+          <div class="pf"><span class="pf-check">✓</span> 4 listing videos per month</div>
+          <div class="pf"><span class="pf-check">✓</span> All 12 languages &amp; formats</div>
+          <div class="pf"><span class="pf-check">✓</span> Portal &amp; social posting</div>
+          <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
+          <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
+        </div>
+        <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
+        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Get Starter</a>
       </div>
-      <a href="https://app.xelo.media/register" class="btn gold" style="white-space:nowrap;flex-shrink:0">Start free →</a>
+      <div class="plan plan-popular">
+        <div class="popular-tag">MOST POPULAR</div>
+        <div class="plan-name">Professional</div>
+        <div class="plan-price"><span id="price-professional">€249</span><span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub" id="sub-professional">12 listing videos per month</div>
+        <div class="plan-features">
+          <div class="pf"><span class="pf-check">✓</span> 12 listing videos per month</div>
+          <div class="pf"><span class="pf-check">✓</span> Everything in Starter</div>
+          <div class="pf"><span class="pf-check">✓</span> Priority support</div>
+        </div>
+        <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
+        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-gold">Get Professional</a>
+      </div>
+      <div class="plan plan-agency">
+        <div class="plan-name">Agency</div>
+        <div class="plan-price" id="price-agency">From €690<span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-vat">excl. VAT</div>
+        <div class="plan-sub">Multi-seat · 720p · unlimited listings</div>
+        <div class="plan-features">
+          <div class="pf"><span class="pf-check">✓</span> Unlimited listings</div>
+          <div class="pf"><span class="pf-check">✓</span> Unlimited video time</div>
+          <div class="pf"><span class="pf-check">✓</span> 720p quality</div>
+          <div class="pf"><span class="pf-check">✓</span> Multi-seat access</div>
+          <div class="pf"><span class="pf-check">✓</span> All languages &amp; formats</div>
+        </div>
+        <a href="mailto:douglashoe@gmail.com?subject=Agency plan enquiry" class="plan-btn plan-btn-gold" id="agency-cta">Contact us</a>
+      </div>
     </div>
+    <div class="credit-note">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
   </div>
 </section>
 
