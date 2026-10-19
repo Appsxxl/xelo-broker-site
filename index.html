@@ -327,6 +327,15 @@ footer a:hover{color:var(--g)}
 }
 @media(max-width:900px){.examples-layout{grid-template-columns:1fr}.market-preview-pair{justify-content:space-around}}
 @media(max-width:639px){.market-preview-pair{display:none}}
+/* ===== i18n lang switcher ===== */
+.xi18n-wrap{position:relative;flex-shrink:0}
+.xi18n-btn-nav{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.18);font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap;letter-spacing:.02em;transition:all .18s}
+.xi18n-btn-nav:hover{border-color:var(--g);color:var(--g)}
+.xi18n-dd{position:absolute;top:calc(100% + 8px);right:0;background:#0f1e36;border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:5px;z-index:400;min-width:156px;display:none;flex-direction:column;gap:1px;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.xi18n-dd.xi18n-open{display:flex}
+.xi18n-opt{background:transparent;border:none;border-radius:6px;padding:6px 12px;font-size:12px;color:rgba(255,255,255,.7);cursor:pointer;text-align:left;transition:background .15s;font-family:system-ui,-apple-system,sans-serif;white-space:nowrap;width:100%}
+.xi18n-opt:hover{background:rgba(255,255,255,.07);color:#fff}
+.xi18n-opt.xi18n-active{color:var(--g);background:rgba(201,168,76,.08)}
   </style>
 </head>
 <body>
@@ -336,23 +345,41 @@ footer a:hover{color:var(--g)}
     <a href="#" style="display:flex;align-items:center;line-height:0"><img src="https://app.xelo.media/xelo-logo-full.png" alt="Xelo" style="height:36px;border-radius:8px"></a>
   </div>
   <div class="nv">
-    <a href="#" style="color:rgba(255,255,255,.55)">Home</a>
-    <a href="#stats">Research</a>
-    <a href="#examples">Examples</a>
-    <a href="#how">How it works</a>
-    <a href="#features">Features</a>
-    <a href="#market">Market</a>
-    <a href="#james">James</a>
-    <a href="#embed">Embed</a>
-    <a href="#compare">Compare</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
+    <a href="#" style="color:rgba(255,255,255,.55)" data-i18n="nav.home">Home</a>
+    <a href="#stats" data-i18n="nav.research">Research</a>
+    <a href="#examples" data-i18n="nav.examples">Examples</a>
+    <a href="#how" data-i18n="nav.how">How it works</a>
+    <a href="#features" data-i18n="nav.features">Features</a>
+    <a href="#market" data-i18n="nav.market">Market</a>
+    <a href="#james" data-i18n="nav.james">James</a>
+    <a href="#embed" data-i18n="nav.embed">Embed</a>
+    <a href="#compare" data-i18n="nav.compare">Compare</a>
+    <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
   </div>
   <div class="nc">
-    <a href="https://app.xelo.media/market" class="btn ghost fp-btn" style="border-color:rgba(201,168,76,.4);color:var(--g)" title="Free portal placement — included with every plan" aria-label="Xelo Market — free portal placement included with every plan">Free portal ✦</a>
-    <a href="https://app.xelo.media/login" class="btn ghost">Log in</a>
-    <a href="https://app.xelo.media/register" class="btn gold">Start free</a>
+    <div class="xi18n-wrap">
+      <button class="xi18n-btn-nav" id="xi18n-btn" aria-label="Switch language">🌐 EN</button>
+      <div class="xi18n-dd" id="xi18n-dd">
+        <button class="xi18n-opt xi18n-active" data-lang="en">🇬🇧 English</button>
+        <button class="xi18n-opt" data-lang="nl">🇳🇱 Nederlands</button>
+        <button class="xi18n-opt" data-lang="de">🇩🇪 Deutsch</button>
+        <button class="xi18n-opt" data-lang="fr">🇫🇷 Français</button>
+        <button class="xi18n-opt" data-lang="es">🇪🇸 Español</button>
+        <button class="xi18n-opt" data-lang="pt">🇵🇹 Português</button>
+        <button class="xi18n-opt" data-lang="ru">🇷🇺 Русский</button>
+        <button class="xi18n-opt" data-lang="zh">🇨🇳 中文</button>
+        <button class="xi18n-opt" data-lang="ar">🇸🇦 العربية</button>
+        <button class="xi18n-opt" data-lang="pl">🇵🇱 Polski</button>
+        <button class="xi18n-opt" data-lang="it">🇮🇹 Italiano</button>
+        <button class="xi18n-opt" data-lang="no">🇳🇴 Norsk</button>
+        <button class="xi18n-opt" data-lang="sv">🇸🇪 Svenska</button>
+      </div>
+    </div>
+    <a href="https://app.xelo.media/market" class="btn ghost fp-btn" style="border-color:rgba(201,168,76,.4);color:var(--g)" title="Free portal placement — included with every plan" aria-label="Xelo Market — free portal placement included with every plan" data-i18n="nav.freeprt">Free portal ✦</a>
+    <a href="https://app.xelo.media/login" class="btn ghost" data-i18n="nav.login">Log in</a>
+    <a href="https://app.xelo.media/register" class="btn gold" data-i18n="nav.start">Start free</a>
   </div>
 </nav>
 
@@ -360,18 +387,18 @@ footer a:hover{color:var(--g)}
   <div class="wrap-wide">
     <div class="hero-grid">
       <div>
-        <h1 class="h1">Every listing.<br><span class="g">12 languages.</span><br>In minutes.</h1>
-        <div style="margin-top:22px;font-size:17px;color:var(--soft);line-height:1.75;max-width:520px">Upload your photos. Xelo generates the video and writes your property description in 12 languages — published automatically.</div>
+        <h1 class="h1" data-i18n-html="hero.h1">Every listing.<br><span class="g">12 languages.</span><br>In minutes.</h1>
+        <div style="margin-top:22px;font-size:17px;color:var(--soft);line-height:1.75;max-width:520px" data-i18n="hero.sub">Upload your photos. Xelo generates the video and writes your property description in 12 languages — published automatically.</div>
         <div class="hero-stats">
-          <div class="hstat"><div class="hnum">12</div><div class="hlabel">languages, written</div><div title="English, Dutch, German, French, Spanish, Portuguese, Russian, Chinese, Arabic, Polish, Italian, Norwegian" style="margin-top:7px;font-size:13px;letter-spacing:2px;line-height:1.2">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div></div>
-          <div class="hstat"><div class="hnum">2</div><div class="hlabel">formats: 16:9 + 9:16</div></div>
-          <div class="hstat"><div class="hnum">from €20.75</div><div class="hlabel">per listing video, Professional plan</div></div>
+          <div class="hstat"><div class="hnum">12</div><div class="hlabel" data-i18n="hero.stat1.label">languages, written</div><div title="English, Dutch, German, French, Spanish, Portuguese, Russian, Chinese, Arabic, Polish, Italian, Norwegian" style="margin-top:7px;font-size:13px;letter-spacing:2px;line-height:1.2">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div></div>
+          <div class="hstat"><div class="hnum">2</div><div class="hlabel" data-i18n="hero.stat2.label">formats: 16:9 + 9:16</div></div>
+          <div class="hstat"><div class="hnum">from €20.75</div><div class="hlabel" data-i18n="hero.stat3.label">per listing video, Professional plan</div></div>
         </div>
         <div class="hero-ctas">
-          <a href="https://app.xelo.media/register" class="btn gold big">Start free</a>
-          <a href="#how" class="btn ghost big">See how it works</a>
+          <a href="https://app.xelo.media/register" class="btn gold big" data-i18n="hero.cta.start">Start free</a>
+          <a href="#how" class="btn ghost big" data-i18n="hero.cta.how">See how it works</a>
         </div>
-        <div style="margin-top:14px;font-size:15px;color:var(--dim)">Free to start · No credit card · Cancel anytime</div>
+        <div style="margin-top:14px;font-size:15px;color:var(--dim)" data-i18n="hero.free">Free to start · No credit card · Cancel anytime</div>
       </div>
       <div class="hero-visual">
         <div class="video-mock" id="hero-mock">
@@ -401,27 +428,27 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="stats">
   <div class="wrap-wide">
-    <h2 class="h2 ctr">Why video wins.</h2>
-    <p class="sub ctr" style="margin-top:16px">The numbers behind listings with video.</p>
+    <h2 class="h2 ctr" data-i18n="stats.h2">Why video wins.</h2>
+    <p class="sub ctr" style="margin-top:16px" data-i18n="stats.sub">The numbers behind listings with video.</p>
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-num">4×</div>
-        <div class="stat-label">more contacts on listings<br>with video</div>
+        <div class="stat-label" data-i18n-html="stats.s1.label">more contacts on listings<br>with video</div>
         <div class="stat-source">Source: <a href="https://pedra.ai/blog/how-to-rank-higher-on-idealista" target="_blank" rel="noopener">idealista</a>, professional portal data</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">73%</div>
-        <div class="stat-label">of sellers prefer an agent<br>who markets with video</div>
+        <div class="stat-label" data-i18n-html="stats.s2.label">of sellers prefer an agent<br>who markets with video</div>
         <div class="stat-source">Source: <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">58%</div>
-        <div class="stat-label">of buyers expect video<br>tours as standard</div>
+        <div class="stat-label" data-i18n-html="stats.s3.label">of buyers expect video<br>tours as standard</div>
         <div class="stat-source">Source: <a href="https://www.amplifiles.ai/blog/8-real-estate-video-statistics-every-realtor-should-know" target="_blank" rel="noopener">real-estate video statistics 2025</a>, via amplifiles.ai</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">1 in 10</div>
-        <div class="stat-label">listings<br>actually has video</div>
+        <div class="stat-label" data-i18n-html="stats.s4.label">listings<br>actually has video</div>
         <div class="stat-source">Source: <a href="https://sofabrain.com/learn/real-estate-video-marketing-statistics/" target="_blank" rel="noopener">NAR</a>, 2025</div>
       </div>
     </div>
@@ -433,9 +460,9 @@ footer a:hover{color:var(--g)}
     <div class="examples-layout">
       <!-- Left: headline + sub + CTA -->
       <div class="examples-text">
-        <h2 class="h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
-        <p class="sub">Every listing on Xelo Market has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
-        <div><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
+        <h2 class="h2" data-i18n-html="examples.h2">Real listings<br><span class="g">live on Xelo Market.</span></h2>
+        <p class="sub" data-i18n="examples.sub">Every listing on Xelo Market has a cinematic walkthrough, copy in 12 languages, and James answering buyer enquiries — right now.</p>
+        <div><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px" data-i18n="examples.cta">Open live market →</a></div>
       </div>
       <!-- Right: frames -->
       <div class="examples-frames">
@@ -472,8 +499,8 @@ footer a:hover{color:var(--g)}
         <!-- Fallback: dark card on iframe failure or <640px -->
         <div id="market-cards-fallback" style="display:none">
           <div class="market-fallback-card">
-            <p style="font-size:15px;color:var(--dim)">All videos generated from property photos — no drone, no studio, no editor.</p>
-            <div style="margin-top:20px"><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px">Open live market →</a></div>
+            <p style="font-size:15px;color:var(--dim)" data-i18n="examples.fallback.text">All videos generated from property photos — no drone, no studio, no editor.</p>
+            <div style="margin-top:20px"><a href="https://app.xelo.media/market" target="_blank" rel="noopener" class="btn gold" style="font-size:15px;padding:13px 32px" data-i18n="examples.fallback.cta">Open live market →</a></div>
           </div>
         </div>
       </div>
@@ -483,32 +510,32 @@ footer a:hover{color:var(--g)}
 
 <section class="bg1" id="how">
   <div class="wrap">
-    <h2 class="h2">From photos to video<br><span class="g">in 4 steps.</span></h2>
-    <p class="sub">You upload the photos and approve the result. Xelo does everything in between.</p>
+    <h2 class="h2" data-i18n-html="how.h2">From photos to video<br><span class="g">in 4 steps.</span></h2>
+    <p class="sub" data-i18n="how.sub">You upload the photos and approve the result. Xelo does everything in between.</p>
     <div class="steps">
-      <div class="step"><div class="step-n">1</div><div><div class="h3">Upload your photos</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">5 to 30 photos from your phone, camera or property portal. Any format works.</div></div></div>
-      <div class="step"><div class="step-n">2</div><div><div class="h3">Xelo makes your video</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">A wide video for property portals and a vertical video for Instagram and other social media.</div></div></div>
-      <div class="step"><div class="step-n">3</div><div><div class="h3">Xelo writes your description in 12 languages</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">The home's best features and the area, written for buyers across Europe: English, Spanish, German, French, Dutch, Italian, Portuguese, Polish, Norwegian, Russian, Arabic and Mandarin.</div></div></div>
-      <div class="step"><div class="step-n">4</div><div><div class="h3">Buyers find it, and James answers them</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px">Your listing goes on Xelo Market. James answers buyers in their own language, day and night, and sends you only the serious ones.</div></div></div>
+      <div class="step"><div class="step-n">1</div><div><div class="h3" data-i18n="how.s1.title">Upload your photos</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px" data-i18n="how.s1.desc">5 to 30 photos from your phone, camera or property portal. Any format works.</div></div></div>
+      <div class="step"><div class="step-n">2</div><div><div class="h3" data-i18n="how.s2.title">Xelo makes your video</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px" data-i18n="how.s2.desc">A wide video for property portals and a vertical video for Instagram and other social media.</div></div></div>
+      <div class="step"><div class="step-n">3</div><div><div class="h3" data-i18n="how.s3.title">Xelo writes your description in 12 languages</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px" data-i18n="how.s3.desc">The home's best features and the area, written for buyers across Europe: English, Spanish, German, French, Dutch, Italian, Portuguese, Polish, Norwegian, Russian, Arabic and Mandarin.</div></div></div>
+      <div class="step"><div class="step-n">4</div><div><div class="h3" data-i18n="how.s4.title">Buyers find it, and James answers them</div><div style="font-size:16px;color:var(--dim);line-height:1.7;max-width:660px" data-i18n="how.s4.desc">Your listing goes on Xelo Market. James answers buyers in their own language, day and night, and sends you only the serious ones.</div></div></div>
     </div>
-    <p style="margin-top:36px;font-size:14px;color:var(--dim);font-style:italic">Xelo Market opens soon. Listings from founding brokers go live first.</p>
+    <p style="margin-top:36px;font-size:14px;color:var(--dim);font-style:italic" data-i18n="how.market.note">Xelo Market opens soon. Listings from founding brokers go live first.</p>
   </div>
 </section>
 
 <section class="bg0" id="features">
   <div class="wrap-wide">
-    <h2 class="h2">Everything.<br><span class="g">In one subscription.</span></h2>
-    <p class="sub">No agencies, no freelancers, no separate tools. One platform handles the full listing workflow.</p>
+    <h2 class="h2" data-i18n-html="feat.h2">Everything.<br><span class="g">In one subscription.</span></h2>
+    <p class="sub" data-i18n="feat.sub">No agencies, no freelancers, no separate tools. One platform handles the full listing workflow.</p>
     <div class="feat-grid">
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="15" height="14" x="1" y="5" rx="2"/><polygon points="23 7 16 12 23 17 23 7"/></svg></div><div class="feat-title">AI Video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">MLS 16:9 + social 9:16. Generated from photos in minutes. No footage needed.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div><div class="feat-title">Voice narration <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc">Natural AI speech narrates your listing in the broker's language. Clear and professional — no robotic tone.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="feat-title">AI copywriting <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Xelo writes the narration, the listing description, and SEO-ready portal text — all from your photos.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="feat-title">12 languages <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">EN, NL, DE, FR, ES, PT, RU, ZH, AR, PL, IT, NO. Buyers read your listing copy in their own language.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div><div class="feat-title">Aerial video <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">AI-generated aerial flyover from satellite imagery — added automatically to your listing video.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg></div><div class="feat-title">Portal export <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc">Formatted video and copy ready for Idealista, Funda, Immowelt, Rightmove, and 30+ other EU portals.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></div><div class="feat-title">James AI assistant <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Buyer enquiry AI that qualifies leads and answers questions in any language — 24/7.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="feat-title">Embed widget <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">One line of code. Put a Xelo video player directly on your own website or property portal listing.</div></div>
-      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div><div class="feat-title">Analytics <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc">Track video views, lead quality, enquiry conversion, and portal performance per listing.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="15" height="14" x="1" y="5" rx="2"/><polygon points="23 7 16 12 23 17 23 7"/></svg></div><div class="feat-title"><span data-i18n="feat.1.title">AI Video</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.1.desc">MLS 16:9 + social 9:16. Generated from photos in minutes. No footage needed.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div><div class="feat-title"><span data-i18n="feat.2.title">Voice narration</span> <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc" data-i18n="feat.2.desc">Natural AI speech narrates your listing in the broker's language. Clear and professional — no robotic tone.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="feat-title"><span data-i18n="feat.3.title">AI copywriting</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.3.desc">Xelo writes the narration, the listing description, and SEO-ready portal text — all from your photos.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="feat-title"><span data-i18n="feat.4.title">12 languages</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.4.desc">EN, NL, DE, FR, ES, PT, RU, ZH, AR, PL, IT, NO. Buyers read your listing copy in their own language.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div><div class="feat-title"><span data-i18n="feat.5.title">Aerial video</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.5.desc">AI-generated aerial flyover from satellite imagery — added automatically to your listing video.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg></div><div class="feat-title"><span data-i18n="feat.6.title">Portal export</span> <span style="display:inline-flex;align-items:center;gap:5px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.28);border-radius:20px;padding:3px 10px;font-size:10px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.08em">coming soon</span></div><div class="feat-desc" data-i18n="feat.6.desc">Formatted video and copy ready for Idealista, Funda, Immowelt, Rightmove, and 30+ other EU portals.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg></div><div class="feat-title"><span data-i18n="feat.7.title">James AI assistant</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.7.desc">Buyer enquiry AI that qualifies leads and answers questions in any language — 24/7.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="feat-title"><span data-i18n="feat.8.title">Embed widget</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.8.desc">One line of code. Put a Xelo video player directly on your own website or property portal listing.</div></div>
+      <div class="feat"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></div><div class="feat-title"><span data-i18n="feat.9.title">Analytics</span> <span class="live"><span class="live-dot"></span>live</span></div><div class="feat-desc" data-i18n="feat.9.desc">Track video views, lead quality, enquiry conversion, and portal performance per listing.</div></div>
     </div>
   </div>
 </section>
@@ -518,12 +545,12 @@ footer a:hover{color:var(--g)}
     <div class="eyebrow"><span class="live"><span class="live-dot"></span>live now</span></div>
     <div class="market-layout">
       <div>
-        <h2 class="h2">The property portal<br>built around<br><span class="g">professional video.</span></h2>
-        <p class="sub">Xelo Market is a European property portal built into your subscription. Your listings appear automatically — no extra upload step.</p>
+        <h2 class="h2" data-i18n-html="market.h2">The property portal<br>built around<br><span class="g">professional video.</span></h2>
+        <p class="sub" data-i18n="market.sub">Xelo Market is a European property portal built into your subscription. Your listings appear automatically — no extra upload step.</p>
         <div class="mperks" style="margin-top:32px">
-          <div class="mperk"><div class="mperk-icon">✦</div><div class="mperk-text"><strong>Premium rotation — fair queue</strong><span>Every broker gets premium placement. Listings rotate every 30 seconds — no budget needed to reach the top.</span></div></div>
-          <div class="mperk"><div class="mperk-icon">🗺️</div><div class="mperk-text"><strong>Map + video grid</strong><span>Buyers see video thumbnails on the map — browse by location and watch before they enquire.</span></div></div>
-          <div class="mperk"><div class="mperk-icon">🌍</div><div class="mperk-text"><strong>Cross-border buyers</strong><span>International buyers searching in their language find your listing with James ready to respond.</span></div></div>
+          <div class="mperk"><div class="mperk-icon">✦</div><div class="mperk-text"><strong data-i18n="market.p1.title">Premium rotation — fair queue</strong><span data-i18n="market.p1.desc">Every broker gets premium placement. Listings rotate every 30 seconds — no budget needed to reach the top.</span></div></div>
+          <div class="mperk"><div class="mperk-icon">🗺️</div><div class="mperk-text"><strong data-i18n="market.p2.title">Map + video grid</strong><span data-i18n="market.p2.desc">Buyers see video thumbnails on the map — browse by location and watch before they enquire.</span></div></div>
+          <div class="mperk"><div class="mperk-icon">🌍</div><div class="mperk-text"><strong data-i18n="market.p3.title">Cross-border buyers</strong><span data-i18n="market.p3.desc">International buyers searching in their language find your listing with James ready to respond.</span></div></div>
         </div>
       </div>
       <div>
@@ -535,7 +562,7 @@ footer a:hover{color:var(--g)}
             <div class="mlisting"><div class="mthumbnail"><img src="https://app.xelo.media/public/listings/17e20711-0c9e-4ee9-8cc8-c3b48484249a/photo_03.jpg" style="width:100%;height:100%;object-fit:cover"></div><div><div class="mprice">€470,000</div><div class="maddr">Willemstad, Curaçao · 5BR · 350m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
             <div class="mlisting"><div class="mthumbnail"><img src="https://app.xelo.media/public/listings/65b306e3-16ec-4773-ad02-bd2dbdfebdae/photo_01.jpg" style="width:100%;height:100%;object-fit:cover"></div><div><div class="mprice">€485,000</div><div class="maddr">Marbella, Málaga · 3BR · 140m²</div><span class="mfeat-badge">✦ PREMIUM</span></div></div>
             </a>
-            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr);font-size:13px;color:var(--dim);text-align:center">Listings rotate every 30 s · Every broker reaches premium</div>
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr);font-size:13px;color:var(--dim);text-align:center" data-i18n="market.card.rotate">Listings rotate every 30 s · Every broker reaches premium</div>
           </div>
         </div>
       </div>
@@ -565,15 +592,15 @@ footer a:hover{color:var(--g)}
         </div>
       </div>
       <div>
-        <h2 class="h2">Buyers get answers.<br><span class="g">You get qualified leads.</span></h2>
-        <p class="sub">James reads the listing, detects the buyer's language, and handles the first conversation — so you only talk to buyers who are actually interested.</p>
+        <h2 class="h2" data-i18n-html="james.h2">Buyers get answers.<br><span class="g">You get qualified leads.</span></h2>
+        <p class="sub" data-i18n="james.sub">James reads the listing, detects the buyer's language, and handles the first conversation — so you only talk to buyers who are actually interested.</p>
         <div class="james-perks">
-          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px"><strong style="color:#fff">Multilingual</strong> — James responds in whatever language the buyer writes in</div></div>
-          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px"><strong style="color:#fff">24/7</strong> — enquiries answered while you're showing another property or asleep</div></div>
-          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px"><strong style="color:#fff">Lead forwarding</strong> — serious buyers get connected to you directly, others are filtered out</div></div>
-          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px"><strong style="color:#fff">No setup</strong> — James reads your listing automatically, no configuration needed</div></div>
+          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px" data-i18n-html="james.p1"><strong style="color:#fff">Multilingual</strong> — James responds in whatever language the buyer writes in</div></div>
+          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px" data-i18n-html="james.p2"><strong style="color:#fff">24/7</strong> — enquiries answered while you're showing another property or asleep</div></div>
+          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px" data-i18n-html="james.p3"><strong style="color:#fff">Lead forwarding</strong> — serious buyers get connected to you directly, others are filtered out</div></div>
+          <div class="jperk"><div class="jperk-bullet"></div><div style="font-size:17px;color:var(--soft);max-width:660px" data-i18n-html="james.p4"><strong style="color:#fff">No setup</strong> — James reads your listing automatically, no configuration needed</div></div>
         </div>
-        <a href="https://app.xelo.media/market" class="btn gold" style="margin-top:32px">See James in action →</a>
+        <a href="https://app.xelo.media/market" class="btn gold" style="margin-top:32px" data-i18n="james.cta">See James in action →</a>
       </div>
     </div>
   </div>
@@ -584,15 +611,15 @@ footer a:hover{color:var(--g)}
     <div class="eyebrow"><span class="live"><span class="live-dot"></span>live now</span></div>
     <div class="embed-layout">
       <div>
-        <h2 class="h2">Put Xelo on<br>your own website.<br><span class="g">One line of code.</span></h2>
-        <p class="sub">Your listings already have professional video. Now you can show them on your own site or portal — without any technical work.</p>
+        <h2 class="h2" data-i18n-html="embed.h2">Put Xelo on<br>your own website.<br><span class="g">One line of code.</span></h2>
+        <p class="sub" data-i18n="embed.sub">Your listings already have professional video. Now you can show them on your own site or portal — without any technical work.</p>
         <div class="embed-perks">
-          <div class="eperk"><span class="eperk-check">✦</span><span>Works on any website, CMS, or portal template</span></div>
-          <div class="eperk"><span class="eperk-check">✦</span><span>Plays the MLS and social video, auto-switches format</span></div>
-          <div class="eperk"><span class="eperk-check">✦</span><span>Buyers can access James directly from the embed</span></div>
-          <div class="eperk"><span class="eperk-check">✦</span><span>No hosting or bandwidth costs on your end</span></div>
+          <div class="eperk"><span class="eperk-check">✦</span><span data-i18n="embed.p1">Works on any website, CMS, or portal template</span></div>
+          <div class="eperk"><span class="eperk-check">✦</span><span data-i18n="embed.p2">Plays the MLS and social video, auto-switches format</span></div>
+          <div class="eperk"><span class="eperk-check">✦</span><span data-i18n="embed.p3">Buyers can access James directly from the embed</span></div>
+          <div class="eperk"><span class="eperk-check">✦</span><span data-i18n="embed.p4">No hosting or bandwidth costs on your end</span></div>
         </div>
-        <div style="margin-top:28px;padding:16px 20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:10px;font-size:13px;color:var(--dim)">
+        <div style="margin-top:28px;padding:16px 20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:10px;font-size:13px;color:var(--dim)" data-i18n-html="embed.note">
           <strong style="color:rgba(255,255,255,.75)">Available to all subscribers</strong> — find your embed snippet in your Settings page under "Embed on your website".
         </div>
       </div>
@@ -617,7 +644,7 @@ footer a:hover{color:var(--g)}
           </div>
         </div>
         <div style="margin-top:14px;padding:12px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;font-size:15px;color:#B9C2D4;text-align:center">
-          That's the whole integration. No API key, no SDK, no backend.
+          <span data-i18n="embed.code.note">That's the whole integration. No API key, no SDK, no backend.</span>
         </div>
       </div>
     </div>
@@ -626,21 +653,21 @@ footer a:hover{color:var(--g)}
 
 <section class="bg0" id="compare">
   <div class="wrap-wide">
-    <h2 class="h2 ctr">Built for European agents.<br><span class="g">Nothing else comes close.</span></h2>
+    <h2 class="h2 ctr" data-i18n-html="compare.h2">Built for European agents.<br><span class="g">Nothing else comes close.</span></h2>
     <div class="comp-wrap">
       <table class="comp-table">
         <thead>
-          <tr><th style="text-align:left">Feature</th><th class="comp-head-xelo">Xelo</th><th>Traditional Videographer</th><th>DIY Video Tool</th><th>No video</th></tr>
+          <tr><th style="text-align:left" data-i18n="compare.th.feature">Feature</th><th class="comp-head-xelo">Xelo</th><th data-i18n="compare.th.video">Traditional Videographer</th><th data-i18n="compare.th.diy">DIY Video Tool</th><th data-i18n="compare.th.none">No video</th></tr>
         </thead>
         <tbody>
-          <tr><td>Cost per listing</td><td class="xelo-col">from €20.75</td><td>€345–€1,250</td><td>€15–€40</td><td>€0</td></tr>
-          <tr><td>Time to publish</td><td class="xelo-col">minutes, not days</td><td>3–5 days</td><td>2–4 hours</td><td>—</td></tr>
-          <tr><td>12 languages</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>MLS + social formats</td><td class="xelo-col yes">✓</td><td>Extra cost</td><td>Manual export</td><td class="no">✕</td></tr>
-          <tr><td>Xelo Market listing</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>James AI buyer assistant</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>AI listing copywriting</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>Enquiry conversion uplift <sup style="font-size:9px;color:var(--dim)">¹</sup></td><td class="xelo-col">4× vs no video</td><td>4× vs no video</td><td>—</td><td>Baseline</td></tr>
+          <tr><td data-i18n="compare.r1.feat">Cost per listing</td><td class="xelo-col">from €20.75</td><td>€345–€1,250</td><td>€15–€40</td><td>€0</td></tr>
+          <tr><td data-i18n="compare.r2.feat">Time to publish</td><td class="xelo-col">minutes, not days</td><td>3–5 days</td><td>2–4 hours</td><td>—</td></tr>
+          <tr><td data-i18n="compare.r3.feat">12 languages</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td data-i18n="compare.r4.feat">MLS + social formats</td><td class="xelo-col yes">✓</td><td>Extra cost</td><td>Manual export</td><td class="no">✕</td></tr>
+          <tr><td data-i18n="compare.r5.feat">Xelo Market listing</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td data-i18n="compare.r6.feat">James AI buyer assistant</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td data-i18n="compare.r7.feat">AI listing copywriting</td><td class="xelo-col yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td data-i18n="compare.r8.feat">Enquiry conversion uplift <sup style="font-size:9px;color:var(--dim)">¹</sup></td><td class="xelo-col">4× vs no video</td><td>4× vs no video</td><td>—</td><td>Baseline</td></tr>
         </tbody>
       </table>
     <div style="margin-top:10px;font-size:13px;color:var(--dim);font-family:ui-monospace,monospace">Starter €99/mo ÷ 4 listing videos = €24.75 · Professional €249/mo ÷ 12 listing videos = €20.75</div>
@@ -655,139 +682,139 @@ footer a:hover{color:var(--g)}
   <div class="wrap-wide">
     <div class="pricing-top">
       <div class="pricing-hd">
-        <h2 class="h2">One price per listing.<br><span class="g">Everything included.</span></h2>
-        <p class="sub" style="margin-top:16px">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
+        <h2 class="h2" data-i18n-html="pricing.h2">One price per listing.<br><span class="g">Everything included.</span></h2>
+        <p class="sub" style="margin-top:16px" data-i18n="pricing.sub">Cinematic walkthrough · copy in every language · your listing portal · James answering prospects 24/7 · automated social posting.</p>
       </div>
       <div class="plan">
-        <div class="plan-name">Trial</div>
+        <div class="plan-name" data-i18n="pricing.trial.name">Trial</div>
         <div class="free-badge">FREE</div>
         <div class="plan-price">€0</div>
         <div class="plan-vat">excl. VAT</div>
-        <div class="plan-sub">Free to start · 1 listing video · 36s of video</div>
+        <div class="plan-sub" data-i18n="pricing.trial.sub">Free to start · 1 listing video · 36s of video</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 1 listing video</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f1">1 listing video</span></div>
           <div class="pf trial-seconds-pf"><span class="pf-check">✓</span> 36 seconds of video</div>
-          <div class="pf"><span class="pf-check">✓</span> 6 clips of 6 seconds — one complete property tour</div>
-          <div class="pf"><span class="pf-check">✓</span> All 12 languages</div>
-          <div class="pf"><span class="pf-check">✓</span> 16:9 portal + 9:16 social</div>
-          <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
-          <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f3">6 clips of 6 seconds — one complete property tour</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f4">All 12 languages</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f5">16:9 portal + 9:16 social</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f6">Xelo Market listing</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f7">James AI assistant</span></div>
           <div class="pf"><span class="pf-check">✓</span> <span class="training-text">Free live training every week</span></div>
-          <div class="pf"><span class="pf-check">✓</span> Personal onboarding with our founder</div>
-          <div class="pf" style="color:#f59e0b"><span class="pf-check" style="color:#f59e0b">⚠</span> Trial videos carry a small Xelo watermark. When you upgrade, your tour is re-rendered watermark-free, free.</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.trial.f9">Personal onboarding with our founder</span></div>
+          <div class="pf" style="color:#f59e0b"><span class="pf-check" style="color:#f59e0b">⚠</span> <span data-i18n="pricing.trial.f10">Trial videos carry a small Xelo watermark. When you upgrade, your tour is re-rendered watermark-free, free.</span></div>
         </div>
         <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
-        <div style="margin-bottom:16px;padding:10px 14px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.6">Attend the free training and earn your first month free: 192 seconds, 4 listings, no watermark. <span style="color:rgba(255,255,255,.35)">Training link coming soon.</span></div>
-        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Start free</a>
+        <div style="margin-bottom:16px;padding:10px 14px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.6"><span data-i18n="pricing.trial.earnfree">Attend the free training and earn your first month free: 192 seconds, 4 listings, no watermark.</span> <span data-i18n="pricing.trial.earnsoon" style="color:rgba(255,255,255,.35)">Training link coming soon.</span></div>
+        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost" data-i18n="pricing.trial.cta">Start free</a>
       </div>
     </div>
     <div class="plans-lower" id="plans-grid">
       <div class="plan">
-        <div class="plan-name">Starter</div>
+        <div class="plan-name" data-i18n="pricing.starter.name">Starter</div>
         <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
         <div class="plan-vat">excl. VAT</div>
         <div class="plan-sub" id="sub-starter">4 listing videos per month</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 4 listing videos per month</div>
-          <div class="pf"><span class="pf-check">✓</span> All 12 languages &amp; formats</div>
-          <div class="pf"><span class="pf-check">✓</span> Portal &amp; social posting</div>
-          <div class="pf"><span class="pf-check">✓</span> Xelo Market listing</div>
-          <div class="pf"><span class="pf-check">✓</span> James AI assistant</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.starter.f1">4 listing videos per month</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.starter.f2">All 12 languages &amp; formats</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.starter.f3">Portal &amp; social posting</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.starter.f4">Xelo Market listing</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.starter.f5">James AI assistant</span></div>
         </div>
         <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
-        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost">Get Starter</a>
+        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost" data-i18n="pricing.starter.cta">Get Starter</a>
       </div>
       <div class="plan plan-popular">
-        <div class="popular-tag">MOST POPULAR</div>
-        <div class="plan-name">Professional</div>
+        <div class="popular-tag" data-i18n="pricing.pro.tag">MOST POPULAR</div>
+        <div class="plan-name" data-i18n="pricing.pro.name">Professional</div>
         <div class="plan-price"><span id="price-professional">€249</span><span style="font-size:16px;font-weight:400">/mo</span></div>
         <div class="plan-vat">excl. VAT</div>
         <div class="plan-sub" id="sub-professional">12 listing videos per month</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> 12 listing videos per month</div>
-          <div class="pf"><span class="pf-check">✓</span> Everything in Starter</div>
-          <div class="pf"><span class="pf-check">✓</span> Priority support</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.pro.f1">12 listing videos per month</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.pro.f2">Everything in Starter</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.pro.f3">Priority support</span></div>
         </div>
         <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
-        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-gold">Get Professional</a>
+        <a href="https://app.xelo.media/register" class="plan-btn plan-btn-gold" data-i18n="pricing.pro.cta">Get Professional</a>
       </div>
       <div class="plan plan-agency">
-        <div class="plan-name">Agency</div>
+        <div class="plan-name" data-i18n="pricing.agency.name">Agency</div>
         <div class="plan-price" id="price-agency">From €690<span style="font-size:16px;font-weight:400">/mo</span></div>
         <div class="plan-vat">excl. VAT</div>
-        <div class="plan-sub">Multi-seat · 720p · unlimited listings</div>
+        <div class="plan-sub" data-i18n="pricing.agency.sub">Multi-seat · 720p · unlimited listings</div>
         <div class="plan-features">
-          <div class="pf"><span class="pf-check">✓</span> Unlimited listings</div>
-          <div class="pf"><span class="pf-check">✓</span> Unlimited video time</div>
-          <div class="pf"><span class="pf-check">✓</span> 720p quality</div>
-          <div class="pf"><span class="pf-check">✓</span> Multi-seat access</div>
-          <div class="pf"><span class="pf-check">✓</span> All languages &amp; formats</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.agency.f1">Unlimited listings</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.agency.f2">Unlimited video time</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.agency.f3">720p quality</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.agency.f4">Multi-seat access</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="pricing.agency.f5">All languages &amp; formats</span></div>
         </div>
-        <a href="mailto:douglashoe@gmail.com?subject=Agency plan enquiry" class="plan-btn plan-btn-gold" id="agency-cta">Contact us</a>
+        <a href="mailto:douglashoe@gmail.com?subject=Agency plan enquiry" class="plan-btn plan-btn-gold" id="agency-cta" data-i18n="pricing.agency.cta">Contact us</a>
       </div>
     </div>
-    <div class="credit-note">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
+    <div class="credit-note" data-i18n="pricing.note">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
   </div>
 </section>
 
 <section class="bg1" id="buy-more" style="padding:80px 0">
   <div class="wrap">
-    <h2 class="h2" style="margin-bottom:8px">No subscription needed.</h2>
-    <p class="sub" style="margin-bottom:40px">Pay once, activate instantly. Same video quality as any paid plan.</p>
+    <h2 class="h2" style="margin-bottom:8px" data-i18n="buymore.h2">No subscription needed.</h2>
+    <p class="sub" style="margin-bottom:40px" data-i18n="buymore.sub">Pay once, activate instantly. Same video quality as any paid plan.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:20px">
       <div style="background:var(--n4);border:1px solid var(--bdr);border-radius:14px;padding:36px 32px;display:flex;flex-direction:column">
-        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px">Extra listing slot</div>
+        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px" data-i18n="buymore.slot.label">Extra listing slot</div>
         <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:44px;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:4px">€89</div>
-        <div style="font-size:13px;color:var(--dim);margin-bottom:18px">One additional active listing</div>
+        <div style="font-size:13px;color:var(--dim);margin-bottom:18px" data-i18n="buymore.slot.desc">One additional active listing</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px">
-          <div class="pf"><span class="pf-check">✓</span> Same features as your plan</div>
-          <div class="pf"><span class="pf-check">✓</span> Valid until you remove the listing</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="buymore.slot.f1">Same features as your plan</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="buymore.slot.f2">Valid until you remove the listing</span></div>
         </div>
-        <div style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 20px;font-size:13px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.06em">coming soon</div>
+        <div style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 20px;font-size:13px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.06em" data-i18n="buymore.slot.soon">coming soon</div>
       </div>
       <div style="background:var(--n4);border:1px solid var(--bdr);border-radius:14px;padding:36px 32px;display:flex;flex-direction:column">
-        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px">Video seconds top-up</div>
+        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.16em;color:var(--g);text-transform:uppercase;margin-bottom:12px" data-i18n="buymore.vid.label">Video seconds top-up</div>
         <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:44px;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:4px">€21<span style="font-size:16px;font-weight:400;color:var(--dim);margin-left:6px">for 60s</span></div>
-        <div style="font-size:13px;color:var(--dim);margin-bottom:18px">€0.35 per second · ~7 clips</div>
+        <div style="font-size:13px;color:var(--dim);margin-bottom:18px" data-i18n="buymore.vid.price_desc">€0.35 per second · ~7 clips</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px">
-          <div class="pf"><span class="pf-check">✓</span> Added to your current month</div>
-          <div class="pf"><span class="pf-check">✓</span> Re-renders draw from your pool</div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="buymore.vid.f1">Added to your current month</span></div>
+          <div class="pf"><span class="pf-check">✓</span> <span data-i18n="buymore.vid.f2">Re-renders draw from your pool</span></div>
         </div>
-        <div style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 20px;font-size:13px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.06em">coming soon</div>
+        <div style="margin-top:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:10px 20px;font-size:13px;color:#f59e0b;font-family:ui-monospace,monospace;letter-spacing:.06em" data-i18n="buymore.vid.soon">coming soon</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bdr);border-radius:12px;overflow:hidden;margin-bottom:20px">
       <div style="background:var(--n3);padding:36px 40px">
-        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.14em;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:14px">Traditional videographer</div>
+        <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.14em;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:14px" data-i18n="buymore.trad.label">Traditional videographer</div>
         <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(44px,5vw,72px);color:var(--red);letter-spacing:-.04em;line-height:1;margin-bottom:10px">€345–1,250</div>
-        <div style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.5">per property<br>scheduling · shoot day · days of editing</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.5" data-i18n-html="buymore.trad.desc">per property<br>scheduling · shoot day · days of editing</div>
       </div>
       <div style="background:var(--n3);padding:36px 40px;display:flex;flex-direction:column;justify-content:space-between">
         <div>
-          <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.14em;color:var(--g);text-transform:uppercase;margin-bottom:14px">Xelo</div>
+          <div style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.14em;color:var(--g);text-transform:uppercase;margin-bottom:14px" data-i18n="buymore.xelo.label">Xelo</div>
           <div style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:clamp(44px,5vw,72px);color:var(--g);letter-spacing:-.04em;line-height:1;margin-bottom:10px">€89</div>
-          <div style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.5">per listing · ready in minutes<br>video, copy, portal &amp; James included</div>
+          <div style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.5" data-i18n-html="buymore.xelo.desc">per listing · ready in minutes<br>video, copy, portal &amp; James included</div>
         </div>
         <div style="margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:10px 16px;align-self:flex-start">
-          <span style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.1em;color:var(--g);text-transform:uppercase">You save up to</span>
+          <span style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.1em;color:var(--g);text-transform:uppercase" data-i18n="buymore.save.pre">You save up to</span>
           <span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:20px;color:var(--g);letter-spacing:-.02em">€1,161</span>
-          <span style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.06em;color:var(--g);text-transform:uppercase">per listing</span>
+          <span style="font-size:11px;font-family:ui-monospace,monospace;letter-spacing:.06em;color:var(--g);text-transform:uppercase" data-i18n="buymore.save.post">per listing</span>
         </div>
       </div>
     </div>
-    <div style="font-size:11px;color:var(--dim);line-height:1.7">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
+    <div style="font-size:11px;color:var(--dim);line-height:1.7" data-i18n="buymore.footnote">Limits reset monthly. Re-renders draw from your video seconds. Unused seconds do not roll over. Founding brokers: price locked for 12 months. Prices excl. VAT.</div>
   </div>
 </section>
 
 <section class="bg1" id="faq">
   <div class="wrap-sm">
-    <h2 class="h2 ctr">Everything you need<br>to <span class="g">know.</span></h2>
+    <h2 class="h2 ctr" data-i18n-html="faq.h2">Everything you need<br>to <span class="g">know.</span></h2>
     <div class="faq-list" style="margin-top:56px">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to get my first video? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Upload your photos and Xelo delivers both the MLS and social video in minutes. No editing, no approvals — it's ready to publish.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Which languages does Xelo support? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">12 languages: English, Dutch, German, French, Spanish, Portuguese, Russian, Mandarin, Arabic, Polish, Italian, and Norwegian. Xelo writes your property description in all 12 languages automatically. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is Xelo Market and do I have to pay extra for it? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Xelo Market is included in every plan, including Trial. It's a property portal built around video — every listing comes with a professional video, multilingual copy, and James AI for buyer enquiries. Your listings are published automatically when you create them — no extra upload step.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does the video time allowance work? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner faq-allowances-text">Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month; unused seconds do not roll over. Trial includes 36 seconds (6 clips). Starter includes 192 seconds (~32 clips). Professional includes 576 seconds (~96 clips). Agency has no cap.</div></div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I use Xelo on my existing website? <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes. The embed widget lets you add a Xelo video player to any website with one line of HTML. Your listings already live on Xelo Market — the embed just mirrors them on your own site. No API key or backend needed.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q1">How long does it take to get my first video?</span> <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a1">Upload your photos and Xelo delivers both the MLS and social video in minutes. No editing, no approvals — it's ready to publish.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Which languages does Xelo support?</span> <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a2">12 languages: English, Dutch, German, French, Spanish, Portuguese, Russian, Mandarin, Arabic, Polish, Italian, and Norwegian. Xelo writes your property description in all 12 languages automatically. James AI responds in whatever language the buyer writes in — even if it's not on this list.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q3">What is Xelo Market and do I have to pay extra for it?</span> <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a3">Xelo Market is included in every plan, including Trial. It's a property portal built around video — every listing comes with a professional video, multilingual copy, and James AI for buyer enquiries. Your listings are published automatically when you create them — no extra upload step.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q4">How does the video time allowance work?</span> <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner faq-allowances-text">Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month; unused seconds do not roll over. Trial includes 36 seconds (6 clips). Starter includes 192 seconds (~32 clips). Professional includes 576 seconds (~96 clips). Agency has no cap.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq.q5">Can I use Xelo on my existing website?</span> <span class="faq-arrow">+</span></div><div class="faq-a"><div class="faq-a-inner" data-i18n="faq.a5">Yes. The embed widget lets you add a Xelo video player to any website with one line of HTML. Your listings already live on Xelo Market — the embed just mirrors them on your own site. No API key or backend needed.</div></div></div>
     </div>
   </div>
 </section>
@@ -796,31 +823,31 @@ footer a:hover{color:var(--g)}
   <div class="wrap-wide">
   <div class="cta-grid">
     <div class="cta-left">
-      <h2 class="cta-h">Stop losing buyers to agents<br>with <span>better video.</span></h2>
-      <div class="cta-sub">Your next listing could have a video tonight.</div>
-      <p style="font-size:16px;color:var(--dim);margin-top:16px;line-height:1.7;max-width:520px">Every day without video, a buyer lands on your listing and leaves. Your first listing video is free. No credit card.</p>
+      <h2 class="cta-h" data-i18n-html="cta.h">Stop losing buyers to agents<br>with <span>better video.</span></h2>
+      <div class="cta-sub" data-i18n="cta.sub">Your next listing could have a video tonight.</div>
+      <p style="font-size:16px;color:var(--dim);margin-top:16px;line-height:1.7;max-width:520px" data-i18n="cta.body">Every day without video, a buyer lands on your listing and leaves. Your first listing video is free. No credit card.</p>
       <div class="cta-btns">
-        <a href="https://app.xelo.media/register" class="btn gold big">Make your first video free</a>
-        <a href="https://app.xelo.media/market" class="btn ghost big">See Xelo Market →</a>
+        <a href="https://app.xelo.media/register" class="btn gold big" data-i18n="cta.btn1">Make your first video free</a>
+        <a href="https://app.xelo.media/market" class="btn ghost big" data-i18n="cta.btn2">See Xelo Market →</a>
       </div>
-      <div class="cta-note">Trial includes 1 listing video · No credit card required · Cancel anytime</div>
+      <div class="cta-note" data-i18n="cta.note">Trial includes 1 listing video · No credit card required · Cancel anytime</div>
     </div>
     <div>
       <div class="cta-proof">
         <div class="cta-proof-item">
           <div class="cta-proof-num">4×</div>
-          <div class="cta-proof-text">more contacts on listings with video</div>
-          <div class="cta-proof-src">idealista portal data</div>
+          <div class="cta-proof-text" data-i18n="cta.proof1.text">more contacts on listings with video</div>
+          <div class="cta-proof-src" data-i18n="cta.proof1.src">idealista portal data</div>
         </div>
         <div class="cta-proof-item">
           <div class="cta-proof-num">73%</div>
-          <div class="cta-proof-text">of sellers prefer an agent who markets with video</div>
-          <div class="cta-proof-src">NAR, 2025</div>
+          <div class="cta-proof-text" data-i18n="cta.proof2.text">of sellers prefer an agent who markets with video</div>
+          <div class="cta-proof-src" data-i18n="cta.proof2.src">NAR, 2025</div>
         </div>
         <div class="cta-proof-item">
-          <div class="cta-proof-num">minutes</div>
-          <div class="cta-proof-text">from photos to published video</div>
-          <div class="cta-proof-src">vs 3–5 days for a videographer</div>
+          <div class="cta-proof-num" data-i18n="cta.proof3.num">minutes</div>
+          <div class="cta-proof-text" data-i18n="cta.proof3.text">from photos to published video</div>
+          <div class="cta-proof-src" data-i18n="cta.proof3.src">vs 3–5 days for a videographer</div>
         </div>
       </div>
     </div>
@@ -831,13 +858,13 @@ footer a:hover{color:var(--g)}
 <footer>
   <div style="display:flex;align-items:center;gap:12px">
     <img src="https://app.xelo.media/xelo-logo-full.png" alt="Xelo" style="height:28px;border-radius:6px">
-    <span style="font-size:11px;color:rgba(255,255,255,.2)">© 2026 Xelo Media World Ltd. All rights reserved.</span>
+    <span style="font-size:11px;color:rgba(255,255,255,.2)" data-i18n="footer.copy">© 2026 Xelo Media World Ltd. All rights reserved.</span>
   </div>
   <div style="display:flex;gap:20px">
-    <a href="/privacy">Privacy</a>
-    <a href="/terms">Terms</a>
-    <a href="https://app.xelo.media/market">Xelo Market</a>
-    <a href="https://app.xelo.media/register">Register</a>
+    <a href="/privacy" data-i18n="footer.privacy">Privacy</a>
+    <a href="/terms" data-i18n="footer.terms">Terms</a>
+    <a href="https://app.xelo.media/market" data-i18n="footer.market">Xelo Market</a>
+    <a href="https://app.xelo.media/register" data-i18n="footer.register">Register</a>
   </div>
 </footer>
 
@@ -963,6 +990,91 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   tick();
   setInterval(tick, 10000);
+})();
+</script>
+<script>
+/* ===== Xelo i18n engine ===== */
+(function(){
+  var LANGS=['en','nl','de','fr','es','pt','ru','zh','ar','pl','it','no','sv'];
+  var snap={};
+  var cur='en';
+  var cache={};
+
+  function buildSnap(){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.dataset.i18n;
+      if(!snap[k]) snap[k]=el.textContent;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.dataset.i18nHtml;
+      if(!snap[k]) snap[k]=el.innerHTML;
+    });
+  }
+
+  function applyDict(dict){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.dataset.i18n;
+      var v=(dict&&dict[k]!=null)?dict[k]:snap[k];
+      if(v!=null) el.textContent=v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.dataset.i18nHtml;
+      var v=(dict&&dict[k]!=null)?dict[k]:snap[k];
+      if(v!=null) el.innerHTML=v;
+    });
+    document.documentElement.lang=cur;
+    document.documentElement.dir=(cur==='ar')?'rtl':'ltr';
+  }
+
+  function setSwitcher(lang){
+    var btn=document.getElementById('xi18n-btn');
+    if(btn) btn.textContent='🌐 '+lang.toUpperCase();
+    document.querySelectorAll('.xi18n-opt').forEach(function(el){
+      el.classList.toggle('xi18n-active',el.dataset.lang===lang);
+    });
+  }
+
+  function loadLang(lang){
+    if(lang==='en'){
+      cur='en'; applyDict(null); localStorage.setItem('xelo_ui_lang','en'); setSwitcher('en'); return;
+    }
+    if(cache[lang]){
+      cur=lang; applyDict(cache[lang]); localStorage.setItem('xelo_ui_lang',lang); setSwitcher(lang); return;
+    }
+    var s=document.createElement('script');
+    s.src='/i18n/'+lang+'.js';
+    s.onerror=function(){ console.warn('Xelo i18n: failed to load',lang); };
+    s.onload=function(){
+      cache[lang]=window.XELO_I18N||{};
+      cur=lang; applyDict(cache[lang]); localStorage.setItem('xelo_ui_lang',lang); setSwitcher(lang);
+    };
+    document.head.appendChild(s);
+  }
+
+  window._xeloLoadLang=loadLang;
+
+  document.addEventListener('DOMContentLoaded',function(){
+    buildSnap();
+    var stored=localStorage.getItem('xelo_ui_lang');
+    var detected=(navigator.language||'').toLowerCase().slice(0,2);
+    var init=(stored&&LANGS.indexOf(stored)!==-1)?stored:(LANGS.indexOf(detected)!==-1?detected:'en');
+    if(init!=='en') loadLang(init);
+    else setSwitcher('en');
+
+    var btn=document.getElementById('xi18n-btn');
+    var dd=document.getElementById('xi18n-dd');
+    if(btn&&dd){
+      btn.addEventListener('click',function(e){ e.stopPropagation(); dd.classList.toggle('xi18n-open'); });
+      document.addEventListener('click',function(){ dd.classList.remove('xi18n-open'); });
+      document.querySelectorAll('.xi18n-opt').forEach(function(el){
+        el.addEventListener('click',function(e){
+          e.stopPropagation();
+          loadLang(el.dataset.lang);
+          dd.classList.remove('xi18n-open');
+        });
+      });
+    }
+  });
 })();
 </script>
 </body>
