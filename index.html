@@ -891,7 +891,7 @@ function setBilling(interval) {
   if(btnA){btnA.style.background=interval==='annual'?'rgba(255,255,255,.15)':'transparent';btnA.style.color=interval==='annual'?'#fff':'rgba(255,255,255,.5)';btnA.style.fontWeight=interval==='annual'?'700':'400';}
   if(badge)badge.style.display=interval==='annual'?'':'none';
   var lang=document.documentElement.lang||'en';
-  var t=(window._xeloI18n&&window._xeloI18n[lang])||{};
+  var t=window['XELO_I18N_'+lang.toUpperCase()]||{};
   var yr=t['pricing.yrSuffix']||'/yr';
   var ps=document.getElementById('price-starter'),pp=document.getElementById('price-professional');
   var pS=document.getElementById('period-starter'),pP=document.getElementById('period-professional');
@@ -906,7 +906,7 @@ function setBilling(interval) {
     if(iS)iS.style.display='none';if(iP)iP.style.display='none';
   }
 }
-window._xeloReapply=function(){setBilling(_billingInterval);};
+window._xeloBillingReapply=function(){setBilling(_billingInterval);};
 // Hydrate plan pricing from KV via same-origin Pages Function proxy
 (function(){
   var DEFAULTS={trial:{price:0,seconds:36,listings:1},starter:{price:99,seconds:192,listings:4},professional:{price:249,seconds:576,listings:12},agency:{price:690,seconds:0,listings:0}};
@@ -924,6 +924,7 @@ window._xeloReapply=function(){setBilling(_billingInterval);};
     if(faqAllowances){var trClips=Math.round(t.seconds/6);var stClips=Math.round(s.seconds/6);var prClips=Math.round(pr.seconds/6);faqAllowances.textContent='Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month — unused seconds do not roll over. Trial includes '+t.seconds+' seconds ('+trClips+' clips). Starter includes '+s.seconds+' seconds (~'+stClips+' clips). Professional includes '+pr.seconds+' seconds (~'+prClips+' clips). Agency has no cap.';}
     _starterPrice = s.price; _proPrice = pr.price;
     if(window._xeloReapply) window._xeloReapply();
+    if(window._xeloBillingReapply) window._xeloBillingReapply();
   }
   fetch('/api/pricing').then(function(r){return r.json()}).then(applyPricing).catch(function(){});
 })();
@@ -1091,7 +1092,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   window._xeloLoadLang=loadLang;
-  window._xeloReapply=function(){ if(cur!=='en'&&cache[cur]) applyDict(cache[cur]); };
+  window._xeloReapply=function(){ if(cur!=='en'&&cache[cur]) applyDict(cache[cur]); if(window._xeloBillingReapply) window._xeloBillingReapply(); };
 
   document.addEventListener('DOMContentLoaded',function(){
     buildSnap();
