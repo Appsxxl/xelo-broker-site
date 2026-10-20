@@ -705,7 +705,15 @@ footer a:hover{color:var(--g)}
           <div class="pf" style="color:#f59e0b"><span class="pf-check" style="color:#f59e0b">⚠</span> <span data-i18n="pricing.trial.f10">Trial videos carry a small Xelo watermark. When you upgrade, your tour is re-rendered watermark-free, free.</span></div>
         </div>
         <div class="plan-flags" title="English · Dutch · German · French · Spanish · Portuguese · Russian · Chinese · Arabic · Polish · Italian · Norwegian">🇬🇧🇳🇱🇩🇪🇫🇷🇪🇸🇵🇹🇷🇺🇨🇳🇸🇦🇵🇱🇮🇹🇳🇴</div>
-        <div style="margin-bottom:16px;padding:10px 14px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;font-size:12px;color:var(--dim);line-height:1.6"><span data-i18n="pricing.trial.earnfree">Attend the free training and earn your first month free: 192 seconds, 4 listings, no watermark.</span> <span data-i18n="pricing.trial.earnsoon" style="color:rgba(255,255,255,.35)">Training link coming soon.</span></div>
+        <div id="trial-training-box" style="margin-bottom:16px;padding:14px 16px;background:rgba(216,180,90,.07);border:1px solid rgba(216,180,90,.5);border-radius:10px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px">
+            <div style="font-size:13px;font-weight:700;color:#d8b45a;line-height:1.3" data-i18n="pricing.trial.trainingTitle">🎓 Free personal training — worth €99</div>
+            <span style="flex-shrink:0;font-size:10px;font-weight:700;color:#0d1321;background:#d8b45a;border-radius:4px;padding:2px 6px;white-space:nowrap">€99 value</span>
+          </div>
+          <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:10px" data-i18n="pricing.trial.earnfree">One live Zoom session, one-on-one. Afterwards your first month unlocks automatically: 4 extra listings · 192 seconds of video · no watermark.</div>
+          <a id="trial-book-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none;background:#d8b45a;color:#0d1321;border-radius:6px;padding:7px 14px;font-weight:700;font-size:12px;text-decoration:none" data-i18n="pricing.trial.trainingBtn">Book my free session →</a>
+          <div id="trial-soon-text" style="font-size:11px;color:rgba(255,255,255,.4);font-style:italic" data-i18n="pricing.trial.earnsoon">Your personal Zoom link follows by email — your month unlocks automatically after the session.</div>
+        </div>
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost" data-i18n="pricing.trial.cta">Start free</a>
       </div>
     </div>
@@ -928,6 +936,8 @@ window._xeloBillingReapply=function(){setBilling(_billingInterval);};
   }
   fetch('/api/pricing').then(function(r){return r.json()}).then(applyPricing).catch(function(){});
 })();
+var XELO_BOOKING_URL='';
+(function(){var btn=document.getElementById('trial-book-btn'),soon=document.getElementById('trial-soon-text');if(XELO_BOOKING_URL&&btn&&soon){btn.href=XELO_BOOKING_URL;btn.style.display='inline-block';soon.style.display='none';}})();
 function switchHero(thumb, src, label, ratio) {
   document.querySelectorAll('.vthmb').forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
