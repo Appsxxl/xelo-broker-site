@@ -134,6 +134,7 @@ window.XELO_I18N_DE = {
 "pricing.agency.cta":"Kontakt aufnehmen",
 "pricing.vat":"zzgl. MwSt.",
 "pricing.note":"Limits werden monatlich zurückgesetzt. Re-Renderings belasten Ihr Videosekunden-Kontingent. Nicht genutzte Sekunden verfallen. Gründungsmakler: Preis für 12 Monate festgeschrieben. Preise zzgl. MwSt.",
+"pricing.billingMonthly":"Monatlich","pricing.billingAnnual":"Jährlich","pricing.annualBadge":"2 Monate gratis","pricing.annualSubline":"Sie zahlen 10 Monate","pricing.yrSuffix":"/Jahr",
 /* buy more */
 "buymore.h2":"Kein Abonnement nötig.",
 "buymore.sub":"Einmalig bezahlen, sofort aktivieren. Gleiche Videoqualität wie jeder kostenpflichtige Plan.",

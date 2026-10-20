@@ -134,6 +134,7 @@ window.XELO_I18N_PL = {
 "pricing.agency.cta":"Skontaktuj się z nami",
 "pricing.vat":"bez VAT",
 "pricing.note":"Limity są resetowane miesięcznie. Ponowne renderowanie pochłania Twoje sekundy wideo. Niewykorzystane sekundy nie przechodzą. Agenci założyciele: cena zablokowana na 12 miesięcy. Ceny bez VAT.",
+"pricing.billingMonthly":"Miesięcznie","pricing.billingAnnual":"Rocznie","pricing.annualBadge":"2 miesiące gratis","pricing.annualSubline":"Płacisz za 10 miesięcy","pricing.yrSuffix":"/rok",
 /* buy more */
 "buymore.h2":"Bez subskrypcji.",
 "buymore.sub":"Zapłać raz, aktywuj natychmiast. Taka sama jakość wideo jak w każdym płatnym planie.",

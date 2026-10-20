@@ -134,6 +134,7 @@ window.XELO_I18N_NO = {
 "pricing.agency.cta":"Kontakt oss",
 "pricing.vat":"ekskl. mva",
 "pricing.note":"Grenser tilbakestilles månedlig. Re-renderinger trekker fra videosekundene dine. Ubrukte sekunder overføres ikke. Grunnleggende meglere: pris låst i 12 måneder. Priser ekskl. MVA.",
+"pricing.billingMonthly":"Månedlig","pricing.billingAnnual":"Årlig","pricing.annualBadge":"2 måneder gratis","pricing.annualSubline":"Du betaler 10 måneder","pricing.yrSuffix":"/år",
 /* buy more */
 "buymore.h2":"Uten abonnement.",
 "buymore.sub":"Betal én gang, aktiver umiddelbart. Samme videokvalitet som ethvert betalt plan.",

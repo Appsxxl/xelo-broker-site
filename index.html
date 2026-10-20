@@ -709,10 +709,18 @@ footer a:hover{color:var(--g)}
         <a href="https://app.xelo.media/register" class="plan-btn plan-btn-ghost" data-i18n="pricing.trial.cta">Start free</a>
       </div>
     </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
+      <div style="display:inline-flex;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:3px;gap:3px">
+        <button id="btn-monthly" onclick="setBilling('monthly')" data-i18n="pricing.billingMonthly" style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:16px;padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer">Monthly</button>
+        <button id="btn-annual" onclick="setBilling('annual')" data-i18n="pricing.billingAnnual" style="background:transparent;color:rgba(255,255,255,.5);border:none;border-radius:16px;padding:5px 14px;font-size:12px;font-weight:400;cursor:pointer">Annual</button>
+      </div>
+      <span id="annual-badge-global" style="display:none;font-size:11px;background:rgba(59,185,80,.15);border:1px solid rgba(59,185,80,.3);border-radius:20px;padding:2px 8px;color:#3fb950;font-weight:700" data-i18n="pricing.annualBadge">2 months free</span>
+    </div>
     <div class="plans-lower" id="plans-grid">
       <div class="plan">
         <div class="plan-name" data-i18n="pricing.starter.name">Starter</div>
-        <div class="plan-price"><span id="price-starter">€99</span><span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-price"><span id="price-starter">€99</span><span id="period-starter" style="font-size:16px;font-weight:400">/mo</span></div>
+        <div id="annual-info-starter" style="display:none;font-size:11px;color:rgba(255,255,255,.5);margin:-4px 0 6px" data-i18n="pricing.annualSubline">You pay 10 months</div>
         <div class="plan-vat" data-i18n="pricing.vat">excl. VAT</div>
         <div class="plan-sub" id="sub-starter" data-i18n="pricing.starter.f1">4 listing videos per month</div>
         <div class="plan-features">
@@ -728,7 +736,8 @@ footer a:hover{color:var(--g)}
       <div class="plan plan-popular">
         <div class="popular-tag" data-i18n="pricing.pro.tag">MOST POPULAR</div>
         <div class="plan-name" data-i18n="pricing.pro.name">Professional</div>
-        <div class="plan-price"><span id="price-professional">€249</span><span style="font-size:16px;font-weight:400">/mo</span></div>
+        <div class="plan-price"><span id="price-professional">€249</span><span id="period-professional" style="font-size:16px;font-weight:400">/mo</span></div>
+        <div id="annual-info-professional" style="display:none;font-size:11px;color:rgba(255,255,255,.5);margin:-4px 0 6px" data-i18n="pricing.annualSubline">You pay 10 months</div>
         <div class="plan-vat" data-i18n="pricing.vat">excl. VAT</div>
         <div class="plan-sub" id="sub-professional" data-i18n="pricing.pro.f1">12 listing videos per month</div>
         <div class="plan-features">
@@ -871,6 +880,33 @@ footer a:hover{color:var(--g)}
 
 <script>
 function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');var s=document.getElementById('faq');if(s){var o=s.querySelector('.faq-item.open');s.classList.toggle('faq-expanded',!!o)}}
+// Annual toggle state
+var _billingInterval = 'monthly';
+var _starterPrice = 99;
+var _proPrice = 249;
+function setBilling(interval) {
+  _billingInterval = interval;
+  var btnM=document.getElementById('btn-monthly'),btnA=document.getElementById('btn-annual'),badge=document.getElementById('annual-badge-global');
+  if(btnM){btnM.style.background=interval==='monthly'?'rgba(255,255,255,.15)':'transparent';btnM.style.color=interval==='monthly'?'#fff':'rgba(255,255,255,.5)';btnM.style.fontWeight=interval==='monthly'?'700':'400';}
+  if(btnA){btnA.style.background=interval==='annual'?'rgba(255,255,255,.15)':'transparent';btnA.style.color=interval==='annual'?'#fff':'rgba(255,255,255,.5)';btnA.style.fontWeight=interval==='annual'?'700':'400';}
+  if(badge)badge.style.display=interval==='annual'?'':'none';
+  var lang=document.documentElement.lang||'en';
+  var t=(window._xeloI18n&&window._xeloI18n[lang])||{};
+  var yr=t['pricing.yrSuffix']||'/yr';
+  var ps=document.getElementById('price-starter'),pp=document.getElementById('price-professional');
+  var pS=document.getElementById('period-starter'),pP=document.getElementById('period-professional');
+  var iS=document.getElementById('annual-info-starter'),iP=document.getElementById('annual-info-professional');
+  if(interval==='annual'){
+    if(ps)ps.textContent='€'+(_starterPrice*10);if(pp)pp.textContent='€'+(_proPrice*10);
+    if(pS)pS.textContent=yr;if(pP)pP.textContent=yr;
+    if(iS)iS.style.display='';if(iP)iP.style.display='';
+  }else{
+    if(ps)ps.textContent='€'+_starterPrice;if(pp)pp.textContent='€'+_proPrice;
+    if(pS)pS.textContent='/mo';if(pP)pP.textContent='/mo';
+    if(iS)iS.style.display='none';if(iP)iP.style.display='none';
+  }
+}
+window._xeloReapply=function(){setBilling(_billingInterval);};
 // Hydrate plan pricing from KV via same-origin Pages Function proxy
 (function(){
   var DEFAULTS={trial:{price:0,seconds:36,listings:1},starter:{price:99,seconds:192,listings:4},professional:{price:249,seconds:576,listings:12},agency:{price:690,seconds:0,listings:0}};
@@ -886,6 +922,7 @@ function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');v
     // Update FAQ allowances text
     var faqAllowances=document.querySelector('.faq-allowances-text');
     if(faqAllowances){var trClips=Math.round(t.seconds/6);var stClips=Math.round(s.seconds/6);var prClips=Math.round(pr.seconds/6);faqAllowances.textContent='Each plan includes a monthly video seconds allowance. One 6-second clip costs 6 seconds from that allowance — generating or re-rendering draws from the same pool. Allowances reset on the 1st of each month — unused seconds do not roll over. Trial includes '+t.seconds+' seconds ('+trClips+' clips). Starter includes '+s.seconds+' seconds (~'+stClips+' clips). Professional includes '+pr.seconds+' seconds (~'+prClips+' clips). Agency has no cap.';}
+    _starterPrice = s.price; _proPrice = pr.price;
     if(window._xeloReapply) window._xeloReapply();
   }
   fetch('/api/pricing').then(function(r){return r.json()}).then(applyPricing).catch(function(){});

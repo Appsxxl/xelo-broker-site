@@ -134,6 +134,7 @@ window.XELO_I18N_NL = {
 "pricing.agency.cta":"Neem contact op",
 "pricing.vat":"excl. btw",
 "pricing.note":"Limieten worden maandelijks gereset. Hervertoningen putten uit je videoseconden. Ongebruikte seconden worden niet overgedragen. Founding brokers: prijs vastzet voor 12 maanden. Prijzen excl. btw.",
+"pricing.billingMonthly":"Maandelijks","pricing.billingAnnual":"Jaarlijks","pricing.annualBadge":"2 maanden gratis","pricing.annualSubline":"U betaalt 10 maanden","pricing.yrSuffix":"/jaar",
 /* buy more */
 "buymore.h2":"Geen abonnement nodig.",
 "buymore.sub":"Eenmalig betalen, direct activeren. Dezelfde videokwaliteit als elk betaald abonnement.",

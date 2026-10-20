@@ -134,6 +134,7 @@ window.XELO_I18N_FR = {
 "pricing.agency.cta":"Nous contacter",
 "pricing.vat":"hors TVA",
 "pricing.note":"Les limites se réinitialisent mensuellement. Les re-rendus sont imputés sur vos secondes vidéo. Les secondes inutilisées ne sont pas reportées. Agents fondateurs : prix garanti 12 mois. Prix hors TVA.",
+"pricing.billingMonthly":"Mensuel","pricing.billingAnnual":"Annuel","pricing.annualBadge":"2 mois offerts","pricing.annualSubline":"Vous payez 10 mois","pricing.yrSuffix":"/an",
 /* buy more */
 "buymore.h2":"Sans abonnement.",
 "buymore.sub":"Payez une fois, activez instantanément. Même qualité vidéo que n'importe quel plan payant.",

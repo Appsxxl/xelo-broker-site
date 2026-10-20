@@ -134,6 +134,7 @@ window.XELO_I18N_SV = {
 "pricing.agency.cta":"Kontakta oss",
 "pricing.vat":"exkl. moms",
 "pricing.note":"Gränserna återställs månadsvis. Omrenderingar drar från dina videosekunder. Oanvända sekunder överförs inte. Grundarmäklare: pris låst i 12 månader. Priser exkl. moms.",
+"pricing.billingMonthly":"Månadsvis","pricing.billingAnnual":"Årsvis","pricing.annualBadge":"2 månader gratis","pricing.annualSubline":"Du betalar 10 månader","pricing.yrSuffix":"/år",
 /* buy more */
 "buymore.h2":"Utan abonnemang.",
 "buymore.sub":"Betala en gång, aktivera direkt. Samma videokvalitet som alla betalplaner.",

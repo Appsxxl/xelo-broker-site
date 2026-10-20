@@ -134,6 +134,7 @@ window.XELO_I18N_PT = {
 "pricing.agency.cta":"Contactar-nos",
 "pricing.vat":"excl. IVA",
 "pricing.note":"Os limites reiniciam mensalmente. Os re-renders consomem os seus segundos de vídeo. Os segundos não utilizados não transitam. Agentes fundadores: preço garantido 12 meses. Preços sem IVA.",
+"pricing.billingMonthly":"Mensal","pricing.billingAnnual":"Anual","pricing.annualBadge":"2 meses grátis","pricing.annualSubline":"Paga 10 meses","pricing.yrSuffix":"/ano",
 /* buy more */
 "buymore.h2":"Sem subscrição.",
 "buymore.sub":"Pague uma vez, ative de imediato. A mesma qualidade de vídeo que qualquer plano pago.",

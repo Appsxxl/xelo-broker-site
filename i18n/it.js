@@ -134,6 +134,7 @@ window.XELO_I18N_IT = {
 "pricing.agency.cta":"Contattaci",
 "pricing.vat":"IVA esclusa",
 "pricing.note":"I limiti si azzerano mensilmente. I re-render attingono dai secondi video. I secondi inutilizzati non vengono trasferiti. Agenti fondatori: prezzo bloccato per 12 mesi. Prezzi IVA esclusa.",
+"pricing.billingMonthly":"Mensile","pricing.billingAnnual":"Annuale","pricing.annualBadge":"2 mesi gratis","pricing.annualSubline":"Paghi 10 mesi","pricing.yrSuffix":"/anno",
 /* buy more */
 "buymore.h2":"Senza abbonamento.",
 "buymore.sub":"Paga una volta, attiva subito. Stessa qualità video di qualsiasi piano a pagamento.",

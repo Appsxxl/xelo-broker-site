@@ -134,6 +134,7 @@ window.XELO_I18N_AR = {
 "pricing.agency.cta":"تواصل معنا",
 "pricing.vat":"غير شامل ضريبة القيمة المضافة",
 "pricing.note":"الحدود تُعاد شهرياً. إعادة المعالجة تستهلك ثواني الفيديو. الثواني غير المستخدمة لا تنتقل. وسطاء مؤسسون: السعر مُثبَّت لـ12 شهراً. الأسعار بدون ضريبة القيمة المضافة.",
+"pricing.billingMonthly":"شهري","pricing.billingAnnual":"سنوي","pricing.annualBadge":"شهران مجاناً","pricing.annualSubline":"تدفع 10 أشهر","pricing.yrSuffix":"/سنة",
 /* buy more */
 "buymore.h2":"بدون اشتراك.",
 "buymore.sub":"ادفع مرة واحدة، فعّل فوراً. نفس جودة الفيديو لأي خطة مدفوعة.",

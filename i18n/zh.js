@@ -134,6 +134,7 @@ window.XELO_I18N_ZH = {
 "pricing.agency.cta":"联系我们",
 "pricing.vat":"不含增值税",
 "pricing.note":"配额每月重置。重新渲染消耗视频秒数。未使用的秒数不累积。创始经纪人：价格锁定12个月。价格不含增值税。",
+"pricing.billingMonthly":"按月","pricing.billingAnnual":"按年","pricing.annualBadge":"免费2个月","pricing.annualSubline":"支付10个月费用","pricing.yrSuffix":"/年",
 /* buy more */
 "buymore.h2":"无需订阅。",
 "buymore.sub":"一次付款，立即激活。与任何付费方案相同的视频质量。",
