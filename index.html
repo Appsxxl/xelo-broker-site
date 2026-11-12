@@ -941,6 +941,11 @@ window._xeloBillingReapply=function(){setBilling(_billingInterval);};
     if(window._xeloBillingReapply) window._xeloBillingReapply();
   }
   fetch('/api/pricing').then(function(r){return r.json()}).then(applyPricing).catch(function(){});
+  fetch('/api/public/stats').then(function(r){return r.json()}).then(function(d){
+    if(!d.ok||!Array.isArray(d.stats))return;
+    var nums=document.querySelectorAll('.stat-num');
+    for(var i=0;i<nums.length&&i<d.stats.length;i++){nums[i].textContent=d.stats[i];}
+  }).catch(function(){});
 })();
 var XELO_BOOKING_URL='';
 (function(){var btn=document.getElementById('trial-book-btn'),soon=document.getElementById('trial-soon-text');if(XELO_BOOKING_URL&&btn&&soon){btn.href=XELO_BOOKING_URL;btn.style.display='inline-block';soon.style.display='none';}})();
